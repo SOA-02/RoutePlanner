@@ -14,7 +14,7 @@ require 'openai'
 
 
 module RoutePlanner
-  module Mixins
+  module OpenAI
     # Service for interacting with the OpenAI API
     class ChatService
       attr_reader :message, :prompt, :api_key
@@ -45,19 +45,19 @@ module RoutePlanner
       # Prerequisite: skill_name and value of difficulty from 1~100
 
       def generate_messages
-        prompts = send("#{prompt}_prompts")
+        prompts = send("#{prompt}_prompt")
         prompts.map { |p| { role: 'system', content: p } } << { role: 'user', content: message }
       end
 
-      def physical_training_prompts
+      def side_quest_prompt
         [
-          'suggests prerequisites keywords suitable for youtube search in json format'
+          'suggests 3 important prerequisites keywords suitable for the syllabus in json format'
         ]
       end
 
-      def online_training_prompts
+      def main_quest_prompt
         [
-          'suggests prerequisites keywords suitable for youtube search in json format'
+          'suggests 3 important prerequisites keywords suitable for the syllabus in json format'
         ]
       end
 

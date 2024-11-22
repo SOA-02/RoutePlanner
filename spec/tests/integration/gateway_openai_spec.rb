@@ -11,13 +11,21 @@ describe 'Tests OpenAI library' do
   end
 
   describe 'Fetch OpenAI successfully' do
-    before do
-      prompt = :physical_training
-      @skillset = RoutePlanner::Mixins::ChatService
+    it 'HAPPY: fetches side quest skill successfully' do
+      prompt = :side_quest
+      @skillset = RoutePlanner::OpenAI::ChatService
         .new(message: 'Machine Learning', prompt: prompt, api_key: OPENAI_KEY)
         .call
+
+      _(@skillset).must_be_kind_of String
     end
-    it 'HAPPY: fetches side quest skill successfully' do
+
+    it 'HAPPY: fetches main quest skill successfully' do
+      prompt = :main_quest
+      @skillset = RoutePlanner::OpenAI::ChatService
+        .new(message: 'Machine Learning', prompt: prompt, api_key: OPENAI_KEY)
+        .call
+
       _(@skillset).must_be_kind_of String
     end
   end
