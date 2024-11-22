@@ -63,12 +63,6 @@ module RoutePlanner
         ]
       end
 
-      def summarize_prompt
-        [
-          'You are a helpful assistant that summarizes course syllabus into 4 parts: course_name, course_description, course_evaluation, AI_use_policy in json format'
-        ]
-      end
-
       def client
         @client ||= OpenAI::Client.new(access_token: api_key)
       end
