@@ -17,8 +17,8 @@ module RoutePlanner
       end
 
       def call
-        skill = @gateway.call
-        parse_response(skill)
+        @gateway.call
+        #parse_response(skill)
         # build_entity(parsed)
       end
 

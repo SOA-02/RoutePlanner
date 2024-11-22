@@ -16,18 +16,19 @@ module RoutePlanner
         [
           'You are an AI assistant that summarizes course syllabi.',
           'Extract the following information:',
-          '- Course name',
-          '- Course description',
-          '- Course evaluation methods',
-          'Format as plain text, not JSON.'
+          'Course name',
+          'Course description',
+          'Course evaluation methods',
+          'AI use policy',
+          'Format as JSON'
         ]
       end
 
       # Prerequisite: skill_name and value of difficulty from 1~100
       def skill_prompt
         [
-          'You are a helpful assistant that suggests 3 most important prerequisites keywords',
-          'suitable for the syllabus in json format'
+          'You are a helpful assistant that suggests 3 most important prerequisite subjects with difficulty score',
+          'suitable for the syllabus in JSON format'
         ]
       end
     end

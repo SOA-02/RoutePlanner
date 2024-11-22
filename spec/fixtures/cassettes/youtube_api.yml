@@ -27,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Fri, 22 Nov 2024 12:56:58 GMT
+      - Fri, 22 Nov 2024 16:14:21 GMT
       Server:
       - scaffolding on HTTPServer2
       X-Xss-Protection:
@@ -229,7 +229,7 @@ http_interactions:
             }
           ]
         }
-  recorded_at: Fri, 22 Nov 2024 12:56:58 GMT
+  recorded_at: Fri, 22 Nov 2024 16:14:21 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/youtube/v3/search?key=<API_KEY>&maxResults=5&part=snippet&q=Ruby%20one%20hour%20lectures%20tutorials&type=video
@@ -257,7 +257,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Fri, 22 Nov 2024 12:56:58 GMT
+      - Fri, 22 Nov 2024 16:14:21 GMT
       Server:
       - scaffolding on HTTPServer2
       X-Xss-Protection:
@@ -459,5 +459,5 @@ http_interactions:
             }
           ]
         }
-  recorded_at: Fri, 22 Nov 2024 12:56:58 GMT
+  recorded_at: Fri, 22 Nov 2024 16:14:21 GMT
 recorded_with: VCR 6.3.1
