@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/root/Desktop/rubyhw/RoutePlanner/require_app.rb": {
+      "/Users/fifiding/RoutePlanner/require_app.rb": {
         "lines": [
           null,
           null,
@@ -16,7 +16,7 @@
           null
         ]
       },
-      "/root/Desktop/rubyhw/RoutePlanner/config/environment.rb": {
+      "/Users/fifiding/RoutePlanner/config/environment.rb": {
         "lines": [
           null,
           null,
@@ -52,7 +52,7 @@
           null
         ]
       },
-      "/root/Desktop/rubyhw/RoutePlanner/app/domain/RoutePlanner/entities/Online.rb": {
+      "/Users/fifiding/RoutePlanner/app/domain/RoutePlanner/entities/Online.rb": {
         "lines": [
           null,
           null,
@@ -79,7 +79,7 @@
           null
         ]
       },
-      "/root/Desktop/rubyhw/RoutePlanner/app/domain/RoutePlanner/entities/Physical.rb": {
+      "/Users/fifiding/RoutePlanner/app/domain/RoutePlanner/entities/Physical.rb": {
         "lines": [
           null,
           null,
@@ -108,7 +108,7 @@
           null
         ]
       },
-      "/root/Desktop/rubyhw/RoutePlanner/app/infrastructure/database/orm/online_orm.rb": {
+      "/Users/fifiding/RoutePlanner/app/infrastructure/database/orm/online_orm.rb": {
         "lines": [
           null,
           null,
@@ -127,7 +127,7 @@
           null
         ]
       },
-      "/root/Desktop/rubyhw/RoutePlanner/app/infrastructure/database/orm/physical_orm.rb": {
+      "/Users/fifiding/RoutePlanner/app/infrastructure/database/orm/physical_orm.rb": {
         "lines": [
           null,
           null,
@@ -146,7 +146,7 @@
           null
         ]
       },
-      "/root/Desktop/rubyhw/RoutePlanner/app/infrastructure/database/repositories/for.rb": {
+      "/Users/fifiding/RoutePlanner/app/infrastructure/database/repositories/for.rb": {
         "lines": [
           null,
           null,
@@ -173,7 +173,7 @@
           null
         ]
       },
-      "/root/Desktop/rubyhw/RoutePlanner/app/infrastructure/database/repositories/onlines.rb": {
+      "/Users/fifiding/RoutePlanner/app/infrastructure/database/repositories/onlines.rb": {
         "lines": [
           null,
           null,
@@ -227,7 +227,7 @@
           null
         ]
       },
-      "/root/Desktop/rubyhw/RoutePlanner/app/infrastructure/database/repositories/physicals.rb": {
+      "/Users/fifiding/RoutePlanner/app/infrastructure/database/repositories/physicals.rb": {
         "lines": [
           null,
           null,
@@ -279,7 +279,7 @@
           null
         ]
       },
-      "/root/Desktop/rubyhw/RoutePlanner/app/infrastructure/youtube/gateways/youtube_api.rb": {
+      "/Users/fifiding/RoutePlanner/app/infrastructure/youtube/gateways/youtube_api.rb": {
         "lines": [
           null,
           null,
@@ -291,198 +291,6 @@
           1,
           null,
           1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/root/Desktop/rubyhw/RoutePlanner/app/infrastructure/youtube/mappers/video_mapper.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          1,
-          1,
-          0,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/root/Desktop/rubyhw/RoutePlanner/app/infrastructure/youtube/mappers/video_recommand_mapper.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          6,
-          null,
-          null,
-          1,
-          6,
-          null,
-          null,
-          null,
-          1,
-          1,
-          5,
-          5,
-          null,
-          null,
-          1,
-          5,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
           1,
           5,
           null,
@@ -492,11 +300,49 @@
           null,
           null,
           1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
           5,
           null,
           null,
           1,
           5,
+          5,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          5,
+          5,
+          5,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          5,
+          null,
+          null,
+          1,
+          0,
           null,
           null,
           null,
@@ -504,7 +350,161 @@
           null
         ]
       },
-      "/root/Desktop/rubyhw/RoutePlanner/app/presentation/view_objects/roadmap.rb": {
+      "/Users/fifiding/RoutePlanner/app/infrastructure/youtube/mappers/video_mapper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/fifiding/RoutePlanner/app/infrastructure/youtube/mappers/video_recommand_mapper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          4,
+          4,
+          4,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          4,
+          4,
+          null,
+          4,
+          4,
+          null,
+          4,
+          null,
+          null,
+          1,
+          null,
+          1,
+          4,
+          4,
+          null,
+          null,
+          1,
+          24,
+          null,
+          null,
+          1,
+          24,
+          null,
+          null,
+          null,
+          1,
+          1,
+          20,
+          20,
+          null,
+          null,
+          1,
+          20,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          20,
+          null,
+          null,
+          1,
+          20,
+          null,
+          null,
+          1,
+          20,
+          null,
+          null,
+          1,
+          20,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/fifiding/RoutePlanner/app/presentation/view_objects/roadmap.rb": {
         "lines": [
           null,
           null,
@@ -547,7 +547,7 @@
           null
         ]
       },
-      "/root/Desktop/rubyhw/RoutePlanner/app/presentation/view_objects/roadmaps_list.rb": {
+      "/Users/fifiding/RoutePlanner/app/presentation/view_objects/roadmaps_list.rb": {
         "lines": [
           null,
           null,
@@ -573,7 +573,7 @@
           null
         ]
       },
-      "/root/Desktop/rubyhw/RoutePlanner/app/presentation/view_objects/timestamp.rb": {
+      "/Users/fifiding/RoutePlanner/app/presentation/view_objects/timestamp.rb": {
         "lines": [
           null,
           null,
@@ -603,7 +603,7 @@
           null
         ]
       },
-      "/root/Desktop/rubyhw/RoutePlanner/app/application/controllers/app.rb": {
+      "/Users/fifiding/RoutePlanner/app/application/controllers/app.rb": {
         "lines": [
           null,
           null,
@@ -707,7 +707,7 @@
           null
         ]
       },
-      "/root/Desktop/rubyhw/RoutePlanner/app/application/forms/new_search.rb": {
+      "/Users/fifiding/RoutePlanner/app/application/forms/new_search.rb": {
         "lines": [
           null,
           null,
@@ -732,7 +732,7 @@
           null
         ]
       },
-      "/root/Desktop/rubyhw/RoutePlanner/app/application/services/fetch_viewed_roadmaps.rb": {
+      "/Users/fifiding/RoutePlanner/app/application/services/fetch_viewed_roadmaps.rb": {
         "lines": [
           null,
           null,
@@ -757,7 +757,7 @@
           null
         ]
       },
-      "/root/Desktop/rubyhw/RoutePlanner/app/application/services/search_service.rb": {
+      "/Users/fifiding/RoutePlanner/app/application/services/search_service.rb": {
         "lines": [
           null,
           null,
@@ -787,7 +787,7 @@
           null
         ]
       },
-      "/root/Desktop/rubyhw/RoutePlanner/spec/helpers/vcr_helper.rb": {
+      "/Users/fifiding/RoutePlanner/spec/helpers/vcr_helper.rb": {
         "lines": [
           null,
           null,
@@ -807,25 +807,68 @@
           null,
           null,
           1,
+          4,
+          344,
+          344,
+          null,
+          null,
+          4,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           1,
-          35,
-          35,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
+          4,
           null,
           null
         ]
       },
-      "/root/Desktop/rubyhw/RoutePlanner/spec/helpers/database_helper.rb": {
+      "/Users/fifiding/RoutePlanner/spec/tests/integration/layers/gateway_database_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          5,
+          null,
+          5,
+          5,
+          null,
+          5,
+          5,
+          5,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/fifiding/RoutePlanner/spec/helpers/database_helper.rb": {
         "lines": [
           null,
           null,
@@ -840,6 +883,6 @@
         ]
       }
     },
-    "timestamp": 1731856356
+    "timestamp": 1732242328
   }
 }
