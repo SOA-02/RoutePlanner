@@ -14,7 +14,7 @@ require 'openai'
 
 
 module RoutePlanner
-  module OpenAI
+  module OpenAPI
     # Service for interacting with the OpenAI API
     class ChatService
       attr_reader :message, :prompt, :api_key
@@ -51,13 +51,21 @@ module RoutePlanner
 
       def side_quest_prompt
         [
-          'suggests 3 important prerequisites keywords suitable for the syllabus in json format'
+          'You are a helpful assistant that suggests 3 most important prerequisites keywords and its difficulty from 1 to 100',
+          'suitable for the syllabus in json format'
         ]
       end
 
       def main_quest_prompt
         [
-          'suggests 3 important prerequisites keywords suitable for the syllabus in json format'
+          'You are a helpful assistant that suggests 3 most important prerequisites keywords and its difficulty from 1 to 100',
+          'suitable for the syllabus in json format'
+        ]
+      end
+
+      def summarize_prompt
+        [
+          'You are a helpful assistant that summarizes course syllabus into 4 parts: course_name, course_description, course_evaluation, AI_use_policy in json format'
         ]
       end
 
@@ -70,8 +78,9 @@ end
 
 
 # Example Usage
-# prompt = :physical_training
-# service = RoutePlanner::Mixins::ChatService.new(message: 'machine learning', prompt: prompt, api_key: api_key)
+#message = File.read('~/RoutePlanner/spec/fixtures/syllabus_example.txt')
+# prompt = :summarize
+# service = RoutePlanner::OpenAPI::ChatService.new(message:'Machine learning', prompt: prompt, api_key: api_key)
 # response = service.call
 
 # puts 'OpenAI Response:'
