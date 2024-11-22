@@ -1,0 +1,56 @@
+Business Analytics using Machine Learning
+Instructor: Galit Shmueli (galit.shmueli@iss.nthu.edu.tw) TA: Cindy (Yu-Hsuan) Liu
+Website: canvas.instructure.com/courses/9474145
+Course Description
+Term: Fall 2024
+Class Time: Tuesdays, 14:20-17:20
+Class Location: Room 406, TSMC Building
+  Business analytics is the use of data-driven decision making. Companies, governments and other organizations now collect and have access to large amounts of data about suppliers, clients, employees, citizens, transactions, etc. Data mining (now better known as machine learning) and predictive analytics provide a powerful toolkit for detecting actionable patterns in data and generating predictions. These methods are used in many industries: Mobile companies use their customer database to predict customer churn or to personalize messages for improving customer service; Financial institutions use past loan data to predict defaulting chance for loan applicants; Charities use data from a campaign in one location to target the right people in another location; Politicians use databases of supporters to segment and best target each audience; Movie, music, and eCommerce websites provide recommendations based on users’ online behavior.
+Most business analytics applications are geared towards benefitting the company, often at the expense of the individual, community, and society. The focus of this course is on humane and socially-responsible business analytics.
+In the course we’ll work with real business problems and real data. We will examine types of questions that machine learning (data mining) can answer and the appropriate machine learning tools for answering different questions. The emphasis is on understanding the concepts and logic behind a wide set of machine learning techniques and their relation to specific business analytics situations. The course is not about mastering the theoretical underpinnings of the techniques. The course is focused on a business analytics team project that will encapsulate the learnings.
+Online Component
+The course is offered in a flipped classroom model. Students are expected to watch videos, read the textbook and post in an online forum prior to each on-ground session. Face-to-face class time will be devoted to discussions, developing the team projects, gaining hands-on experience, invited lectures, and other forms of interactive learning.
+Course Objectives
+Upon successful completion of the course, you should possess valuable practical analytical skills that will equip you with a competitive skill in almost any contemporary workplace. In particular, the knowledge acquired in this course will benefit those who plan careers in business and strategic consulting.
+The course will provide participants with the following skills and knowledge:
+● Become familiar with the potential and dangers of machine learning in today’s data rich-environment
+● Gain experience using key machine learning methods: classification, prediction, data reduction and exploration
+● Know how to decide when to use which technique
+● Be able to implement major machine learning techniques using software
+● Become a smart and critical use and consumer of machine learning techniques
+● Gain the intellectual capital required to provide responsible business analytics services
+● Be conscious of humanistic and societal implications of deploying machine learning in organizations
+2
+Learning Goals
+In addition to the course objectives, students should expect to develop the following by the end of the course:
+1. Effective Oral Communication - Each student shall be able to communicate verbally in an organized, clear, and persuasive manner, and be a responsive listener. (Assessment: Project presentations)
+2. Critical and Integrative Thinking - Each student shall be able to identify key issues in a business setting, develop a perspective that is supported with relevant information and integrative thinking, to draw and assess conclusions. (Assessment: Individual Assignments, online discussions, ideation proposal, team presentations)
+3. Interpersonal Awareness and Working in Teams - Each student shall demonstrate an ability to work effectively in a team, exhibiting behavior that reflects an understanding of the importance of individual roles and tasks, and the ability to manage conflict and compromise, so that team goals are achieved. (Assessment: Team project report and team presentations, team meetings with instructor)
+Grading
+Required Textbook
+Machine Learning for Business Analytics: Concepts, Techniques, and Applications in RapidMiner by Shmueli, Bruce, Deokar & Patel, Wiley, 2023.
+For Python experts:
+Data Mining for Business Analytics: Concepts, Techniques, and Applications in Python, by Shmueli, Bruce, Gedeck & Patel, Wiley & Sons 2019.
+Book website: dataminingbook.com (for downloading data and other resources)
+  
+Software
+An important feature of this course is hands-on learning using machine learning and data visualization software. For machine learning, we’ll use the free RapidMiner.
+For data visualization we will use Tableau.
+  
+Deliverable
+Weight
+Individual assignments (7)
+35%
+Team proposal
+15%
+Machine learning contest submission
+5%
+Final team project report
+15%
+Final team presentation
+10%
+Pre-class posts on online forum (10)
+10%
+30-second online quizzes (10)
+10%
+Final letter grades are determined based on curving the numerical grades (not based on fixed grade intervals). Each student is required to fill a peer evaluation report. If multiple team members indicate insufficient contribution of a member, a deduction of 30% of the presentation/report grade will be applied to that member.

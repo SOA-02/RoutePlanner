@@ -31,7 +31,7 @@ module VcrHelper
 
   def self.configure_vcr_for_openai
     VCR.configure do |c|
-      c.filter_sensitive_data('<OPENAI_KEY>') { OPENAI_KEY}
+      c.filter_sensitive_data('<OPENAI_KEY>') { OPENAI_KEY }
       c.filter_sensitive_data('<OPENAI_KEY_ESC>') { CGI.escape(OPENAI_KEY) }
     end
 

@@ -3,7 +3,7 @@
 module RoutePlanner
   module OpenAPI
     # map main quest to entity
-    class SideQuestMapper
+    class MainQuestMapper
       def initialize(input, prompt, openai_key, gateway_class = ChatService)
         @input = input
         @prompt = prompt

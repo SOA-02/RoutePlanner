@@ -3,7 +3,7 @@ require_relative '../../helpers/vcr_helper'
 
 describe 'Tests OpenAI library' do
   before do
-    VcrHelper.configure_vcr_for_youtube
+    VcrHelper.configure_vcr_for_openai
   end
 
   after do
@@ -11,22 +11,32 @@ describe 'Tests OpenAI library' do
   end
 
   describe 'Fetch OpenAI successfully' do
-    it 'HAPPY: fetches side quest skill successfully' do
-      prompt = :side_quest
-      @skillset = RoutePlanner::OpenAI::ChatService
-        .new(message: 'Machine Learning', prompt: prompt, api_key: OPENAI_KEY)
+    it 'HAPPY: fetches syllabus and summarize successfully' do
+      prompt = RoutePlanner::Entity::SkillSet.new.summarize_prompt
+      summary = RoutePlanner::OpenAPI::ChatService
+        .new(input: SYLLABUS, prompt: prompt, api_key: OPENAI_KEY)
         .call
 
-      _(@skillset).must_be_kind_of String
+      puts "\nSyllabus result:"
+      puts summary.inspect
+
+      _(summary).must_be_kind_of String
     end
 
-    it 'HAPPY: fetches main quest skill successfully' do
-      prompt = :main_quest
-      @skillset = RoutePlanner::OpenAI::ChatService
-        .new(message: 'Machine Learning', prompt: prompt, api_key: OPENAI_KEY)
-        .call
+    it 'HAPPY: fetches syllabus and analyze prerequisite successfully' do
+      prompt = RoutePlanner::Entity::SkillSet.new.skill_prompt
+      mapper = RoutePlanner::OpenAPI::SkillSetMapper.new(
+        SYLLABUS,
+        prompt,
+        OPENAI_KEY
+      )
 
-      _(@skillset).must_be_kind_of String
+      result = mapper.call
+      puts "\nParsed skill result:"
+      puts result.inspect
+
+      # puts "\nPrerequisite format:"
+      # puts result['prerequisites']
     end
   end
 end
