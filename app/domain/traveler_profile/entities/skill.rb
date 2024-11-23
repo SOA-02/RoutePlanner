@@ -9,8 +9,9 @@ module RoutePlanner
     class Skill < Dry::Struct
       include Dry.Types()
 
+      attribute :id, Integer.optional
       attribute :skill_name, Strict::String
-      attribute :challenge_level, Strict::Integer
+      attribute :challenge_score, Strict::Integer
       attribute? :loot_resources, Strict::Array.of(Strict::Hash).optional.default([])
     end
   end
