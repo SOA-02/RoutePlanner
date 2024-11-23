@@ -27,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Fri, 22 Nov 2024 16:14:21 GMT
+      - Sat, 23 Nov 2024 01:49:32 GMT
       Server:
       - scaffolding on HTTPServer2
       X-Xss-Protection:
@@ -49,7 +49,7 @@ http_interactions:
       string: |
         {
           "kind": "youtube#searchListResponse",
-          "etag": "Stq4ZPKDOHSqDAmJM68u-iBztFA",
+          "etag": "W8k1A1b6Fe3AUMik5IsOYxzW9e8",
           "nextPageToken": "CAUQAA",
           "regionCode": "TW",
           "pageInfo": {
@@ -161,40 +161,6 @@ http_interactions:
             },
             {
               "kind": "youtube#searchResult",
-              "etag": "KVLI6T9IpsJ6GDtiOg-phnRh7DE",
-              "id": {
-                "kind": "youtube#video",
-                "videoId": "oG-H6Qo-EnI"
-              },
-              "snippet": {
-                "publishedAt": "2024-08-18T16:45:24Z",
-                "channelId": "UCIIhqydramkUXfwCldOXWSQ",
-                "title": "Oi oi oi Baka",
-                "description": "",
-                "thumbnails": {
-                  "default": {
-                    "url": "https://i.ytimg.com/vi/oG-H6Qo-EnI/default.jpg",
-                    "width": 120,
-                    "height": 90
-                  },
-                  "medium": {
-                    "url": "https://i.ytimg.com/vi/oG-H6Qo-EnI/mqdefault.jpg",
-                    "width": 320,
-                    "height": 180
-                  },
-                  "high": {
-                    "url": "https://i.ytimg.com/vi/oG-H6Qo-EnI/hqdefault.jpg",
-                    "width": 480,
-                    "height": 360
-                  }
-                },
-                "channelTitle": "finnerson405",
-                "liveBroadcastContent": "none",
-                "publishTime": "2024-08-18T16:45:24Z"
-              }
-            },
-            {
-              "kind": "youtube#searchResult",
               "etag": "xu02JA1NeDc-ux2HU40uy1JwlCs",
               "id": {
                 "kind": "youtube#video",
@@ -226,10 +192,44 @@ http_interactions:
                 "liveBroadcastContent": "none",
                 "publishTime": "2008-03-12T01:24:57Z"
               }
+            },
+            {
+              "kind": "youtube#searchResult",
+              "etag": "1pnITlMbfXIxFU2F7TAm4_EqV70",
+              "id": {
+                "kind": "youtube#video",
+                "videoId": "MXlZCgh2M6A"
+              },
+              "snippet": {
+                "publishedAt": "2022-08-20T08:45:02Z",
+                "channelId": "UCrRsuNXylZ85VT9u7c3e6Tw",
+                "title": "Ruby For Beginners | Ruby Tutorial with Real Projects #ruby",
+                "description": "Ruby For Beginners | Learn Ruby Practically with Real Projects #besttutorial #ruby #rubytutorial #rubyforbeginners #rubyprojects ...",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/MXlZCgh2M6A/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/MXlZCgh2M6A/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/MXlZCgh2M6A/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "Best Tutorial",
+                "liveBroadcastContent": "none",
+                "publishTime": "2022-08-20T08:45:02Z"
+              }
             }
           ]
         }
-  recorded_at: Fri, 22 Nov 2024 16:14:21 GMT
+  recorded_at: Sat, 23 Nov 2024 01:49:32 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/youtube/v3/search?key=<API_KEY>&maxResults=5&part=snippet&q=Ruby%20one%20hour%20lectures%20tutorials&type=video
@@ -257,7 +257,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Fri, 22 Nov 2024 16:14:21 GMT
+      - Sat, 23 Nov 2024 01:49:33 GMT
       Server:
       - scaffolding on HTTPServer2
       X-Xss-Protection:
@@ -279,7 +279,7 @@ http_interactions:
       string: |
         {
           "kind": "youtube#searchListResponse",
-          "etag": "Stq4ZPKDOHSqDAmJM68u-iBztFA",
+          "etag": "W8k1A1b6Fe3AUMik5IsOYxzW9e8",
           "nextPageToken": "CAUQAA",
           "regionCode": "TW",
           "pageInfo": {
@@ -391,40 +391,6 @@ http_interactions:
             },
             {
               "kind": "youtube#searchResult",
-              "etag": "KVLI6T9IpsJ6GDtiOg-phnRh7DE",
-              "id": {
-                "kind": "youtube#video",
-                "videoId": "oG-H6Qo-EnI"
-              },
-              "snippet": {
-                "publishedAt": "2024-08-18T16:45:24Z",
-                "channelId": "UCIIhqydramkUXfwCldOXWSQ",
-                "title": "Oi oi oi Baka",
-                "description": "",
-                "thumbnails": {
-                  "default": {
-                    "url": "https://i.ytimg.com/vi/oG-H6Qo-EnI/default.jpg",
-                    "width": 120,
-                    "height": 90
-                  },
-                  "medium": {
-                    "url": "https://i.ytimg.com/vi/oG-H6Qo-EnI/mqdefault.jpg",
-                    "width": 320,
-                    "height": 180
-                  },
-                  "high": {
-                    "url": "https://i.ytimg.com/vi/oG-H6Qo-EnI/hqdefault.jpg",
-                    "width": 480,
-                    "height": 360
-                  }
-                },
-                "channelTitle": "finnerson405",
-                "liveBroadcastContent": "none",
-                "publishTime": "2024-08-18T16:45:24Z"
-              }
-            },
-            {
-              "kind": "youtube#searchResult",
               "etag": "xu02JA1NeDc-ux2HU40uy1JwlCs",
               "id": {
                 "kind": "youtube#video",
@@ -456,8 +422,42 @@ http_interactions:
                 "liveBroadcastContent": "none",
                 "publishTime": "2008-03-12T01:24:57Z"
               }
+            },
+            {
+              "kind": "youtube#searchResult",
+              "etag": "1pnITlMbfXIxFU2F7TAm4_EqV70",
+              "id": {
+                "kind": "youtube#video",
+                "videoId": "MXlZCgh2M6A"
+              },
+              "snippet": {
+                "publishedAt": "2022-08-20T08:45:02Z",
+                "channelId": "UCrRsuNXylZ85VT9u7c3e6Tw",
+                "title": "Ruby For Beginners | Ruby Tutorial with Real Projects #ruby",
+                "description": "Ruby For Beginners | Learn Ruby Practically with Real Projects #besttutorial #ruby #rubytutorial #rubyforbeginners #rubyprojects ...",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/MXlZCgh2M6A/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/MXlZCgh2M6A/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/MXlZCgh2M6A/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "Best Tutorial",
+                "liveBroadcastContent": "none",
+                "publishTime": "2022-08-20T08:45:02Z"
+              }
             }
           ]
         }
-  recorded_at: Fri, 22 Nov 2024 16:14:21 GMT
+  recorded_at: Sat, 23 Nov 2024 01:49:33 GMT
 recorded_with: VCR 6.3.1

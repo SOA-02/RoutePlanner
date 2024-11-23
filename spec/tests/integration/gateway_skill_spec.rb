@@ -12,10 +12,9 @@ describe 'Tests OpenAI library' do
 
   describe 'Fetch OpenAI successfully' do
     it 'HAPPY: fetches syllabus and analyze prerequisite successfully' do
-      skill_prompt = RoutePlanner::Entity::SkillSet.new.skill_prompt
+      # skill_prompt = RoutePlanner::Entity::SkillSet.new.skill_prompt
       mapper = RoutePlanner::OpenAPI::SkillSetMapper.new(
         SYLLABUS,
-        skill_prompt,
         OPENAI_KEY
       )
 

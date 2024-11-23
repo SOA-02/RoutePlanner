@@ -5,28 +5,30 @@ http_interactions:
     uri: https://api.openai.com/v1/chat/completions
     body:
       encoding: UTF-8
-      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"system","content":"You
-        are a helpful assistant that suggests 3 most important prerequisite subjects
-        with difficulty score"},{"role":"system","content":"suitable for the syllabus
-        in JSON format"},{"role":"user","content":"Business Analytics using Machine
-        Learning\nInstructor: Galit Shmueli (galit.shmueli@iss.nthu.edu.tw) TA: Cindy
-        (Yu-Hsuan) Liu\nWebsite: canvas.instructure.com/courses/9474145\nCourse Description\nTerm:
-        Fall 2024\nClass Time: Tuesdays, 14:20-17:20\nClass Location: Room 406, TSMC
-        Building\n  Business analytics is the use of data-driven decision making.
-        Companies, governments and other organizations now collect and have access
-        to large amounts of data about suppliers, clients, employees, citizens, transactions,
-        etc. Data mining (now better known as machine learning) and predictive analytics
-        provide a powerful toolkit for detecting actionable patterns in data and generating
-        predictions. These methods are used in many industries: Mobile companies use
-        their customer database to predict customer churn or to personalize messages
-        for improving customer service; Financial institutions use past loan data
-        to predict defaulting chance for loan applicants; Charities use data from
-        a campaign in one location to target the right people in another location;
-        Politicians use databases of supporters to segment and best target each audience;
-        Movie, music, and eCommerce websites provide recommendations based on users’
-        online behavior.\nMost business analytics applications are geared towards
-        benefitting the company, often at the expense of the individual, community,
-        and society. The focus of this course is on humane and socially-responsible
+      string: '{"model":"gpt-3.5-turbo","response_format":{"type":"json_object"},"messages":[{"role":"system","content":"Provide
+        valid JSON Output"},{"role":"system","content":"Provide the top 5 prerequisite
+        subjects for the course suitable for the syllabus"},{"role":"system","content":"Provide
+        one column prerequisite, subject name, and another column, difficulty level,
+        from 1 to 100"},{"role":"system","content":"Rank the difficulty from easiest
+        to hardest for an average person"},{"role":"user","content":"Business Analytics
+        using Machine Learning\nInstructor: Galit Shmueli (galit.shmueli@iss.nthu.edu.tw)
+        TA: Cindy (Yu-Hsuan) Liu\nWebsite: canvas.instructure.com/courses/9474145\nCourse
+        Description\nTerm: Fall 2024\nClass Time: Tuesdays, 14:20-17:20\nClass Location:
+        Room 406, TSMC Building\n  Business analytics is the use of data-driven decision
+        making. Companies, governments and other organizations now collect and have
+        access to large amounts of data about suppliers, clients, employees, citizens,
+        transactions, etc. Data mining (now better known as machine learning) and
+        predictive analytics provide a powerful toolkit for detecting actionable patterns
+        in data and generating predictions. These methods are used in many industries:
+        Mobile companies use their customer database to predict customer churn or
+        to personalize messages for improving customer service; Financial institutions
+        use past loan data to predict defaulting chance for loan applicants; Charities
+        use data from a campaign in one location to target the right people in another
+        location; Politicians use databases of supporters to segment and best target
+        each audience; Movie, music, and eCommerce websites provide recommendations
+        based on users’ online behavior.\nMost business analytics applications are
+        geared towards benefitting the company, often at the expense of the individual,
+        community, and society. The focus of this course is on humane and socially-responsible
         business analytics.\nIn the course we’ll work with real business problems
         and real data. We will examine types of questions that machine learning (data
         mining) can answer and the appropriate machine learning tools for answering
@@ -99,7 +101,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 22 Nov 2024 16:14:27 GMT
+      - Sat, 23 Nov 2024 01:49:37 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -111,7 +113,7 @@ http_interactions:
       Openai-Organization:
       - user-puxbhrdszzsz9p2xhyhw7spz
       Openai-Processing-Ms:
-      - '1434'
+      - '1289'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -121,45 +123,45 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '9998'
       X-Ratelimit-Remaining-Tokens:
-      - '198527'
+      - '198493'
       X-Ratelimit-Reset-Requests:
-      - 13.484s
+      - 14.779s
       X-Ratelimit-Reset-Tokens:
-      - 441ms
+      - 451ms
       X-Request-Id:
-      - req_3c280420af0fd001fb6c278818d8aebd
+      - req_595b57b43b83216dd42ee7f60f57a1b6
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=dbHIHyun8CtXtNPyelSbwJYtAGQ5N3Jk.YWSkPHv0NU-1732292067-1.0.1.1-g5kAiY92I6m_JTyIXxLwV8ircWnuYCm_yN.PSzJjq8s_Q_3wv.hhlU5_aNMtRhVK13jvlwlP7XtMFR5l2OpAEw;
-        path=/; expires=Fri, 22-Nov-24 16:44:27 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=dBS8CYdlggJFqxQoVRE7Vuv9nDv5Ha.fPov5rCmOsZU-1732326577-1.0.1.1-VoG7kzBXnPnQf4hnTffvYp8jd.QXx99P9ZjKDR701NEUCF121wrWcCw4RqXPRo35ETNoInpnBCWcMOsypoicEA;
+        path=/; expires=Sat, 23-Nov-24 02:19:37 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=IMCzn1oKfBdUFyqJgbdrAZcuFpSAbJQW7HBXBpzrhDk-1732292067506-0.0.1.1-604800000;
+      - _cfuvid=JojmGQrMu.OnbwUVYxzJ9iOVJMq3CZnLB.3o1H7IzGQ-1732326577528-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e6a36635b488440-TPE
+      - 8e6d80ebf81a8097-TPE
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AWQaYGNSVttLDhReSDH1Byf1Y11Cm",
+          "id": "chatcmpl-AWZZAAMZB5TZJyaRlLML8Mbgwcg8k",
           "object": "chat.completion",
-          "created": 1732292066,
+          "created": 1732326576,
           "model": "gpt-3.5-turbo-0125",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "```json\n{\n  \"Course Name\": \"Business Analytics using Machine Learning\",\n  \"Instructor\": \"Galit Shmueli\",\n  \"Prerequisite Subjects\": [\n    {\n      \"Subject\": \"Statistics\",\n      \"Difficulty Score\": 3\n    },\n    {\n      \"Subject\": \"Python Programming\",\n      \"Difficulty Score\": 3\n    },\n    {\n      \"Subject\": \"Data Science\",\n      \"Difficulty Score\": 3\n    }\n  ]\n}\n```",
+                "content": "{\n    \"prerequisite_subjects\": [\n        {\n            \"subject_name\": \"Statistics\",\n            \"difficulty_level\": 50\n        },\n        {\n            \"subject_name\": \"Data Analysis\",\n            \"difficulty_level\": 60\n        },\n        {\n            \"subject_name\": \"Machine Learning Fundamentals\",\n            \"difficulty_level\": 70\n        },\n        {\n            \"subject_name\": \"Python Programming\",\n            \"difficulty_level\": 75\n        },\n        {\n            \"subject_name\": \"Business Analytics\",\n            \"difficulty_level\": 80\n        }\n    ]\n}",
                 "refusal": null
               },
               "logprobs": null,
@@ -167,9 +169,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 1119,
-            "completion_tokens": 99,
-            "total_tokens": 1218,
+            "prompt_tokens": 1153,
+            "completion_tokens": 118,
+            "total_tokens": 1271,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -183,5 +185,5 @@ http_interactions:
           },
           "system_fingerprint": null
         }
-  recorded_at: Fri, 22 Nov 2024 16:14:27 GMT
+  recorded_at: Sat, 23 Nov 2024 01:49:37 GMT
 recorded_with: VCR 6.3.1

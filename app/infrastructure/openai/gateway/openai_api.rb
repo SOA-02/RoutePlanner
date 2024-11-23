@@ -20,6 +20,7 @@ module RoutePlanner
         response = client.chat(
           parameters: {
             model: 'gpt-3.5-turbo',
+            response_format: { type: 'json_object' },
             messages: messages,
             temperature: 0.7
           }
