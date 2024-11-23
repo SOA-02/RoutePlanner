@@ -1,12 +1,17 @@
 # frozen_string_literal: true
 
+require 'dry-types'
+require 'dry-struct'
+
 module RoutePlanner
   module Entity
     # Domain entity for team members
-    class SkillSet < Dry::Struct
-      include Dry.Types
+    class Skill < Dry::Struct
+      # include Dry.Types
 
-      attr_reader :skill, :difficulty
+      # attribute :skill_name, Strict::String
+      # attribute :challenge_level, String::Integer
+      # attribute :loot_resources, Array::String
 
       # Syllabus summary: course_name, course_description, course_evaluation, AI_use_policy
       def summarize_prompt
@@ -21,7 +26,7 @@ module RoutePlanner
       end
 
       # Prerequisite: skill_name and value of difficulty from 1~100
-      def skillset_prompt
+      def skill_prompt
         [
           'Provide valid JSON Output',
           'Provide the top 5 prerequisite subjects for the course suitable for the syllabus',

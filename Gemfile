@@ -63,3 +63,4 @@ end
 # Gemfile
 gem 'fiddle'
 gem 'rdoc'
+gem 'ruby-openai'

@@ -3,7 +3,7 @@ require_relative '../../helpers/vcr_helper'
 
 describe 'Tests OpenAI library' do
   before do
-    VcrHelper.configure_vcr_for_skill
+    VcrHelper.configure_vcr_for_summary
   end
 
   after do
@@ -11,12 +11,12 @@ describe 'Tests OpenAI library' do
   end
 
   describe 'Fetch OpenAI successfully' do
-    it 'HAPPY: fetches syllabus and analyze prerequisite successfully' do
-      skillset = RoutePlanner::OpenAPI::SkillMapper
-        .new(SYLLABUS,OPENAI_KEY)
+    it 'HAPPY: fetches syllabus and summarize successfully' do
+      summary = RoutePlanner::OpenAPI::MapMapper
+        .new(SYLLABUS, OPENAI_KEY)
         .call
 
-      _(skillset).must_be_kind_of String
+      _(summary).must_be_kind_of String
     end
   end
 end
