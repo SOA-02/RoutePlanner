@@ -2,19 +2,15 @@
 
 module RoutePlanner
   module Entity
-    # Domain entity for team members
-    class Map
-      # Syllabus summary: course_name, course_description, course_evaluation, AI_use_policy
-      def summarize_prompt
-        [
-          'Provide valid JSON Output',
-          'Provide a summary of the course syllabi.',
-          'Extract the following information:',
-          'Provide a column for each information:',
-          'Course name, Course description, Course evaluation methods, AI use policy',
-          'Keep the summary concise and informative'
-        ]
-      end
+    # Domain entity for map
+    class Map < Dry::Struct
+      include Dry.Types()
+
+      attribute :id, Integer.optional
+      attribute :map_name, Strict::String
+      attribute :map_description, Strict::String
+      attribute :map_evaluation, Strict::Hash
+      attribute :map_ai, Strict::String
     end
   end
 end

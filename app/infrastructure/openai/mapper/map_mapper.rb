@@ -3,8 +3,8 @@
 module RoutePlanner
   module OpenAPI
     # map main quest to entity
-    class SkillMapper
-      def initialize(input, openai_key, prompt = skill_prompt, gateway_class = ChatService)
+    class MapMapper
+      def initialize(input, openai_key, prompt = summarize_prompt, gateway_class = ChatService)
         @input = input
         @openai_key = openai_key
         @prompt = prompt
@@ -13,13 +13,13 @@ module RoutePlanner
       end
 
       def call
-        skillset = @gateway.call
-        skill = parse_response(skillset)
-        build_entity(skill)
+        summary = @gateway.call
+        parsed_summary = parse_response(summary)
+        build_entity(parsed_summary)
       end
 
-      def skill_prompt
-        RoutePlanner::Value::Prompt.new.skill_prompt
+      def summarize_prompt
+        RoutePlanner::Value::Prompt.new.summarize_prompt
       end
 
       def build_gateway
@@ -47,13 +47,31 @@ module RoutePlanner
         end
 
         def build_entity
-          @parsed_response['prerequisite_subjects'].map do |subject|
-            RoutePlanner::Entity::Skill.new(
-              id: nil,
-              skill_name: subject['subject_name'],
-              challenge_score: subject['difficulty_level']
-            )
-          end
+          RoutePlanner::Entity::Map.new(
+            id: nil,
+            map_name:,
+            map_description:,
+            map_evaluation:,
+            map_ai:
+          )
+        end
+
+        private
+
+        def map_name
+          @parsed_response['Course name']
+        end
+
+        def map_description
+          @parsed_response['Course description']
+        end
+
+        def map_evaluation
+          @parsed_response['Course evaluation methods']
+        end
+
+        def map_ai
+          @parsed_response['AI use policy']
         end
       end
     end

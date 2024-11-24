@@ -10,8 +10,9 @@ http_interactions:
         syllabi."},{"role":"system","content":"Extract the following information:"},{"role":"system","content":"Provide
         a column for each information:"},{"role":"system","content":"Course name,
         Course description, Course evaluation methods, AI use policy"},{"role":"system","content":"Keep
-        the summary concise and informative"},{"role":"user","content":"Business Analytics
-        using Machine Learning\nInstructor: Galit Shmueli (galit.shmueli@iss.nthu.edu.tw)
+        the summary concise and informative"},{"role":"system","content":"AI use policy
+        is defined as whether LLM like ChatGPT, Copilot, etc. is allowed to be used"},{"role":"user","content":"Business
+        Analytics using Machine Learning\nInstructor: Galit Shmueli (galit.shmueli@iss.nthu.edu.tw)
         TA: Cindy (Yu-Hsuan) Liu\nWebsite: canvas.instructure.com/courses/9474145\nCourse
         Description\nTerm: Fall 2024\nClass Time: Tuesdays, 14:20-17:20\nClass Location:
         Room 406, TSMC Building\n  Business analytics is the use of data-driven decision
@@ -101,7 +102,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 23 Nov 2024 01:49:35 GMT
+      - Sat, 23 Nov 2024 14:29:07 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -113,7 +114,7 @@ http_interactions:
       Openai-Organization:
       - user-puxbhrdszzsz9p2xhyhw7spz
       Openai-Processing-Ms:
-      - '2126'
+      - '2397'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -121,36 +122,69 @@ http_interactions:
       X-Ratelimit-Limit-Tokens:
       - '200000'
       X-Ratelimit-Remaining-Requests:
-      - '9999'
+      - '9998'
       X-Ratelimit-Remaining-Tokens:
-      - '198496'
+      - '198472'
       X-Ratelimit-Reset-Requests:
-      - 8.64s
+      - 14.314s
       X-Ratelimit-Reset-Tokens:
-      - 451ms
+      - 458ms
       X-Request-Id:
-      - req_420103e867cac43c483126fd4bda84c9
+      - req_75777477504816e0c31de1070541f1cb
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=9HyJf_kWifIiH077gksrz.AXVe.ul2u1NqrWxrul7Fo-1732326575-1.0.1.1-ywZ8HQsjQT5ZS1v0s_0PSKnPkRp68o8gW9BryUPyUGWgXHczWZBPRNTzR80AnUEC5Xg2hl9_YD4veEZCxgfKPw;
-        path=/; expires=Sat, 23-Nov-24 02:19:35 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=ZjudFRHIjWgXFPLlI.NdrpJEaeHzuEzHgyi7jeSTfyQ-1732372147-1.0.1.1-N0ThCOP175Qiz2dshJoguA7wI9c0zult3CsHTBpCEohU95ovrVvUdNR9EZJUkFdi5rNBLjKOIkxaSZwltCtJBw;
+        path=/; expires=Sat, 23-Nov-24 14:59:07 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=oKqpbFZGF8m_0ZXfklYBDyl1uJsA14LPfBcFqcPehls-1732326575875-0.0.1.1-604800000;
+      - _cfuvid=oSWpjO3X3BDWxMN3hpcbtUFDnAUUE1Wi.NPrOqoYAco-1732372147488-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e6d80dc4ae6843f-TPE
+      - 8e71d9712cf78f13-TPE
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
-      string: !binary |-
-        ewogICJpZCI6ICJjaGF0Y21wbC1BV1paN1ZvREdYZUE2RG9MbzVvNEY4SDZzRW1wMyIsCiAgIm9iamVjdCI6ICJjaGF0LmNvbXBsZXRpb24iLAogICJjcmVhdGVkIjogMTczMjMyNjU3MywKICAibW9kZWwiOiAiZ3B0LTMuNS10dXJiby0wMTI1IiwKICAiY2hvaWNlcyI6IFsKICAgIHsKICAgICAgImluZGV4IjogMCwKICAgICAgIm1lc3NhZ2UiOiB7CiAgICAgICAgInJvbGUiOiAiYXNzaXN0YW50IiwKICAgICAgICAiY29udGVudCI6ICJ7XG4gIFwiQ291cnNlIG5hbWVcIjogXCJCdXNpbmVzcyBBbmFseXRpY3MgdXNpbmcgTWFjaGluZSBMZWFybmluZ1wiLFxuICBcIkNvdXJzZSBkZXNjcmlwdGlvblwiOiBcIkJ1c2luZXNzIGFuYWx5dGljcyBpcyB0aGUgdXNlIG9mIGRhdGEtZHJpdmVuIGRlY2lzaW9uIG1ha2luZy4gVGhpcyBjb3Vyc2UgZm9jdXNlcyBvbiBodW1hbmUgYW5kIHNvY2lhbGx5LXJlc3BvbnNpYmxlIGJ1c2luZXNzIGFuYWx5dGljcy4gU3R1ZGVudHMgd2lsbCB3b3JrIHdpdGggcmVhbCBidXNpbmVzcyBwcm9ibGVtcyBhbmQgZGF0YSwgdW5kZXJzdGFuZGluZyBtYWNoaW5lIGxlYXJuaW5nIHRlY2huaXF1ZXMgYW5kIHRoZWlyIHJlbGF0aW9uIHRvIHNwZWNpZmljIGJ1c2luZXNzIGFuYWx5dGljcyBzaXR1YXRpb25zLlwiLFxuICBcIkNvdXJzZSBldmFsdWF0aW9uIG1ldGhvZHNcIjoge1xuICAgIFwiSW5kaXZpZHVhbCBhc3NpZ25tZW50c1wiOiBcIjM1JVwiLFxuICAgIFwiVGVhbSBwcm9wb3NhbFwiOiBcIjE1JVwiLFxuICAgIFwiTWFjaGluZSBsZWFybmluZyBjb250ZXN0IHN1Ym1pc3Npb25cIjogXCI1JVwiLFxuICAgIFwiRmluYWwgdGVhbSBwcm9qZWN0IHJlcG9ydFwiOiBcIjE1JVwiLFxuICAgIFwiRmluYWwgdGVhbSBwcmVzZW50YXRpb25cIjogXCIxMCVcIixcbiAgICBcIlByZS1jbGFzcyBwb3N0cyBvbiBvbmxpbmUgZm9ydW1cIjogXCIxMCVcIixcbiAgICBcIjMwLXNlY29uZCBvbmxpbmUgcXVpenplc1wiOiBcIjEwJVwiXG4gIH0sXG4gIFwiQUkgdXNlIHBvbGljeVwiOiBcIlRoZSBjb3Vyc2UgZW1waGFzaXplcyB0aGUgcG90ZW50aWFsIGFuZCBkYW5nZXJzIG9mIG1hY2hpbmUgbGVhcm5pbmcgaW4gdG9kYXnigJlzIGRhdGEtcmljaCBlbnZpcm9ubWVudC4gSXQgYWltcyB0byBlcXVpcCBzdHVkZW50cyB3aXRoIGFuYWx5dGljYWwgc2tpbGxzIGFuZCBrbm93bGVkZ2UgdG8gdXNlIG1hY2hpbmUgbGVhcm5pbmcgcmVzcG9uc2libHksIGJlIGNyaXRpY2FsIGNvbnN1bWVycyBvZiBtYWNoaW5lIGxlYXJuaW5nIHRlY2huaXF1ZXMsIGFuZCB1bmRlcnN0YW5kIHRoZSBodW1hbmlzdGljIGFuZCBzb2NpZXRhbCBpbXBsaWNhdGlvbnMgb2YgZGVwbG95aW5nIG1hY2hpbmUgbGVhcm5pbmcgaW4gb3JnYW5pemF0aW9ucy5cIlxufSIsCiAgICAgICAgInJlZnVzYWwiOiBudWxsCiAgICAgIH0sCiAgICAgICJsb2dwcm9icyI6IG51bGwsCiAgICAgICJmaW5pc2hfcmVhc29uIjogInN0b3AiCiAgICB9CiAgXSwKICAidXNhZ2UiOiB7CiAgICAicHJvbXB0X3Rva2VucyI6IDExNTQsCiAgICAiY29tcGxldGlvbl90b2tlbnMiOiAyMDUsCiAgICAidG90YWxfdG9rZW5zIjogMTM1OSwKICAgICJwcm9tcHRfdG9rZW5zX2RldGFpbHMiOiB7CiAgICAgICJjYWNoZWRfdG9rZW5zIjogMCwKICAgICAgImF1ZGlvX3Rva2VucyI6IDAKICAgIH0sCiAgICAiY29tcGxldGlvbl90b2tlbnNfZGV0YWlscyI6IHsKICAgICAgInJlYXNvbmluZ190b2tlbnMiOiAwLAogICAgICAiYXVkaW9fdG9rZW5zIjogMCwKICAgICAgImFjY2VwdGVkX3ByZWRpY3Rpb25fdG9rZW5zIjogMCwKICAgICAgInJlamVjdGVkX3ByZWRpY3Rpb25fdG9rZW5zIjogMAogICAgfQogIH0sCiAgInN5c3RlbV9maW5nZXJwcmludCI6IG51bGwKfQo=
-  recorded_at: Sat, 23 Nov 2024 01:49:35 GMT
+      string: |
+        {
+          "id": "chatcmpl-AWlQ913DeR6gXo8k4lEWot82iYEEY",
+          "object": "chat.completion",
+          "created": 1732372145,
+          "model": "gpt-3.5-turbo-0125",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "{\n  \"Course name\": \"Business Analytics using Machine Learning\",\n  \"Course description\": \"Business analytics is the use of data-driven decision making. Machine learning and predictive analytics are used to detect patterns in data and generate predictions for various industries. The course focuses on humane and socially-responsible business analytics, working with real business problems and data. It emphasizes understanding machine learning concepts and tools for specific business analytics situations.\",\n  \"Course evaluation methods\": {\n    \"Individual assignments\": \"35%\",\n    \"Team proposal\": \"15%\",\n    \"Machine learning contest submission\": \"5%\",\n    \"Final team project report\": \"15%\",\n    \"Final team presentation\": \"10%\",\n    \"Pre-class posts on online forum\": \"10%\",\n    \"30-second online quizzes\": \"10%\"\n  },\n  \"AI use policy\": \"The course does not specify any policy regarding the use of AI tools like ChatGPT or Copilot.\"\n}",
+                "refusal": null
+              },
+              "logprobs": null,
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 1182,
+            "completion_tokens": 188,
+            "total_tokens": 1370,
+            "prompt_tokens_details": {
+              "cached_tokens": 0,
+              "audio_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 0,
+              "audio_tokens": 0,
+              "accepted_prediction_tokens": 0,
+              "rejected_prediction_tokens": 0
+            }
+          },
+          "system_fingerprint": null
+        }
+  recorded_at: Sat, 23 Nov 2024 14:29:07 GMT
 recorded_with: VCR 6.3.1

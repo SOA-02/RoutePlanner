@@ -101,7 +101,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 23 Nov 2024 01:49:37 GMT
+      - Sat, 23 Nov 2024 14:29:03 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -113,7 +113,7 @@ http_interactions:
       Openai-Organization:
       - user-puxbhrdszzsz9p2xhyhw7spz
       Openai-Processing-Ms:
-      - '1289'
+      - '1604'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -121,47 +121,47 @@ http_interactions:
       X-Ratelimit-Limit-Tokens:
       - '200000'
       X-Ratelimit-Remaining-Requests:
-      - '9998'
+      - '9999'
       X-Ratelimit-Remaining-Tokens:
       - '198493'
       X-Ratelimit-Reset-Requests:
-      - 14.779s
+      - 8.64s
       X-Ratelimit-Reset-Tokens:
       - 451ms
       X-Request-Id:
-      - req_595b57b43b83216dd42ee7f60f57a1b6
+      - req_c187b22d58cb7622cb1757a2ce707193
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=dBS8CYdlggJFqxQoVRE7Vuv9nDv5Ha.fPov5rCmOsZU-1732326577-1.0.1.1-VoG7kzBXnPnQf4hnTffvYp8jd.QXx99P9ZjKDR701NEUCF121wrWcCw4RqXPRo35ETNoInpnBCWcMOsypoicEA;
-        path=/; expires=Sat, 23-Nov-24 02:19:37 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=XptmLdsJE1KA7tU0nZWGwOiGJBPdUCURV7.vOn5xx5U-1732372143-1.0.1.1-kASLn7X7ILJKhmanUJCzsJSePDRvmp31Fn2oD5j.kKmYRJaxE6r8Lx9zLhWR_.R65uiNKssBDOHak8_REZAEnA;
+        path=/; expires=Sat, 23-Nov-24 14:59:03 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=JojmGQrMu.OnbwUVYxzJ9iOVJMq3CZnLB.3o1H7IzGQ-1732326577528-0.0.1.1-604800000;
+      - _cfuvid=TzBNIEKlQN8eBIgPHqNUXspRk8t3nq4fobSXnRrE5oU-1732372143721-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e6d80ebf81a8097-TPE
+      - 8e71d95e9c998f09-TPE
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AWZZAAMZB5TZJyaRlLML8Mbgwcg8k",
+          "id": "chatcmpl-AWlQ6ZGSgUJ3E5CkMVBZjDbUbeMCQ",
           "object": "chat.completion",
-          "created": 1732326576,
+          "created": 1732372142,
           "model": "gpt-3.5-turbo-0125",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "{\n    \"prerequisite_subjects\": [\n        {\n            \"subject_name\": \"Statistics\",\n            \"difficulty_level\": 50\n        },\n        {\n            \"subject_name\": \"Data Analysis\",\n            \"difficulty_level\": 60\n        },\n        {\n            \"subject_name\": \"Machine Learning Fundamentals\",\n            \"difficulty_level\": 70\n        },\n        {\n            \"subject_name\": \"Python Programming\",\n            \"difficulty_level\": 75\n        },\n        {\n            \"subject_name\": \"Business Analytics\",\n            \"difficulty_level\": 80\n        }\n    ]\n}",
+                "content": "{\n  \"prerequisite_subjects\": [\n    {\n      \"subject_name\": \"Introduction to Data Science\",\n      \"difficulty_level\": 60\n    },\n    {\n      \"subject_name\": \"Statistics\",\n      \"difficulty_level\": 70\n    },\n    {\n      \"subject_name\": \"Python Programming\",\n      \"difficulty_level\": 75\n    },\n    {\n      \"subject_name\": \"Database Management\",\n      \"difficulty_level\": 80\n    },\n    {\n      \"subject_name\": \"Machine Learning Fundamentals\",\n      \"difficulty_level\": 85\n    }\n  ]\n}",
                 "refusal": null
               },
               "logprobs": null,
@@ -170,8 +170,8 @@ http_interactions:
           ],
           "usage": {
             "prompt_tokens": 1153,
-            "completion_tokens": 118,
-            "total_tokens": 1271,
+            "completion_tokens": 120,
+            "total_tokens": 1273,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -185,5 +185,5 @@ http_interactions:
           },
           "system_fingerprint": null
         }
-  recorded_at: Sat, 23 Nov 2024 01:49:37 GMT
+  recorded_at: Sat, 23 Nov 2024 14:29:03 GMT
 recorded_with: VCR 6.3.1

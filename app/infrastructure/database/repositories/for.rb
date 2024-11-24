@@ -8,7 +8,8 @@ module RoutePlanner
     module For
       ENTITY_REPOSITORY = {
         Entity::Online   => Onlines,
-        Entity::Physical => Physicals
+        Entity::Physical => Physicals,
+        Entity::Skill    => Skills
       }.freeze
 
       def self.klass(entity_klass)

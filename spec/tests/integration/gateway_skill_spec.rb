@@ -13,10 +13,16 @@ describe 'Tests OpenAI library' do
   describe 'Fetch OpenAI successfully' do
     it 'HAPPY: fetches syllabus and analyze prerequisite successfully' do
       skillset = RoutePlanner::OpenAPI::SkillMapper
-        .new(SYLLABUS,OPENAI_KEY)
+        .new(SYLLABUS, OPENAI_KEY)
         .call
 
-      _(skillset).must_be_kind_of String
+      _(skillset).must_be_kind_of Array
+
+      skillset.each do |skill|
+        _(skill).must_be_kind_of RoutePlanner::Entity::Skill
+        _(skill.skill_name).must_be_kind_of String
+        _(skill.challenge_score).must_be_kind_of Integer
+      end
     end
   end
 end

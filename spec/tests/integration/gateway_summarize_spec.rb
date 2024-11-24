@@ -16,7 +16,11 @@ describe 'Tests OpenAI library' do
         .new(SYLLABUS, OPENAI_KEY)
         .call
 
-      _(summary).must_be_kind_of String
+      _(summary).must_be_kind_of RoutePlanner::Entity::Map
+      _(summary.map_name).must_be_kind_of String
+      _(summary.map_description).must_be_kind_of String
+      _(summary.map_evaluation).must_be_kind_of Hash
+      _(summary.map_ai).must_be_kind_of String
     end
   end
 end
