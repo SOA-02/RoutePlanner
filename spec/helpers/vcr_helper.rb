@@ -9,6 +9,7 @@ module VcrHelper
   YOUTUBE_CASSETTE = 'youtube_api'
   SUMMARY_CASSETTE = 'summary_openai'
   SKILL_CASSETTE = 'skill_openai'
+  NTHUSA_CASSETTE = 'nthusa_api'
 
   def self.setup_vcr
     VCR.configure do |c|
@@ -50,9 +51,11 @@ module VcrHelper
       c.filter_sensitive_data('<OPENAI_KEY>') { OPENAI_KEY }
       c.filter_sensitive_data('<OPENAI_KEY_ESC>') { CGI.escape(OPENAI_KEY) }
     end
+  end
 
+  def self.configure_vcr_for_nthusa
     VCR.insert_cassette(
-      SKILL_CASSETTE,
+      NTHUSA_CASSETTE,
       record: :new_episodes,
       match_requests_on: %i[method uri headers]
     )

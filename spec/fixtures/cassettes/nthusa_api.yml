@@ -1,0 +1,131 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.nthusa.tw/courses/searches?field=english_title&limits=5&value=Analytic
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - close
+      Host:
+      - api.nthusa.tw
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 18 Nov 2024 15:47:01 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '3178'
+      Connection:
+      - close
+      X-Process-Time:
+      - '0.005482673645019531'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=zO7DalPjfWTEQC9B%2FWTuHVTAyWtTvpjKep58KWZ7eDD1tzfW2nLQezrY3SsVuw%2Blizeu5vELd1z0%2FeaN71maJkCkbi4mJYq87Yjo%2BCO15uTmJMrrw0UQEXkJ91sMKofs"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e4918c04a37809d-TPE
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Server-Timing:
+      - cfL4;desc="?proto=TCP&rtt=4869&sent=5&recv=6&lost=0&retrans=0&sent_bytes=2555&recv_bytes=784&delivery_rate=596990&cwnd=203&unsent_bytes=0&cid=1db50dab70209aff&ts=93&x=0"
+    body:
+      encoding: UTF-8
+      string: '[{"id":"11210AES 520100","chinese_title":"環境分析化學","english_title":"Environmental
+        Analytical Chemistry","credit":"3","size_limit":"","freshman_reservation":"0","object":"
+        ","ge_type":"","language":"中","note":"本課程為16週課程","suspend":"","class_room_and_time":"BMES醫環501\tR5R6R7\n","teacher":"黃郁棻\tHUANG,
+        YU-FEN\n","prerequisite":"","limit_note":"","expertise":"環境科技學程(第二專長)","program":"","no_extra_selection":"","required_optional_note":"分環所112M  必修\t原科院學士班109B  選修\t"},{"id":"11210BME
+        500700","chinese_title":"生醫材料特性分析","english_title":"Analytical and Sensing
+        Technologies in Biomedical Sciences","credit":"3","size_limit":"","freshman_reservation":"0","object":"
+        ","ge_type":"","language":"英","note":"本課程為16週課程","suspend":"","class_room_and_time":"NTHU
+        Lab清實826\tT7T8T9\n","teacher":"萬德輝\tWAN, DE-HUI\n","prerequisite":"","limit_note":"限醫工所","expertise":"","program":"","no_extra_selection":"","required_optional_note":"醫工所112D  選修\t醫工所112M  選修\t"},{"id":"11210CHEM311000","chinese_title":"分析化學一","english_title":"Analytical
+        Chemistry (I)","credit":"3","size_limit":"100","freshman_reservation":"0","object":"
+        ","ge_type":"","language":"英","note":"本課程上150分鐘，其餘時間由教授彈性運用","suspend":"","class_room_and_time":"CHEM化   B07\tT3T4R3R4\n","teacher":"陳貴通\tTAN,
+        KUI THONG\n","prerequisite":"<div>\n  擋修對象 : 全校 <br>\n  先修科目 : <BR><BR>曾修普通化學二<BR><br>上述條件一定要有，則不擋修。</div>","limit_note":"限理學院","expertise":"化學(第二專長)\t化學(第一專長)","program":"","no_extra_selection":"","required_optional_note":"化學系110B  必修\t理學院學士班110B  必修\t"},{"id":"11210CHEM313001","chinese_title":"分析化學實驗一","english_title":"Analytical
+        Chemistry Laboratory (I)","credit":"2","size_limit":"33","freshman_reservation":"0","object":"
+        ","ge_type":"","language":"中","note":"加簽事宜請洽化207廖英孝；召集人陳貴通教授","suspend":"","class_room_and_time":"CHEM化   229\tF1F2F3F4\n","teacher":"廖英孝\tLIAO,
+        YING-HSIAO\n","prerequisite":"","limit_note":"化學系大學部3年級4年級,理學院學士班大學部3年級4年級優先，第3次選課起開放全校修習","expertise":"化學(第二專長)\t化學(第一專長)","program":"","no_extra_selection":"","required_optional_note":"化學系110B  必修\t"},{"id":"11210CHEM313002","chinese_title":"分析化學實驗一","english_title":"Analytical
+        Chemistry Laboratory (I)","credit":"2","size_limit":"33","freshman_reservation":"0","object":"
+        ","ge_type":"","language":"中","note":"加簽事宜請洽化207廖英孝；召集人陳貴通教授","suspend":"","class_room_and_time":"CHEM化   229\tW5W6W7W8\n","teacher":"廖英孝\tLIAO,
+        YING-HSIAO\n","prerequisite":"","limit_note":"限化學系大學部3年級4年級,理學院學士班大學部3年級4年級","expertise":"化學(第二專長)\t化學(第一專長)","program":"","no_extra_selection":"","required_optional_note":"化學系110B  必修\t"}]'
+  recorded_at: Mon, 18 Nov 2024 15:47:01 GMT
+- request:
+    method: get
+    uri: https://api.nthusa.tw/courses/searches?field=english_title&limits=5&value=Analytic
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - close
+      Host:
+      - api.nthusa.tw
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 18 Nov 2024 15:47:02 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '3178'
+      Connection:
+      - close
+      X-Process-Time:
+      - '0.011152267456054688'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=aGI8iaurdJ0BsDd58nYcbNxq%2FsgJO8Nu3TIdeDTuZ7oC2MQnnaeOATNBqczWn7qhv5u1W2TN2JhuZzYKxZDlGPo0bIWHX49%2BgaSnElcs3J7pQXNApq1YD%2By93BrW8W8t"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8e4918c2cead4a33-TPE
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Server-Timing:
+      - cfL4;desc="?proto=TCP&rtt=15230&sent=5&recv=6&lost=0&retrans=0&sent_bytes=2556&recv_bytes=784&delivery_rate=456782&cwnd=190&unsent_bytes=0&cid=9379290a462e22ba&ts=105&x=0"
+    body:
+      encoding: UTF-8
+      string: '[{"id":"11210AES 520100","chinese_title":"環境分析化學","english_title":"Environmental
+        Analytical Chemistry","credit":"3","size_limit":"","freshman_reservation":"0","object":"
+        ","ge_type":"","language":"中","note":"本課程為16週課程","suspend":"","class_room_and_time":"BMES醫環501\tR5R6R7\n","teacher":"黃郁棻\tHUANG,
+        YU-FEN\n","prerequisite":"","limit_note":"","expertise":"環境科技學程(第二專長)","program":"","no_extra_selection":"","required_optional_note":"分環所112M  必修\t原科院學士班109B  選修\t"},{"id":"11210BME
+        500700","chinese_title":"生醫材料特性分析","english_title":"Analytical and Sensing
+        Technologies in Biomedical Sciences","credit":"3","size_limit":"","freshman_reservation":"0","object":"
+        ","ge_type":"","language":"英","note":"本課程為16週課程","suspend":"","class_room_and_time":"NTHU
+        Lab清實826\tT7T8T9\n","teacher":"萬德輝\tWAN, DE-HUI\n","prerequisite":"","limit_note":"限醫工所","expertise":"","program":"","no_extra_selection":"","required_optional_note":"醫工所112D  選修\t醫工所112M  選修\t"},{"id":"11210CHEM311000","chinese_title":"分析化學一","english_title":"Analytical
+        Chemistry (I)","credit":"3","size_limit":"100","freshman_reservation":"0","object":"
+        ","ge_type":"","language":"英","note":"本課程上150分鐘，其餘時間由教授彈性運用","suspend":"","class_room_and_time":"CHEM化   B07\tT3T4R3R4\n","teacher":"陳貴通\tTAN,
+        KUI THONG\n","prerequisite":"<div>\n  擋修對象 : 全校 <br>\n  先修科目 : <BR><BR>曾修普通化學二<BR><br>上述條件一定要有，則不擋修。</div>","limit_note":"限理學院","expertise":"化學(第二專長)\t化學(第一專長)","program":"","no_extra_selection":"","required_optional_note":"化學系110B  必修\t理學院學士班110B  必修\t"},{"id":"11210CHEM313001","chinese_title":"分析化學實驗一","english_title":"Analytical
+        Chemistry Laboratory (I)","credit":"2","size_limit":"33","freshman_reservation":"0","object":"
+        ","ge_type":"","language":"中","note":"加簽事宜請洽化207廖英孝；召集人陳貴通教授","suspend":"","class_room_and_time":"CHEM化   229\tF1F2F3F4\n","teacher":"廖英孝\tLIAO,
+        YING-HSIAO\n","prerequisite":"","limit_note":"化學系大學部3年級4年級,理學院學士班大學部3年級4年級優先，第3次選課起開放全校修習","expertise":"化學(第二專長)\t化學(第一專長)","program":"","no_extra_selection":"","required_optional_note":"化學系110B  必修\t"},{"id":"11210CHEM313002","chinese_title":"分析化學實驗一","english_title":"Analytical
+        Chemistry Laboratory (I)","credit":"2","size_limit":"33","freshman_reservation":"0","object":"
+        ","ge_type":"","language":"中","note":"加簽事宜請洽化207廖英孝；召集人陳貴通教授","suspend":"","class_room_and_time":"CHEM化   229\tW5W6W7W8\n","teacher":"廖英孝\tLIAO,
+        YING-HSIAO\n","prerequisite":"","limit_note":"限化學系大學部3年級4年級,理學院學士班大學部3年級4年級","expertise":"化學(第二專長)\t化學(第一專長)","program":"","no_extra_selection":"","required_optional_note":"化學系110B  必修\t"}]'
+  recorded_at: Mon, 18 Nov 2024 15:47:01 GMT
+recorded_with: VCR 6.3.1

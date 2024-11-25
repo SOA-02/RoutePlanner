@@ -4,14 +4,10 @@ require 'sequel'
 
 Sequel.migration do
   change do
-    create_table(:onlines) do
+    create_table(:neverlands_prerequisites) do
       primary_key :id
-
-      String :original_id, unique: true
-      String :topic
-      String :url, unique: true
-      String :platform
-      String :for_skill
+      foreign_key :neverland_id, :neverlands
+      foreign_key :prerequisite_id, :prerequisites
 
       DateTime :created_at
       DateTime :updated_at

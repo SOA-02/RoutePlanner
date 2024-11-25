@@ -4,17 +4,13 @@ require 'sequel'
 
 Sequel.migration do
   change do
-    create_table(:physicals) do
+    create_table(:neverlands) do
       primary_key :id
-
-      String :course_id, unique: true
+      
       String :course_name
-      Integer :credit
-      String :language
-      String :provider
-      String :timeloc
-      String :for_skill
-
+      String :course_description
+      String :course_evaluation
+      String :AI_use_policy
 
       DateTime :created_at
       DateTime :updated_at

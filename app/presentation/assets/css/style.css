@@ -103,3 +103,8 @@ footer {
   font-size: 11px;
   color: rgb(2, 3, 83);
 }
+
+#radarChart {
+  width: 20%;
+  height: 20%;
+}

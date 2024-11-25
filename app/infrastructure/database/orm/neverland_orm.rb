@@ -5,11 +5,9 @@ require 'sequel'
 module RoutePlanner
   module Database
     # Object Relational Mapper for Online Entities
-    class OnlineOrm < Sequel::Model(:onlines)
+    class NeverlandOrm < Sequel::Model(:neverlands)
       one_to_many :routeplanners,
-                  key: :resource_id,
-                  class: :'RoutePlanner::Database::RouteplannerOrm',
-                  conditions: { resource_type: 'Online' }
+                  class: :'RoutePlanner::Database::RouteplannerOrm'
 
       plugin :timestamps, update_on_create: true
     end

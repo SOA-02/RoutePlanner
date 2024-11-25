@@ -8,7 +8,7 @@ module RoutePlanner
       MSG_NO_RECLIST = 'Unable to recommend a list of related videos for you.'
 
       def video_from_youtube(key_word)
-        @search_results = Youtube::VideoRecommandMapper
+        @search_results = Youtube::VideoRecommendMapper
           .new(App.config.API_KEY)
           .find(key_word)
 

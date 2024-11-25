@@ -25,17 +25,11 @@ module RoutePlanner
         end
 
         def build_entity_map
-          # value = @mapper_data['items'][0]['snippet']
-          # puts "value being passed to Video.new: #{value.inspect}"
-          # "value class: #{value.class}"
 
-          RoutePlanner::Entity::Video.new(
+          RoutePlanner::Entity::Youtubevideo.new(
             id: nil,
             video_id:,
-            video_title:,
-            video_published_at:,
-            video_description:,
-            video_thumbnail_url:
+            video_duration:
           )
         end
 
@@ -45,20 +39,8 @@ module RoutePlanner
           @mapper_data['items'][0]['id']
         end
 
-        def video_title
-          @mapper_data['items'][0]['snippet']['title']
-        end
-
-        def video_published_at
-          @mapper_data['items'][0]['snippet']['publishedAt']
-        end
-
-        def video_description
-          @mapper_data['items'][0]['snippet']['description']
-        end
-
-        def video_thumbnail_url
-          @mapper_data['items'][0]['snippet']['thumbnails']['high']['url']
+        def video_duration
+          @mapper_data['items'][0]['contentDetails']['duration']
         end
       end
     end

@@ -1,0 +1,57 @@
+.container
+  .row
+    .col
+      h2 Course Name
+      .card
+        .card-body
+          p There is course description
+          p HW
+  .row
+    .col
+      h2 Skills Survey
+      form#skillsForm
+        table.table
+          thead
+            tr
+              th Skill
+              th familiar
+              th average
+              th unfamiliar
+          tbody
+            tr
+              td HTML
+              td
+                input#htmlProficient type="radio" name="html" value="familiar"
+                label for="htmlProficient"
+              td
+                input#htmlIntermediate type="radio" name="html" value="average"
+                label for="htmlIntermediate"
+              td
+                input#htmlUnfamiliar type="radio" name="html" value="unfamiliar"
+                label for="htmlUnfamiliar"
+            tr
+              td CSS
+              td
+                input#cssProficient type="radio" name="css" value="familiar"
+                label for="cssProficient"
+              td
+                input#cssIntermediate type="radio" name="css" value="average"
+                label for="cssIntermediate"
+              td
+                input#cssUnfamiliar type="radio" name="css" value="unfamiliar"
+                label for="cssUnfamiliar"
+        button#getSkillsButton.btn.btn-primary.mt-3 type="button" Get User Choices
+    script
+      |
+        document.getElementById('getSkillsButton').addEventListener('click', function () {
+          const form = document.getElementById('skillsForm');
+          const skills = ['html', 'css'];
+          const results = {};
+
+          skills.forEach(skill => {
+            const selected = form.querySelector(`input[name="${skill}"]:checked`);
+            results[skill] = selected ? selected.value : '未選擇';
+          });
+
+          alert(`您的選擇：\nHTML: ${results.html}\nCSS: ${results.css}`);
+        });
