@@ -6,17 +6,13 @@ require 'dry-struct'
 module RoutePlanner
   module Entity
     # Domain entity for team members
-    class Routeplanner < Dry::Struct
+    class Youtubevideo < Dry::Struct
       include Dry.Types
 
       attribute :id, Integer.optional
-      attribute :neverland_id, Integer
-      attribute :resource_id, Integer
-      attribute :resource_type, Integer
+      attribute :video_id, Strict::String
+      attribute :video_duration, Strict::String
 
-      def to_attr_hash
-        to_hash.except(:id)
-      end
     end
   end
 end

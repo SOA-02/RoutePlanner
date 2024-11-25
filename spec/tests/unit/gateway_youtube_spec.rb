@@ -46,7 +46,7 @@ describe 'Tests Youtube API library' do
       before do
         @video_data = RoutePlanner::Youtube::YoutubeApi.new(API_KEY).video_info(VIDEO_ID)
         @video_mapper = RoutePlanner::Youtube::VideoMapper.new(API_KEY).find(VIDEO_ID)
-        binding.irb
+        # binding.irb
       end
 
       it 'HAPPY: fetches video data successfully' do
@@ -63,22 +63,6 @@ describe 'Tests Youtube API library' do
       end
     end
 
-    # describe 'HAPPY: Parse video description' do
-    #   before do
-    #     @video = Outline::Youtube::VideoMapper
-    #       .new(API_KEY)
-    #       .find(VIDEO_ID)
-    #   end
 
-    #   it 'HAPPY: should parse video description' do
-    #     @toc = Views::Timestamp.new(@video.video_description).extract_toc
-    #     binding.irb
-    #     assert_kind_of Array, @toc
-    #     @toc.each do |timestamp, title|
-    #       assert_match(/\d{1,2}:\d{2}(?::\d{2})?/, timestamp) # Check timestamp format
-    #       assert_kind_of String, title # Check title is a string
-    #     end
-    #   end
-    # end
   end
 end

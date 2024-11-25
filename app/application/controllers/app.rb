@@ -84,7 +84,7 @@ module RoutePlanner
         routing.is do
           # temp for test
 
-          result = Service::AddResources.new.call(key_word: 'C++', pre_req: 'Analytic')
+          result = Service::AddResources.new.call(key_word: 'A++', pre_req: 'System')
           if result.failure?
             flash[:error] = result.failure
           else

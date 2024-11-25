@@ -103,7 +103,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 25 Nov 2024 04:23:34 GMT
+      - Mon, 25 Nov 2024 05:31:33 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -115,7 +115,7 @@ http_interactions:
       Openai-Organization:
       - user-puxbhrdszzsz9p2xhyhw7spz
       Openai-Processing-Ms:
-      - '1123'
+      - '1082'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -131,39 +131,39 @@ http_interactions:
       X-Ratelimit-Reset-Tokens:
       - 464ms
       X-Request-Id:
-      - req_8b22f8d8cee3ebca4ca1a7ffe00da727
+      - req_7ef5187a282941f4db7e3c5f145abaac
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=tAqC8syGCb_hyj7wZgRdviQaqiFJhlnTTnkHBHRvgcc-1732508614-1.0.1.1-bLC6wVPhNrHzgLpdpX_4OJbDrelOfxas1WrvO.Q57GzBht8Japb.h9MXThIRlk0neGTYXtxIATdLPYdOF6p6.A;
-        path=/; expires=Mon, 25-Nov-24 04:53:34 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=tMCcoPNjo9vsHIv73TBD7ifEHWmRaWJxP.lDwFgPHok-1732512693-1.0.1.1-F2EA0If28.r_nmM._WTEkCRFKAs3ewC.jpwKQsGVhQ1qVoDx907vlzpHMgDwah7zXGwuIm_Lbv6dI7ivUYyZOw;
+        path=/; expires=Mon, 25-Nov-24 06:01:33 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=_ZJUSSFVlj3ea7xn7wP0ekCcyauOXA.VCSUx1PAkgD0-1732508614718-0.0.1.1-604800000;
+      - _cfuvid=erGw3w8dZakvtl9xncsUnxu5YtalS17L9xdb.EJQxm4-1732512693613-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e7edd30ef364a94-TPE
+      - 8e7f40c67db14aa4-TPE
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AXKvFny9rcCsJnX9zhBfyextIEeto",
+          "id": "chatcmpl-AXLz2XjR0RqzuPRLDOrGh3D4pqMjq",
           "object": "chat.completion",
-          "created": 1732508613,
+          "created": 1732512692,
           "model": "gpt-3.5-turbo-0125",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "{\n\"CourseName\": \"Business Analytics using Machine Learning\",\n\"CourseDescription\": \"Business analytics is the use of data-driven decision making. The course focuses on humane and socially-responsible business analytics, working with real business problems and data. It covers machine learning methods for detecting actionable patterns and generating predictions.\",\n\"CourseEvaluationMethods\": \"Individual assignments (35%), Team proposal (15%), Machine learning contest submission (5%), Final team project report (15%), Final team presentation (10%), Pre-class posts on online forum (10%), 30-second online quizzes (10%)\",\n\"AIUsePolicy\": \"AI tools like ChatGPT, Copilot are not mentioned in the syllabus\"\n}",
+                "content": "{\n\t\"CourseName\": \"Business Analytics using Machine Learning\",\n\t\"CourseDescription\": \"Business analytics is the use of data-driven decision making, focusing on humane and socially-responsible practices. The course involves working with real business problems and data, understanding machine learning techniques, and applying them to specific analytics situations.\",\n\t\"CourseEvaluationMethods\": \"Individual assignments (35%), Team proposal (15%), Machine learning contest submission (5%), Final team project report (15%), Final team presentation (10%), Pre-class posts on online forum (10%), 30-second online quizzes (10%)\",\n\t\"AIUsePolicy\": \"No specific policy mentioned\"\n}",
                 "refusal": null
               },
               "logprobs": null,
@@ -172,8 +172,8 @@ http_interactions:
           ],
           "usage": {
             "prompt_tokens": 1202,
-            "completion_tokens": 139,
-            "total_tokens": 1341,
+            "completion_tokens": 131,
+            "total_tokens": 1333,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -187,5 +187,5 @@ http_interactions:
           },
           "system_fingerprint": null
         }
-  recorded_at: Mon, 25 Nov 2024 04:23:34 GMT
+  recorded_at: Mon, 25 Nov 2024 05:31:33 GMT
 recorded_with: VCR 6.3.1

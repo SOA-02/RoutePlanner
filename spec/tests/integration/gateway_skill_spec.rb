@@ -15,7 +15,6 @@ describe 'Tests OpenAI library' do
       skillset = RoutePlanner::OpenAPI::SkillMapper
         .new(SYLLABUS, OPENAI_KEY)
         .call
-
       _(skillset).must_be_kind_of Array
 
       skillset.each do |skill|

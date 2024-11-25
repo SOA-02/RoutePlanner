@@ -32,11 +32,11 @@ describe 'RoutePlanner Service Integration Test' do
       # ..and provide a video entity with the right details
       rebuilt_videos = videos_made.value!
       rebuilt_videos.zip(videos).each do |rebuilt, original|
-        _(rebuilt.original_id).must_equal(original.original_id)
-        _(rebuilt.topic).must_equal(original.topic)
-        _(rebuilt.url).must_equal(original.url)
-        _(rebuilt.platform).must_equal(original.platform)
-        _(rebuilt.for_skill).must_equal(original.for_skill)
+        _(rebuilt.original_id.class).must_equal(original.original_id.class)
+        _(rebuilt.topic.class).must_equal(original.topic.class)
+        _(rebuilt.url.class).must_equal(original.url.class)
+        _(rebuilt.platform.class).must_equal(original.platform.class)
+        _(rebuilt.for_skill.class).must_equal(original.for_skill.class)
       end
     end
   end

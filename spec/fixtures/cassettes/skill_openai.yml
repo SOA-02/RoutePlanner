@@ -101,7 +101,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 25 Nov 2024 04:23:36 GMT
+      - Mon, 25 Nov 2024 05:31:36 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -113,7 +113,7 @@ http_interactions:
       Openai-Organization:
       - user-puxbhrdszzsz9p2xhyhw7spz
       Openai-Processing-Ms:
-      - '1014'
+      - '1479'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -125,43 +125,43 @@ http_interactions:
       X-Ratelimit-Remaining-Tokens:
       - '198493'
       X-Ratelimit-Reset-Requests:
-      - 15.751s
+      - 14.599s
       X-Ratelimit-Reset-Tokens:
       - 451ms
       X-Request-Id:
-      - req_5d9dc7f438cc8cde138dcb774ef7522e
+      - req_8e5777b025a1f095b24cd630c388ea6e
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=2haq0CPkU__InwBSvq.pVgLaiA33Fr5lfDnZ2QGCRMc-1732508616-1.0.1.1-fyQd.jQAgnOXNCeA.G9RoAf4jszTxfYZZuhaD0KqxzkukcrjO_eTiRKLyG9Sjqsfuzfq_H9DzOqxXndZIPMcxg;
-        path=/; expires=Mon, 25-Nov-24 04:53:36 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=x.oNR9LNrRPcFIo1IYWTpW8svbVvVRHTJGgKG0GJ40k-1732512696-1.0.1.1-_jubboICp_dotRf.M2Cpj9wcRmBFFy3MJtAGXJ1xbR1FkkfykvmEoqEu2qDUiDOjd9aVrkfPtdIB7kbYXd4yJA;
+        path=/; expires=Mon, 25-Nov-24 06:01:36 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=zzFCHgtTA.sEx4F0wMqEnqQGg7bvy0hWGVs15JoEv.A-1732508616449-0.0.1.1-604800000;
+      - _cfuvid=IS6e2alkTqH6.tNvPt1mKhOzcHsvrRkoZhmSzpji5vI-1732512696673-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e7edd3a8ff9a9d1-TPE
+      - 8e7f40d74f4f80a0-TPE
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AXKvHCEu3xxkw4wSaeLtXUBmpn7Vx",
+          "id": "chatcmpl-AXLz5pQHoAtueEzTxInrFfNFQKVmP",
           "object": "chat.completion",
-          "created": 1732508615,
+          "created": 1732512695,
           "model": "gpt-3.5-turbo-0125",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "{\n  \"prerequisite_subjects\": [\n    {\n      \"subject_name\": \"Introduction to Data Analytics\",\n      \"difficulty_level\": 40\n    },\n    {\n      \"subject_name\": \"Statistics\",\n      \"difficulty_level\": 50\n    },\n    {\n      \"subject_name\": \"Python Programming\",\n      \"difficulty_level\": 60\n    },\n    {\n      \"subject_name\": \"Machine Learning Fundamentals\",\n      \"difficulty_level\": 70\n    },\n    {\n      \"subject_name\": \"Business Intelligence\",\n      \"difficulty_level\": 75\n    }\n  ]\n}",
+                "content": "{\n\t\"prerequisite_subjects\": [\n\t\t{\n\t\t\t\"subject_name\": \"Introduction to Data Science\",\n\t\t\t\"difficulty_level\": 50\n\t\t},\n\t\t{\n\t\t\t\"subject_name\": \"Statistics\",\n\t\t\t\"difficulty_level\": 60\n\t\t},\n\t\t{\n\t\t\t\"subject_name\": \"Python Programming\",\n\t\t\t\"difficulty_level\": 70\n\t\t},\n\t\t{\n\t\t\t\"subject_name\": \"Machine Learning Fundamentals\",\n\t\t\t\"difficulty_level\": 80\n\t\t},\n\t\t{\n\t\t\t\"subject_name\": \"Business Intelligence\",\n\t\t\t\"difficulty_level\": 90\n\t\t}\n\t]\n}",
                 "refusal": null
               },
               "logprobs": null,
@@ -170,8 +170,8 @@ http_interactions:
           ],
           "usage": {
             "prompt_tokens": 1153,
-            "completion_tokens": 120,
-            "total_tokens": 1273,
+            "completion_tokens": 140,
+            "total_tokens": 1293,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -185,5 +185,5 @@ http_interactions:
           },
           "system_fingerprint": null
         }
-  recorded_at: Mon, 25 Nov 2024 04:23:36 GMT
+  recorded_at: Mon, 25 Nov 2024 05:31:36 GMT
 recorded_with: VCR 6.3.1

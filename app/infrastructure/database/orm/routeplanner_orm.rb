@@ -6,8 +6,8 @@ module RoutePlanner
   module Database
     # Object Relational Mapper for Routeplanner
     class RouteplannerOrm < Sequel::Model(:routeplanners)
-      many_to_one :neverland,
-                  class: :'RoutePlanner::Database::NeverlandOrm'
+      # many_to_one :neverland,
+      #             class: :'RoutePlanner::Database::NeverlandOrm'
 
       def resource
         case resource_type
