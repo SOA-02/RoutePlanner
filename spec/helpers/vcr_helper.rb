@@ -21,6 +21,8 @@ module VcrHelper
     VCR.configure do |c|
       c.filter_sensitive_data('<API_KEY>') { API_KEY }
       c.filter_sensitive_data('<API_KEY_ESC>') { CGI.escape(API_KEY) }
+      c.filter_sensitive_data('<OPENAI_KEY>') { OPENAI_KEY }
+      c.filter_sensitive_data('<OPENAI_KEY_ESC>') { CGI.escape(OPENAI_KEY) }
     end
 
     VCR.insert_cassette(
