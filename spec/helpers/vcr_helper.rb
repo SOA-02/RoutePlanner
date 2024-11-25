@@ -61,6 +61,11 @@ module VcrHelper
   end
 
   def self.configure_vcr_for_nthusa
+
+    VCR.configure do |c|
+      c.filter_sensitive_data('<OPENAI_KEY>') { OPENAI_KEY }
+      c.filter_sensitive_data('<OPENAI_KEY_ESC>') { CGI.escape(OPENAI_KEY) }
+    end
     VCR.insert_cassette(
       NTHUSA_CASSETTE,
       record: :new_episodes,

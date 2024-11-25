@@ -27,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Mon, 25 Nov 2024 05:31:34 GMT
+      - Mon, 25 Nov 2024 07:20:31 GMT
       Server:
       - scaffolding on HTTPServer2
       X-Xss-Protection:
@@ -229,7 +229,7 @@ http_interactions:
             }
           ]
         }
-  recorded_at: Mon, 25 Nov 2024 05:31:33 GMT
+  recorded_at: Mon, 25 Nov 2024 07:20:30 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/youtube/v3/search?key=<API_KEY>&maxResults=5&part=snippet&q=Ruby%20one%20hour%20lectures%20tutorials&type=video
@@ -257,7 +257,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Mon, 25 Nov 2024 05:31:34 GMT
+      - Mon, 25 Nov 2024 07:20:31 GMT
       Server:
       - scaffolding on HTTPServer2
       X-Xss-Protection:
@@ -279,7 +279,7 @@ http_interactions:
       string: |
         {
           "kind": "youtube#searchListResponse",
-          "etag": "tFZ1JF3ZS012qtU1F31USLKnC6k",
+          "etag": "Stq4ZPKDOHSqDAmJM68u-iBztFA",
           "nextPageToken": "CAUQAA",
           "regionCode": "TW",
           "pageInfo": {
@@ -323,6 +323,40 @@ http_interactions:
             },
             {
               "kind": "youtube#searchResult",
+              "etag": "I_XkVBXhjvq6BW3pZcLIpxC39Ww",
+              "id": {
+                "kind": "youtube#video",
+                "videoId": "fmyvWz5TUWg"
+              },
+              "snippet": {
+                "publishedAt": "2020-11-09T14:50:57Z",
+                "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
+                "title": "Learn Ruby on Rails - Full Course",
+                "description": "Learn Ruby on Rails in this full course for beginners. Ruby on Rails is a is a server-side web application framework used for ...",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/fmyvWz5TUWg/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/fmyvWz5TUWg/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/fmyvWz5TUWg/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "freeCodeCamp.org",
+                "liveBroadcastContent": "none",
+                "publishTime": "2020-11-09T14:50:57Z"
+              }
+            },
+            {
+              "kind": "youtube#searchResult",
               "etag": "AZrLELWvDg42-neoGkkNo388PVw",
               "id": {
                 "kind": "youtube#video",
@@ -357,36 +391,36 @@ http_interactions:
             },
             {
               "kind": "youtube#searchResult",
-              "etag": "I_XkVBXhjvq6BW3pZcLIpxC39Ww",
+              "etag": "KVLI6T9IpsJ6GDtiOg-phnRh7DE",
               "id": {
                 "kind": "youtube#video",
-                "videoId": "fmyvWz5TUWg"
+                "videoId": "oG-H6Qo-EnI"
               },
               "snippet": {
-                "publishedAt": "2020-11-09T14:50:57Z",
-                "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
-                "title": "Learn Ruby on Rails - Full Course",
-                "description": "Learn Ruby on Rails in this full course for beginners. Ruby on Rails is a is a server-side web application framework used for ...",
+                "publishedAt": "2024-08-18T16:45:24Z",
+                "channelId": "UCIIhqydramkUXfwCldOXWSQ",
+                "title": "Oi oi oi Baka",
+                "description": "",
                 "thumbnails": {
                   "default": {
-                    "url": "https://i.ytimg.com/vi/fmyvWz5TUWg/default.jpg",
+                    "url": "https://i.ytimg.com/vi/oG-H6Qo-EnI/default.jpg",
                     "width": 120,
                     "height": 90
                   },
                   "medium": {
-                    "url": "https://i.ytimg.com/vi/fmyvWz5TUWg/mqdefault.jpg",
+                    "url": "https://i.ytimg.com/vi/oG-H6Qo-EnI/mqdefault.jpg",
                     "width": 320,
                     "height": 180
                   },
                   "high": {
-                    "url": "https://i.ytimg.com/vi/fmyvWz5TUWg/hqdefault.jpg",
+                    "url": "https://i.ytimg.com/vi/oG-H6Qo-EnI/hqdefault.jpg",
                     "width": 480,
                     "height": 360
                   }
                 },
-                "channelTitle": "freeCodeCamp.org",
+                "channelTitle": "finnerson405",
                 "liveBroadcastContent": "none",
-                "publishTime": "2020-11-09T14:50:57Z"
+                "publishTime": "2024-08-18T16:45:24Z"
               }
             },
             {
@@ -422,44 +456,10 @@ http_interactions:
                 "liveBroadcastContent": "none",
                 "publishTime": "2008-03-12T01:24:57Z"
               }
-            },
-            {
-              "kind": "youtube#searchResult",
-              "etag": "Wr0Wpn8ojGIGelGswV2qO2BajKA",
-              "id": {
-                "kind": "youtube#video",
-                "videoId": "3FNYvj2U0HM"
-              },
-              "snippet": {
-                "publishedAt": "2022-12-09T21:56:18Z",
-                "channelId": "UC0ArlFuFYMpEewyRBzdLHiw",
-                "title": "Ethical Hacking in 15 Hours - 2023 Edition - Learn to Hack! (Part 1)",
-                "description": "The TCM Security Academy Black Friday Cyber Monday deals are HERE! Enjoy 20% off certifications and live trainings, and 50% ...",
-                "thumbnails": {
-                  "default": {
-                    "url": "https://i.ytimg.com/vi/3FNYvj2U0HM/default.jpg",
-                    "width": 120,
-                    "height": 90
-                  },
-                  "medium": {
-                    "url": "https://i.ytimg.com/vi/3FNYvj2U0HM/mqdefault.jpg",
-                    "width": 320,
-                    "height": 180
-                  },
-                  "high": {
-                    "url": "https://i.ytimg.com/vi/3FNYvj2U0HM/hqdefault.jpg",
-                    "width": 480,
-                    "height": 360
-                  }
-                },
-                "channelTitle": "The Cyber Mentor",
-                "liveBroadcastContent": "none",
-                "publishTime": "2022-12-09T21:56:18Z"
-              }
             }
           ]
         }
-  recorded_at: Mon, 25 Nov 2024 05:31:33 GMT
+  recorded_at: Mon, 25 Nov 2024 07:20:30 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/youtube/v3/videos?id=xiWUL3M9D8c&key=<API_KEY>&part=contentDetails
@@ -487,7 +487,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Mon, 25 Nov 2024 05:31:36 GMT
+      - Mon, 25 Nov 2024 07:20:35 GMT
       Server:
       - scaffolding on HTTPServer2
       X-Xss-Protection:
@@ -531,7 +531,7 @@ http_interactions:
             "resultsPerPage": 1
           }
         }
-  recorded_at: Mon, 25 Nov 2024 05:31:36 GMT
+  recorded_at: Mon, 25 Nov 2024 07:20:34 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/youtube/v3/videos?id=xiWUL3M9D8c&key=<API_KEY>&part=contentDetails
@@ -559,7 +559,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Mon, 25 Nov 2024 05:31:36 GMT
+      - Mon, 25 Nov 2024 07:20:35 GMT
       Server:
       - scaffolding on HTTPServer2
       X-Xss-Protection:
@@ -603,5 +603,5 @@ http_interactions:
             "resultsPerPage": 1
           }
         }
-  recorded_at: Mon, 25 Nov 2024 05:31:36 GMT
+  recorded_at: Mon, 25 Nov 2024 07:20:34 GMT
 recorded_with: VCR 6.3.1
