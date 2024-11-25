@@ -1,8 +1,0 @@
-playlist_url: 'https://www.youtube.com/watch?v=UmSdAw_ctLI&list=PLBlnK6fEyqRgfOB2fidzM9n11SQIA76_e'
-invalid_playlist_url: 'https://www.youtube.com/watch?v=UmSdAw_ctLI&===I_am_Invalid===&listPLBlnK6fEyqRgfOB2fidzM9n11SQIA76_e'
-playlist_title: 'Compiler Design - Quick Concepts'
-video_titles:
-  - 'Types of Formal Grammars #CompilerDesign #NesoAcademy #QuickConcepts'
-  - 'Formal Grammar #CompilerDesign #NesoAcademy #QuickConcepts'
-  - 'Six Phases of Compilers #CompilerDesign #NesoAcademy #QuickConcepts'
-  - 'What is a Compiler? #Compiler #NesoAcademy #QuickConcepts'

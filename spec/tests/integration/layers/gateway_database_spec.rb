@@ -69,5 +69,19 @@ describe 'Integration Tests of NTHUSA API and Database' do
         _(rebuilt.credit).wont_be_nil
       end
     end
+
+    it 'HAPPY: fetch summary response from openai' do
+      summary = RoutePlanner::OpenAPI::MapMapper
+        .new(SYLLABUS, OPENAI_KEY)
+        .call
+
+      _(summary).must_be_kind_of RoutePlanner::Entity::Map
+      rebuilt = RoutePlanner::Repository::For.entity(summary).build_map(summary)
+      _(rebuilt.map_name).must_be_kind_of String
+      _(rebuilt.map_description).must_be_kind_of String
+      _(rebuilt.map_evaluation).must_be_kind_of String
+      _(rebuilt.map_ai).must_be_kind_of String
+
+    end
   end
 end

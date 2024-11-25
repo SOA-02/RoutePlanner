@@ -4,14 +4,10 @@ require 'sequel'
 
 Sequel.migration do
   change do
-    create_table(:onlines) do
+    create_table(:map_skills) do
       primary_key :id
-
-      String :original_id, unique: true
-      String :topic
-      String :url, unique: true
-      String :platform
-      String :for_skill
+      foreign_key :map_id, :maps
+      foreign_key :skill_id, :skills
 
       DateTime :created_at
       DateTime :updated_at

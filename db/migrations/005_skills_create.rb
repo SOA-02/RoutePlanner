@@ -4,14 +4,11 @@ require 'sequel'
 
 Sequel.migration do
   change do
-    create_table(:onlines) do
+    create_table(:skills) do
       primary_key :id
 
-      String :original_id, unique: true
-      String :topic
-      String :url, unique: true
-      String :platform
-      String :for_skill
+      String :skill_name
+      Integer :challenge_score
 
       DateTime :created_at
       DateTime :updated_at

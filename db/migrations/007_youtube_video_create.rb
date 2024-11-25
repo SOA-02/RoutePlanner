@@ -4,14 +4,12 @@ require 'sequel'
 
 Sequel.migration do
   change do
-    create_table(:onlines) do
+    create_table(:youtube_videos) do
       primary_key :id
+      foreign_key :online_id, :onlines
 
-      String :original_id, unique: true
-      String :topic
-      String :url, unique: true
-      String :platform
-      String :for_skill
+      String :video_id, unique: true
+      String :video_duration
 
       DateTime :created_at
       DateTime :updated_at
