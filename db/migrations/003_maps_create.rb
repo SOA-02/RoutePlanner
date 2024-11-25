@@ -7,10 +7,10 @@ Sequel.migration do
     create_table(:maps) do
       primary_key :id
 
-      String :course_name
-      String :course_description
-      String :course_evaluation
-      String :AI_use_policy
+      String :map_name
+      String :map_description
+      String :map_evaluation
+      String :map_ai
 
       DateTime :created_at
       DateTime :updated_at

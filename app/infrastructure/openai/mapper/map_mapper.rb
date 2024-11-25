@@ -59,19 +59,19 @@ module RoutePlanner
         private
 
         def map_name
-          @parsed_response['Course name']
+          @parsed_response['CourseName']
         end
 
         def map_description
-          @parsed_response['Course description']
+          @parsed_response['CourseDescription']
         end
 
         def map_evaluation
-          @parsed_response['Course evaluation methods']
+          @parsed_response['CourseEvaluationMethods']
         end
 
         def map_ai
-          @parsed_response['AI use policy']
+          @parsed_response['AIUsePolicy']
         end
       end
     end

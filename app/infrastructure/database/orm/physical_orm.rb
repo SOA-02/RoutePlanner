@@ -5,7 +5,7 @@ require 'sequel'
 module RoutePlanner
   module Database
     # Object Relational Mapper for Online Entities
-    class PhysicalOrm < Sequel::Model(:onlines)
+    class PhysicalOrm < Sequel::Model(:physicals)
       # many_to_one :channel,
       #             class: :'RoutePlanner::Database::ChannelOrm'
 

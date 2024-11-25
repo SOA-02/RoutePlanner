@@ -10,10 +10,11 @@ module RoutePlanner
           'Provide valid JSON Output',
           'Provide a summary of the course syllabi.',
           'Extract the following information:',
-          'Provide a column for each information:',
-          'Course name, Course description, Course evaluation methods, AI use policy',
+          'Provide a column for each information in this format:',
+          '"CourseName:", "CourseDescription:", "CourseEvaluationMethods:", "AIUsePolicy:"',
           'Keep the summary concise and informative',
-          'AI use policy is defined as whether LLM like ChatGPT, Copilot, etc. is allowed to be used'
+          'AI use policy is defined as whether LLM like ChatGPT, Copilot, etc. is allowed to be used',
+          'Course evaluation methods should be in datatype String'
         ]
       end
 
@@ -24,6 +25,12 @@ module RoutePlanner
           'Provide the top 5 prerequisite subjects for the course suitable for the syllabus',
           'Provide one column prerequisite, subject name, and another column, difficulty level, from 1 to 100',
           'Rank the difficulty from easiest to hardest for an average person'
+        ]
+      end
+
+      def rank_resource_prompt
+        [
+          'Rank the importance of the learning resources according to the user needs'
         ]
       end
     end

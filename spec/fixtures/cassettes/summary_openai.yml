@@ -8,10 +8,11 @@ http_interactions:
       string: '{"model":"gpt-3.5-turbo","response_format":{"type":"json_object"},"messages":[{"role":"system","content":"Provide
         valid JSON Output"},{"role":"system","content":"Provide a summary of the course
         syllabi."},{"role":"system","content":"Extract the following information:"},{"role":"system","content":"Provide
-        a column for each information:"},{"role":"system","content":"Course name,
-        Course description, Course evaluation methods, AI use policy"},{"role":"system","content":"Keep
+        a column for each information in this format:"},{"role":"system","content":"\"CourseName:\",
+        \"CourseDescription:\", \"CourseEvaluationMethods:\", \"AIUsePolicy:\""},{"role":"system","content":"Keep
         the summary concise and informative"},{"role":"system","content":"AI use policy
-        is defined as whether LLM like ChatGPT, Copilot, etc. is allowed to be used"},{"role":"user","content":"Business
+        is defined as whether LLM like ChatGPT, Copilot, etc. is allowed to be used"},{"role":"system","content":"Course
+        evaluation methods should be in datatype String"},{"role":"user","content":"Business
         Analytics using Machine Learning\nInstructor: Galit Shmueli (galit.shmueli@iss.nthu.edu.tw)
         TA: Cindy (Yu-Hsuan) Liu\nWebsite: canvas.instructure.com/courses/9474145\nCourse
         Description\nTerm: Fall 2024\nClass Time: Tuesdays, 14:20-17:20\nClass Location:
@@ -102,7 +103,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 23 Nov 2024 14:29:07 GMT
+      - Mon, 25 Nov 2024 04:23:34 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -114,7 +115,7 @@ http_interactions:
       Openai-Organization:
       - user-puxbhrdszzsz9p2xhyhw7spz
       Openai-Processing-Ms:
-      - '2397'
+      - '1123'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -122,47 +123,47 @@ http_interactions:
       X-Ratelimit-Limit-Tokens:
       - '200000'
       X-Ratelimit-Remaining-Requests:
-      - '9998'
+      - '9999'
       X-Ratelimit-Remaining-Tokens:
-      - '198472'
+      - '198452'
       X-Ratelimit-Reset-Requests:
-      - 14.314s
+      - 8.64s
       X-Ratelimit-Reset-Tokens:
-      - 458ms
+      - 464ms
       X-Request-Id:
-      - req_75777477504816e0c31de1070541f1cb
+      - req_8b22f8d8cee3ebca4ca1a7ffe00da727
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=ZjudFRHIjWgXFPLlI.NdrpJEaeHzuEzHgyi7jeSTfyQ-1732372147-1.0.1.1-N0ThCOP175Qiz2dshJoguA7wI9c0zult3CsHTBpCEohU95ovrVvUdNR9EZJUkFdi5rNBLjKOIkxaSZwltCtJBw;
-        path=/; expires=Sat, 23-Nov-24 14:59:07 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=tAqC8syGCb_hyj7wZgRdviQaqiFJhlnTTnkHBHRvgcc-1732508614-1.0.1.1-bLC6wVPhNrHzgLpdpX_4OJbDrelOfxas1WrvO.Q57GzBht8Japb.h9MXThIRlk0neGTYXtxIATdLPYdOF6p6.A;
+        path=/; expires=Mon, 25-Nov-24 04:53:34 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=oSWpjO3X3BDWxMN3hpcbtUFDnAUUE1Wi.NPrOqoYAco-1732372147488-0.0.1.1-604800000;
+      - _cfuvid=_ZJUSSFVlj3ea7xn7wP0ekCcyauOXA.VCSUx1PAkgD0-1732508614718-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e71d9712cf78f13-TPE
+      - 8e7edd30ef364a94-TPE
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AWlQ913DeR6gXo8k4lEWot82iYEEY",
+          "id": "chatcmpl-AXKvFny9rcCsJnX9zhBfyextIEeto",
           "object": "chat.completion",
-          "created": 1732372145,
+          "created": 1732508613,
           "model": "gpt-3.5-turbo-0125",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "{\n  \"Course name\": \"Business Analytics using Machine Learning\",\n  \"Course description\": \"Business analytics is the use of data-driven decision making. Machine learning and predictive analytics are used to detect patterns in data and generate predictions for various industries. The course focuses on humane and socially-responsible business analytics, working with real business problems and data. It emphasizes understanding machine learning concepts and tools for specific business analytics situations.\",\n  \"Course evaluation methods\": {\n    \"Individual assignments\": \"35%\",\n    \"Team proposal\": \"15%\",\n    \"Machine learning contest submission\": \"5%\",\n    \"Final team project report\": \"15%\",\n    \"Final team presentation\": \"10%\",\n    \"Pre-class posts on online forum\": \"10%\",\n    \"30-second online quizzes\": \"10%\"\n  },\n  \"AI use policy\": \"The course does not specify any policy regarding the use of AI tools like ChatGPT or Copilot.\"\n}",
+                "content": "{\n\"CourseName\": \"Business Analytics using Machine Learning\",\n\"CourseDescription\": \"Business analytics is the use of data-driven decision making. The course focuses on humane and socially-responsible business analytics, working with real business problems and data. It covers machine learning methods for detecting actionable patterns and generating predictions.\",\n\"CourseEvaluationMethods\": \"Individual assignments (35%), Team proposal (15%), Machine learning contest submission (5%), Final team project report (15%), Final team presentation (10%), Pre-class posts on online forum (10%), 30-second online quizzes (10%)\",\n\"AIUsePolicy\": \"AI tools like ChatGPT, Copilot are not mentioned in the syllabus\"\n}",
                 "refusal": null
               },
               "logprobs": null,
@@ -170,9 +171,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 1182,
-            "completion_tokens": 188,
-            "total_tokens": 1370,
+            "prompt_tokens": 1202,
+            "completion_tokens": 139,
+            "total_tokens": 1341,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -186,5 +187,5 @@ http_interactions:
           },
           "system_fingerprint": null
         }
-  recorded_at: Sat, 23 Nov 2024 14:29:07 GMT
+  recorded_at: Mon, 25 Nov 2024 04:23:34 GMT
 recorded_with: VCR 6.3.1

@@ -6,11 +6,7 @@ module RoutePlanner
     class Planner
       
       # 
-      def rank_resource_prompt
-        [
-          'Rank the importance of the learning resources according to the user needs'
-        ]
-      end
+      
     end
   end
 end
