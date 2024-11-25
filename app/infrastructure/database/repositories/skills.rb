@@ -8,7 +8,7 @@ module RoutePlanner
         Database::SkillOrm.all.map { |db_resource| rebuild_entity(db_resource) }
       end
 
-      def self.find_id(id)
+      def self.find_skillid(id)
         db_resource = Database::SkillOrm.first(id:)
         rebuild_entity(db_resource)
       end

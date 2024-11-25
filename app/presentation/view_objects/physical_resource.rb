@@ -2,7 +2,7 @@
 
 module Views
   # View for a single physical_resources entity
-  class PhyicalResources
+  class PhyicalResource
     def initialize(physical_resources, index = nil)
       @physical_resources = physical_resources
       @index = index

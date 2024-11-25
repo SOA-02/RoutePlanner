@@ -76,7 +76,22 @@ module RoutePlanner
 
       routing.on 'LevelEvaluation' do
         routing.is do
-          view 'level_eval'
+          map_name = 'sorry'
+          skill_name = 'statistical'
+          result = Service::FetchMapWithEvalSkill.new.call(map_name)
+
+          resulta = Service::FetchSkillListWithEvalSkill.new.call(map_name)
+          # b = Database::MapSkillsOrm.where(map_id:map_id).select(:skill_id).all
+          # a = Repository::For.klass(RoutePlanner::Entity::Map).find_map_name('sorry')
+          # a = Repository::For.klass(RoutePlanner::Entity::Map).all
+          if result.failure? || resulta.failure?
+            flash[:error] = result.failure
+          else
+            skills = Views::SkillList.new(resulta.value!)
+            map = Views::Map.new(result.value!)
+            binding.irb
+            view 'level_eval', locals: { map: map, skills: skills }
+          end
         end
       end
 
@@ -90,6 +105,7 @@ module RoutePlanner
           else
             online_resources = Views::OnlineResourceList.new(result.value![:online_resources])
             physical_resources = Views::PhyicalResourcesList.new(result.value![:physical_resources])
+            binding.irb
             view 'ability_recs', locals: { online_resources: online_resources, physical_resources: physical_resources }
           end
           # view 'ability_recs', locals: { online_resources: online_resources }
