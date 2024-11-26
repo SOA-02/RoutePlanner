@@ -19,51 +19,29 @@
   .row
     .col
       h2 Skills Survey
-      form#skillsForm
-        table.table
+      form#skillsForm role="form" method="post" action="/RoutePlanner" 
+        table.table.table-hover#skills_table
           thead
             tr
               th Skill
-              th familiar
-              th average
-              th unfamiliar
+              th Familiar
+              th Average
+              th Unfamiliar
           tbody
-            - skills.each do |skill_item|
+            - if skills.any?
+              - skills.each do |skill|
+                tr
+                  td = skill.skill_name
+                  td
+                    input type="radio" name="skills[#{skill.skill_name}]" value="familiar" id="#{skill.skill_name}_familiar"
+                    label for="#{skill.skill_name}_familiar" Familiar
+                  td
+                    input type="radio" name="skills[#{skill.skill_name}]" value="average" id="#{skill.skill_name}_average"
+                    label for="#{skill.skill_name}_average" Average
+                  td
+                    input type="radio" name="skills[#{skill.skill_name}]" value="unfamiliar" id="#{skill.skill_name}_unfamiliar"
+                    label for="#{skill.skill_name}_unfamiliar" Unfamiliar
+            - else
               tr
-                td = skill_item.skill_name
-                td
-                  input type="radio" name="<%= skill_item.skill_name.downcase %>" value="familiar" id="<%= skill_item.skill_name.downcase + 'Proficient' %>"
-                  label for="<%= skill_item.skill_name.downcase + 'Proficient' %>" Familiar
-                td
-                  input type="radio" name="<%= skill_item.skill_name.downcase %>" value="average" id="<%= skill_item.skill_name.downcase + 'Intermediate' %>"
-                  label for="<%= skill_item.skill_name.downcase + 'Intermediate' %>" Average
-                td
-                  input type="radio" name="<%= skill_item.skill_name.downcase %>" value="unfamiliar" id="<%= skill_item.skill_name.downcase + 'Unfamiliar' %>"
-                  label for="<%= skill_item.skill_name.downcase + 'Unfamiliar' %>" Unfamiliar
-
-      button#getSkillsButton.btn.btn-primary.mt-3 type="button" Get User Choices
-    script
-      |
-        document.getElementById('getSkillsButton').addEventListener('click', function () {
-          const form = document.getElementById('skillsForm');
-          const results = {};
-
-          // Iterate over each skill row
-          const skillRows = form.querySelectorAll('tbody tr');
-          skillRows.forEach(function (row) {
-            // Get the skill name from the first 'td' (the skill name)
-            const skillName = row.querySelector('td').textContent.trim().toLowerCase();
-
-            // Select the checked radio button within this row for the corresponding skill
-            const selected = row.querySelector(`input[name="${skillName}"]:checked`);
-            results[skillName] = selected ? selected.value : '未選擇'; // Default to '未選擇' if no selection
-
-          });
-
-          // Format and display the results
-          let resultMessage = '您的選擇：\n';
-          for (const [skill, value] of Object.entries(results)) {
-            resultMessage += `${skill.toUpperCase()}: ${value}\n`;
-          }
-          alert(resultMessage);
-        });
+                td colspan="4" No skills available
+        button.btn.btn-primary.mt-3 type="submit" Submit

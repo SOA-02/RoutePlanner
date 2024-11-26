@@ -18,5 +18,9 @@ module Views
     def any?
       @skills.any?
     end
+
+    def map(&)
+      @skills.map(&)
+    end
   end
 end

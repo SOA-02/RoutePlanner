@@ -89,28 +89,92 @@ module RoutePlanner
           else
             skills = Views::SkillList.new(resulta.value!)
             map = Views::Map.new(result.value!)
-            binding.irb
             view 'level_eval', locals: { map: map, skills: skills }
           end
         end
       end
-
       routing.on 'RoutePlanner' do
         routing.is do
-          # temp for test
-
-          result = Service::AddResources.new.call(key_word: 'A++', pre_req: 'System')
-          if result.failure?
-            flash[:error] = result.failure
-          else
-            online_resources = Views::OnlineResourceList.new(result.value![:online_resources])
-            physical_resources = Views::PhyicalResourcesList.new(result.value![:physical_resources])
-            binding.irb
-            view 'ability_recs', locals: { online_resources: online_resources, physical_resources: physical_resources }
+          # POST /RoutePlanner
+          routing.post do
+            puts 'RoutePlanner POST matched'
+            skills = routing.params['skills']
+      
+            # 重定向到 GET 路徑，將關鍵字合併成用逗號分隔的參數
+            redirect_skills = skills.keys.join(',')
+            routing.redirect "RoutePlanner/#{redirect_skills}"
           end
-          # view 'ability_recs', locals: { online_resources: online_resources }
+        end
+      
+        routing.on String do |skills_str|
+          # GET /RoutePlanner/:skills
+          routing.get do
+            # 解析逗號分隔的關鍵字
+            skills = skills_str.split(',')
+      
+            results = []
+            errors = []
+      
+            skills.each do |key_word|
+              result = Service::AddResources.new.call(key_word: key_word, pre_req: key_word)
+      
+              if result.success?
+                results << result.value!
+              else
+                errors << result.failure
+              end
+            end
+      
+            if results.any?
+              online_resources = Views::OnlineResourceList.new(results.map { |res| res[:online_resources] }.flatten)
+              physical_resources = Views::PhyicalResourcesList.new(results.map { |res| res[:physical_resources] }.flatten)
+      
+              # 渲染結果頁面
+              view 'ability_recs',
+                   locals: { online_resources: online_resources, physical_resources: physical_resources }
+            else
+              flash[:error] = "Some errors occurred: #{errors.join(', ')}" if errors.any?
+              routing.redirect '/'
+            end
+          end
         end
       end
+      # routing.on 'RoutePlanner' do
+      #   routing.is do
+      #     # temp for test
+      #     routing.post do
+      #       puts 'RoutePlanner POST matched'
+      #       a= routing.params['skills']
+      #       binding.irb
+      #       results = []
+      #       errors = []
+      #       routing.params['skills'].each_key do |key_word|
+      #         result = Service::AddResources.new.call(key_word: key_word, pre_req: key_word)
+
+      #         if result.success?
+      #           results << result.value!
+      #         else
+      #           errors << result.failure
+      #         end
+      #       end
+      #       binding.irb
+      #       # binding
+      #       # # result = Service::AddOnlineResource.new.call(key_word: 'C++')
+      #       # binding.irb
+      #       if results.any?
+      #         online_resources = Views::OnlineResourceList.new(results.map { |res| res[:online_resources] }.flatten)
+      #         physical_resources = Views::PhyicalResourcesList.new(results.map do |res|
+      #           res[:physical_resources]
+      #         end.flatten)
+      #         binding.irb
+      #         view 'ability_recs',
+      #              locals: { online_resources: online_resources, physical_resources: physical_resources }
+      #       end
+
+      #       flash[:error] = "Some errors occurred: #{errors.join(', ')}" if errors.any?
+      #     end
+      #   end
+      # end
     end
   end
 end

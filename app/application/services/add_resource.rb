@@ -18,7 +18,7 @@ module RoutePlanner
           @physical_service.call(pre_req)
         ]
 
-        failures = results.select(&:failure?)
+        failures = results.compact.select(&:failure?)
         return Failure(failures.map(&:failure).join(', ')) if failures.any?
 
         Success(
