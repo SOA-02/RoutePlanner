@@ -5,13 +5,12 @@ require 'dry/monads'
 module RoutePlanner
   module Service
     # logic of fetching viewed map
-    class FetchMapWithEvalSkill
+    class FetchMapInfo
       include Dry::Monads::Result::Mixin
       MSG_SERVER_ERROR = 'An unexpected error occurred on the server. Please try again later.'
 
-
       def call(map_name)
-        map = Repository::For.klass(Entity::Map).find_mapname(map_name)
+        map = Repository::For.klass(Entity::Map).find_by_mapname(map_name)
 
         Success(map)
       rescue StandardError

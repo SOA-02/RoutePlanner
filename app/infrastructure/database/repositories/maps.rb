@@ -8,9 +8,9 @@ module RoutePlanner
         Database::MapOrm.all.map { |db_resource| rebuild_entity(db_resource) }
       end
 
-      def self.find_map(map_name)
+      def self.find_mapid(map_name)
         map = Database::MapOrm.where(map_name:).select(:id).first
-        map_id = map.id # 這樣也能取得 id 的值
+        map.id
       end
 
       def self.find_id(id)
@@ -18,7 +18,7 @@ module RoutePlanner
         rebuild_entity(db_resource)
       end
 
-      def self.find_mapname(map_name)
+      def self.find_by_mapname(map_name)
         db_resource = Database::MapOrm.where(map_name:).first
         rebuild_entity(db_resource)
       end

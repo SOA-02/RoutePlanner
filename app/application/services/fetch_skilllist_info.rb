@@ -5,19 +5,19 @@ require 'dry/monads'
 module RoutePlanner
   module Service
     # logic of fetching viewed resources
-    class FetchSkillListWithEvalSkill
+    class FetchSkillListInfo
       include Dry::Monads::Result::Mixin
       MSG_COURSE_NOT_FOUND = 'Could not find any Physical resource'
       MSG_OURSE_NOT_FOUND = 'Sorry, could not find that Physical resource information.'
       MSG_SERVER_ERROR = 'An unexpected error occurred on the server. Please try again later.'
 
       def call(map_name)
-        map_id= fetch_map_id(map_name)
-        find_by_map_id = Repository::For.klass(RoutePlanner::Entity::MapSkill).find_by_map_id(map_id)
-        b=[]
+        map_id = fetch_map_id(map_name)
+        find_by_map_id = fetch_skill_id(map_id)
+        b = []
         find_by_map_id.each do |skill_id|
-          result = Repository::For.klass(Entity::Skill).find_skillid(skill_id)
-          b += result.is_a?(Array) ? result : [result] 
+          result = fetch_skill(skill_id)
+          b += result.is_a?(Array) ? result : [result]
         end
 
         Success(b)
@@ -27,7 +27,7 @@ module RoutePlanner
       end
 
       def fetch_map_id(map_name)
-        Repository::For.klass(RoutePlanner::Entity::Map).find_map(map_name)
+        Repository::For.klass(Entity::Map).find_mapid(map_name)
       rescue StandardError => e
         LOGGER.error("Error in phyiscal_resource_from_nthusa: Could not find that video on NTHUSA - #{e.message}")
         Failure(MSG_COURSE_NOT_FOUND)
@@ -40,8 +40,8 @@ module RoutePlanner
         Failure(MSG_OURSE_NOT_FOUND)
       end
 
-      def find_skillid(skill_id)
-        Repository::For.klass(RoutePlanner::Entity::MapSkill).find_by_map_id(entity)
+      def fetch_skill(skill_id)
+        Repository::For.klass(Entity::Skill).find_skillid(skill_id)
       rescue StandardError => e
         LOGGER.error("Error in physical_resource_from_nthusa: Could not find that video on Youtube - #{e.message}")
         Failure(MSG_OURSE_NOT_FOUND)

@@ -77,12 +77,11 @@ module RoutePlanner
       routing.on 'LevelEvaluation' do
         routing.is do
           map_name = 'sorry'
-          # skill_name = 'statistical'
           session[:skills] ||= []
-          result_map = Service::FetchMapWithEvalSkill.new.call(map_name)
+          result_map = Service::FetchMapInfo.new.call(map_name)
 
-          result_skill = Service::FetchSkillListWithEvalSkill.new.call(map_name)
-        
+          result_skill = Service::FetchSkillListInfo.new.call(map_name)
+          binding.irb
           if result_map.failure? || result_skill.failure?
             flash[:error] = result.failure
           else
@@ -138,6 +137,7 @@ module RoutePlanner
               physical_resources = Views::PhyicalResourcesList.new(results.map do |res|
                 res[:physical_resources]
               end.flatten)
+
               binding.irb
               view 'ability_recs',
                    locals: { online_resources: online_resources, physical_resources: physical_resources }
