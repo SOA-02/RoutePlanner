@@ -78,17 +78,18 @@ module RoutePlanner
         routing.is do
           map_name = 'sorry'
           skill_name = 'statistical'
-          result = Service::FetchMapWithEvalSkill.new.call(map_name)
+          session[:skills] ||= []
+          result_map = Service::FetchMapWithEvalSkill.new.call(map_name)
 
-          resulta = Service::FetchSkillListWithEvalSkill.new.call(map_name)
+          result_skill = Service::FetchSkillListWithEvalSkill.new.call(map_name)
           # b = Database::MapSkillsOrm.where(map_id:map_id).select(:skill_id).all
           # a = Repository::For.klass(RoutePlanner::Entity::Map).find_map_name('sorry')
           # a = Repository::For.klass(RoutePlanner::Entity::Map).all
-          if result.failure? || resulta.failure?
+          if result_map.failure? || result_skill.failure?
             flash[:error] = result.failure
           else
-            skills = Views::SkillList.new(resulta.value!)
-            map = Views::Map.new(result.value!)
+            skills = Views::SkillList.new(result_skill.value!)
+            map = Views::Map.new(result_map.value!)
             view 'level_eval', locals: { map: map, skills: skills }
           end
         end
@@ -97,38 +98,39 @@ module RoutePlanner
         routing.is do
           # POST /RoutePlanner
           routing.post do
-            puts 'RoutePlanner POST matched'
-            skills = routing.params['skills']
-      
-            # 重定向到 GET 路徑，將關鍵字合併成用逗號分隔的參數
-            redirect_skills = skills.keys.join(',')
-            routing.redirect "RoutePlanner/#{redirect_skills}"
+
+            # a = routing.params
+            map = routing.params.keys.first.split('_').first
+            session[:skills] = routing.params.values.first
+            binding.irb
+            routing.redirect "RoutePlanner/#{map}"
           end
         end
-      
+
         routing.on String do |skills_str|
           # GET /RoutePlanner/:skills
           routing.get do
-            # 解析逗號分隔的關鍵字
-            skills = skills_str.split(',')
-      
             results = []
             errors = []
-      
-            skills.each do |key_word|
-              result = Service::AddResources.new.call(key_word: key_word, pre_req: key_word)
-      
+
+            desired_skill = session[:skills].reject { |_key, value| value == 'familiar' }
+
+            desired_skill.each_key do |skill|
+              result = Service::AddResources.new.call(online_skill: skill, physical_skill: skill)
+
               if result.success?
                 results << result.value!
               else
                 errors << result.failure
               end
             end
-      
+
             if results.any?
               online_resources = Views::OnlineResourceList.new(results.map { |res| res[:online_resources] }.flatten)
-              physical_resources = Views::PhyicalResourcesList.new(results.map { |res| res[:physical_resources] }.flatten)
-      
+              physical_resources = Views::PhyicalResourcesList.new(results.map do |res|
+                res[:physical_resources]
+              end.flatten)
+
               # 渲染結果頁面
               view 'ability_recs',
                    locals: { online_resources: online_resources, physical_resources: physical_resources }

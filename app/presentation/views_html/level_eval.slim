@@ -33,13 +33,13 @@
                 tr
                   td = skill.skill_name
                   td
-                    input type="radio" name="skills[#{skill.skill_name}]" value="familiar" id="#{skill.skill_name}_familiar"
+                    input type="radio" name="#{map.map_name}_skills[#{skill.skill_name}]" value="familiar" id="#{skill.skill_name}_familiar"
                     label for="#{skill.skill_name}_familiar" Familiar
                   td
-                    input type="radio" name="skills[#{skill.skill_name}]" value="average" id="#{skill.skill_name}_average"
+                    input type="radio" name="#{map.map_name}_skills[#{skill.skill_name}]" value="average" id="#{skill.skill_name}_average"
                     label for="#{skill.skill_name}_average" Average
                   td
-                    input type="radio" name="skills[#{skill.skill_name}]" value="unfamiliar" id="#{skill.skill_name}_unfamiliar"
+                    input type="radio" name="#{map.map_name}_skills[#{skill.skill_name}]" value="unfamiliar" id="#{skill.skill_name}_unfamiliar"
                     label for="#{skill.skill_name}_unfamiliar" Unfamiliar
             - else
               tr

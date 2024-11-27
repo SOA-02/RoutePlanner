@@ -4,6 +4,8 @@ require 'dry/monads'
 
 module RoutePlanner
   module Service
+    # The AddResources class is responsible for managing and adding resources
+    # within the RoutePlanner service. It is composed of two services, AddOnlineResource and AddPhysicalResource.
     class AddResources
       include Dry::Monads::Result::Mixin
 
@@ -12,10 +14,10 @@ module RoutePlanner
         @physical_service = physical_service
       end
 
-      def call(key_word:, pre_req:)
+      def call(online_skill:, physical_skill:)
         results = [
-          @online_service.call(key_word),
-          @physical_service.call(pre_req)
+          @online_service.call(online_skill),
+          @physical_service.call(physical_skill)
         ]
 
         failures = results.compact.select(&:failure?)
