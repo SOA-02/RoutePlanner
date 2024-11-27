@@ -77,14 +77,12 @@ module RoutePlanner
       routing.on 'LevelEvaluation' do
         routing.is do
           map_name = 'sorry'
-          skill_name = 'statistical'
+          # skill_name = 'statistical'
           session[:skills] ||= []
           result_map = Service::FetchMapWithEvalSkill.new.call(map_name)
 
           result_skill = Service::FetchSkillListWithEvalSkill.new.call(map_name)
-          # b = Database::MapSkillsOrm.where(map_id:map_id).select(:skill_id).all
-          # a = Repository::For.klass(RoutePlanner::Entity::Map).find_map_name('sorry')
-          # a = Repository::For.klass(RoutePlanner::Entity::Map).all
+        
           if result_map.failure? || result_skill.failure?
             flash[:error] = result.failure
           else
@@ -94,15 +92,13 @@ module RoutePlanner
           end
         end
       end
-      routing.on 'RoutePlanner' do
+      routing.on 'RoutePlanner' do # rubocop:disable Metrics/BlockLength
         routing.is do
           # POST /RoutePlanner
           routing.post do
-
             # a = routing.params
             map = routing.params.keys.first.split('_').first
             session[:skills] = routing.params.values.first
-            binding.irb
             routing.redirect "RoutePlanner/#{map}"
           end
         end
@@ -112,16 +108,28 @@ module RoutePlanner
           routing.get do
             results = []
             errors = []
-
-            desired_skill = session[:skills].reject { |_key, value| value == 'familiar' }
-
-            desired_skill.each_key do |skill|
+            session[:skills].each_key do |skill|
               result = Service::AddResources.new.call(online_skill: skill, physical_skill: skill)
-
               if result.success?
                 results << result.value!
               else
                 errors << result.failure
+              end
+            end
+
+            if errors.any?
+              flash[:error] = "Error processing skill: #{errors.join(', ')}"
+              routing.redirect '/'
+            else
+              results = []
+              desired_skill = session[:skills].reject { |_key, value| value == 'familiar' }
+              desired_skill.each_key do |skill|
+                viewable_resource = Service::FetchViewedResources.new.call(skill)
+                if viewable_resource.success?
+                  results << viewable_resource.value!
+                else
+                  errors << viewable_resource.failure
+                end
               end
             end
 
@@ -130,8 +138,7 @@ module RoutePlanner
               physical_resources = Views::PhyicalResourcesList.new(results.map do |res|
                 res[:physical_resources]
               end.flatten)
-
-              # 渲染結果頁面
+              binding.irb
               view 'ability_recs',
                    locals: { online_resources: online_resources, physical_resources: physical_resources }
             else
@@ -141,42 +148,6 @@ module RoutePlanner
           end
         end
       end
-      # routing.on 'RoutePlanner' do
-      #   routing.is do
-      #     # temp for test
-      #     routing.post do
-      #       puts 'RoutePlanner POST matched'
-      #       a= routing.params['skills']
-      #       binding.irb
-      #       results = []
-      #       errors = []
-      #       routing.params['skills'].each_key do |key_word|
-      #         result = Service::AddResources.new.call(key_word: key_word, pre_req: key_word)
-
-      #         if result.success?
-      #           results << result.value!
-      #         else
-      #           errors << result.failure
-      #         end
-      #       end
-      #       binding.irb
-      #       # binding
-      #       # # result = Service::AddOnlineResource.new.call(key_word: 'C++')
-      #       # binding.irb
-      #       if results.any?
-      #         online_resources = Views::OnlineResourceList.new(results.map { |res| res[:online_resources] }.flatten)
-      #         physical_resources = Views::PhyicalResourcesList.new(results.map do |res|
-      #           res[:physical_resources]
-      #         end.flatten)
-      #         binding.irb
-      #         view 'ability_recs',
-      #              locals: { online_resources: online_resources, physical_resources: physical_resources }
-      #       end
-
-      #       flash[:error] = "Some errors occurred: #{errors.join(', ')}" if errors.any?
-      #     end
-      #   end
-      # end
     end
   end
 end

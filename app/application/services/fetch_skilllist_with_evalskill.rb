@@ -17,8 +17,7 @@ module RoutePlanner
         b=[]
         find_by_map_id.each do |skill_id|
           result = Repository::For.klass(Entity::Skill).find_skillid(skill_id)
-          p result  # 查看返回的結果
-          b += result.is_a?(Array) ? result : [result]  # 如果不是陣列，則將其轉為陣列
+          b += result.is_a?(Array) ? result : [result] 
         end
 
         Success(b)

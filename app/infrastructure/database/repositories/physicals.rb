@@ -23,6 +23,11 @@ module RoutePlanner
         rebuild_entity(db_resource)
       end
 
+      def self.find_all_resource_of_skills(for_skill)
+        db_resources = Database::PhysicalOrm.where(for_skill:).all
+        db_resources.map { |resource| rebuild_entity(resource) }
+      end
+
       def self.build_physical_resource(entity)
         return if physicals_find(entity)
 
