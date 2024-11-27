@@ -10,10 +10,10 @@ module RoutePlanner
       MSG_INVALID_INPUT = 'Please enter a non-empty value that contains letters or numbers.'
 
       params do
-        required(:search_key_word).filled(:string)
+        required(:syllabus).filled(:string)
       end
 
-      rule(:search_key_word) do
+      rule(:syllabus) do
         key.failure(MSG_INVALID_INPUT) unless KEYWORDS_REGEX.match?(value)
       end
     end

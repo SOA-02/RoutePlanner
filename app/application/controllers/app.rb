@@ -50,10 +50,10 @@ module RoutePlanner
           routing.post do
             key_word_request = Forms::NewSearch.new.call(routing.params)
             if key_word_request.errors.empty?
-              key_word = key_word_request[:search_key_word]
+              key_word = key_word_request[:syllabus]
               routing.redirect "search/#{key_word}"
             else
-              flash[:error] = key_word_request.errors[:search_key_word].first
+              flash[:error] = key_word_request.errors[:syllabus].first
               routing.redirect '/'
             end
           end
@@ -61,6 +61,8 @@ module RoutePlanner
 
         routing.on String do |key_word|
           # GET /search/key_word
+          # skill = RoutePlanner::OpenAPI::SkillMapper.new(SYLLABUS, OPENAI_KEY).call
+          # map = summary = RoutePlanner::OpenAPI::MapMapper.new(SYLLABUS, OPENAI_KEY).call
           routing.get do
             results = Service::SearchService.new.video_from_youtube(key_word)
             if results.failure?
