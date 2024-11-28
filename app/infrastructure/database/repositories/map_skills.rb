@@ -3,7 +3,7 @@
 module RoutePlanner
   module Repository
     class MapSkills # rubocop:disable Style/Documentation
-      def self.find_by_map_id(map_id)
+      def self.find_by_mapid(map_id)
         db_resources = Database::MapSkillsOrm.where(map_id:map_id).select(:skill_id).all
         db_resources.map { |db_resource| db_resource[:skill_id] }
       end

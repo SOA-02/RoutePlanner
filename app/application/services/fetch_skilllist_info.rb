@@ -1,50 +1,57 @@
 # frozen_string_literal: true
 
-require 'dry/monads'
+require 'dry/transaction'
 
 module RoutePlanner
   module Service
-    # logic of fetching viewed resources
+    # Transaction to fetch skill list information
     class FetchSkillListInfo
-      include Dry::Monads::Result::Mixin
-      MSG_COURSE_NOT_FOUND = 'Could not find any Physical resource'
-      MSG_OURSE_NOT_FOUND = 'Sorry, could not find that Physical resource information.'
+      include Dry::Transaction
+      MSG_MAP_NOT_FOUND = 'Sorry, could not find that map information.'
+      MSG_MAPSKILL_NOT_FOUND = 'Sorry, could not find that map skill information.'
+      MSG_SKILL_NOT_FOUND = 'Sorry, could not find that skill information.'
       MSG_SERVER_ERROR = 'An unexpected error occurred on the server. Please try again later.'
 
-      def call(map_name)
+      step :find_map_id
+      step :fetch_skilllist
+
+      private
+
+      # Step 1: Find the map ID based on the map name
+      def find_map_id(map_name)
         map_id = fetch_map_id(map_name)
         find_by_map_id = fetch_skill_id(map_id)
-        b = []
-        find_by_map_id.each do |skill_id|
-          result = fetch_skill(skill_id)
-          b += result.is_a?(Array) ? result : [result]
-        end
 
-        Success(b)
+        Success(find_by_map_id)
       rescue StandardError
         Failure(MSG_SERVER_ERROR)
-        puts 'Could not access database'
       end
 
+      # Step 2: Fetch the skill list based on the map ID
+      def fetch_skilllist(find_by_map_id)
+        skilllist = find_by_map_id.flat_map { |skill_id| Array(fetch_skill(skill_id)) }
+        Success(skilllist)
+      rescue StandardError
+        Failure(MSG_SERVER_ERROR)
+      end
+
+      # Helper methods
       def fetch_map_id(map_name)
         Repository::For.klass(Entity::Map).find_mapid(map_name)
-      rescue StandardError => e
-        LOGGER.error("Error in phyiscal_resource_from_nthusa: Could not find that video on NTHUSA - #{e.message}")
-        Failure(MSG_COURSE_NOT_FOUND)
+      rescue StandardError
+        Failure(MSG_MAP_NOT_FOUND)
       end
 
       def fetch_skill_id(map_id)
-        Repository::For.klass(RoutePlanner::Entity::MapSkill).find_by_map_id(map_id)
-      rescue StandardError => e
-        LOGGER.error("Error in physical_resource_from_nthusa: Could not find that video on Youtube - #{e.message}")
-        Failure(MSG_OURSE_NOT_FOUND)
+        Repository::For.klass(RoutePlanner::Entity::MapSkill).find_by_mapid(map_id)
+      rescue StandardError
+        Failure(MSG_MAPSKILL_NOT_FOUND)
       end
 
       def fetch_skill(skill_id)
         Repository::For.klass(Entity::Skill).find_skillid(skill_id)
-      rescue StandardError => e
-        LOGGER.error("Error in physical_resource_from_nthusa: Could not find that video on Youtube - #{e.message}")
-        Failure(MSG_OURSE_NOT_FOUND)
+      rescue StandardError
+        Failure(MSG_SKILL_NOT_FOUND)
       end
     end
   end
