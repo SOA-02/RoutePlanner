@@ -51,7 +51,8 @@ module RoutePlanner
             RoutePlanner::Entity::Skill.new(
               id: nil,
               skill_name: subject['subject_name'],
-              challenge_score: subject['difficulty_level']
+              challenge_score: subject['difficulty_level'],
+              # loot_resources: nil
             )
           end
         end

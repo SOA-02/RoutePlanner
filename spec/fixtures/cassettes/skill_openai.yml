@@ -101,7 +101,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 25 Nov 2024 07:20:33 GMT
+      - Thu, 28 Nov 2024 11:57:53 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -113,7 +113,7 @@ http_interactions:
       Openai-Organization:
       - user-puxbhrdszzsz9p2xhyhw7spz
       Openai-Processing-Ms:
-      - '1517'
+      - '1418'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -121,47 +121,47 @@ http_interactions:
       X-Ratelimit-Limit-Tokens:
       - '200000'
       X-Ratelimit-Remaining-Requests:
-      - '9998'
+      - '9999'
       X-Ratelimit-Remaining-Tokens:
       - '198493'
       X-Ratelimit-Reset-Requests:
-      - 14.549s
+      - 8.64s
       X-Ratelimit-Reset-Tokens:
       - 451ms
       X-Request-Id:
-      - req_5d600487e3f511d4cb60d2ba0702d775
+      - req_9a89f83dab62ee8ed7385705f33308b0
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=zbL7p89fZ7owEPUJYCIqq.kBxwlyLj7a94M5syzLU18-1732519233-1.0.1.1-b_tGlj1n3hEW60yA3XMoteEmVKbuTMX4mJ28MFQ27Yl1mleRNL14RRPUQ8JjEXnfu5w2axJixx4GxM9fCcx7UA;
-        path=/; expires=Mon, 25-Nov-24 07:50:33 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=keV2m.REYuBDYjKlKG0onBw1nGQuQcsKzJyZLIV2aFQ-1732795073-1.0.1.1-dgzzh1eGSUQRWS59FzGfYxOFkDpmSZ_Lvu6x8ywknRNiH77_UNsZwFoxLCosXR5bLwTmTtU5.zwbX_Q_hN6KdA;
+        path=/; expires=Thu, 28-Nov-24 12:27:53 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=RmaYmk1Zsd1_6wOoTPjCbg4XJQzqMxzRFPCdI3MYg0E-1732519233680-0.0.1.1-604800000;
+      - _cfuvid=D1_ULhV9Cz1BJlulznlhczzs_C0KVFUh278_oXYBIeA-1732795073604-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e7fe06fccb6a349-TPE
+      - 8e9a2ecbdd2d6a98-TPE
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AXNgWbtWLxtBTFCWktjnchlz2EZVA",
+          "id": "chatcmpl-AYXRYyK18HCSLFIlPPqKXYPyWTCGx",
           "object": "chat.completion",
-          "created": 1732519232,
+          "created": 1732795072,
           "model": "gpt-3.5-turbo-0125",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "{\n  \"prerequisite_subjects\": [\n    {\n      \"subject_name\": \"Introduction to Data Science\",\n      \"difficulty_level\": 40\n    },\n    {\n      \"subject_name\": \"Statistics\",\n      \"difficulty_level\": 50\n    },\n    {\n      \"subject_name\": \"Python Programming\",\n      \"difficulty_level\": 60\n    },\n    {\n      \"subject_name\": \"Machine Learning Fundamentals\",\n      \"difficulty_level\": 70\n    },\n    {\n      \"subject_name\": \"Business Intelligence\",\n      \"difficulty_level\": 80\n    }\n  ]\n}",
+                "content": "{\n  \"prerequisite_subjects\": [\n    {\n      \"subject_name\": \"Introduction to Statistics\",\n      \"difficulty_level\": 40\n    },\n    {\n      \"subject_name\": \"Data Analysis\",\n      \"difficulty_level\": 50\n    },\n    {\n      \"subject_name\": \"Python Programming\",\n      \"difficulty_level\": 60\n    },\n    {\n      \"subject_name\": \"Machine Learning Fundamentals\",\n      \"difficulty_level\": 70\n    },\n    {\n      \"subject_name\": \"Business Intelligence\",\n      \"difficulty_level\": 80\n    }\n  ]\n}",
                 "refusal": null
               },
               "logprobs": null,
@@ -185,5 +185,5 @@ http_interactions:
           },
           "system_fingerprint": null
         }
-  recorded_at: Mon, 25 Nov 2024 07:20:32 GMT
+  recorded_at: Thu, 28 Nov 2024 11:57:53 GMT
 recorded_with: VCR 6.3.1

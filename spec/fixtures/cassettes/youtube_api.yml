@@ -27,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Mon, 25 Nov 2024 07:20:31 GMT
+      - Thu, 28 Nov 2024 11:57:54 GMT
       Server:
       - scaffolding on HTTPServer2
       X-Xss-Protection:
@@ -229,7 +229,7 @@ http_interactions:
             }
           ]
         }
-  recorded_at: Mon, 25 Nov 2024 07:20:30 GMT
+  recorded_at: Thu, 28 Nov 2024 11:57:54 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/youtube/v3/search?key=<API_KEY>&maxResults=5&part=snippet&q=Ruby%20one%20hour%20lectures%20tutorials&type=video
@@ -257,7 +257,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Mon, 25 Nov 2024 07:20:31 GMT
+      - Thu, 28 Nov 2024 11:57:54 GMT
       Server:
       - scaffolding on HTTPServer2
       X-Xss-Protection:
@@ -459,7 +459,7 @@ http_interactions:
             }
           ]
         }
-  recorded_at: Mon, 25 Nov 2024 07:20:30 GMT
+  recorded_at: Thu, 28 Nov 2024 11:57:54 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/youtube/v3/videos?id=xiWUL3M9D8c&key=<API_KEY>&part=contentDetails
@@ -487,7 +487,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Mon, 25 Nov 2024 07:20:35 GMT
+      - Thu, 28 Nov 2024 11:57:57 GMT
       Server:
       - scaffolding on HTTPServer2
       X-Xss-Protection:
@@ -531,7 +531,7 @@ http_interactions:
             "resultsPerPage": 1
           }
         }
-  recorded_at: Mon, 25 Nov 2024 07:20:34 GMT
+  recorded_at: Thu, 28 Nov 2024 11:57:57 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/youtube/v3/videos?id=xiWUL3M9D8c&key=<API_KEY>&part=contentDetails
@@ -559,7 +559,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Mon, 25 Nov 2024 07:20:35 GMT
+      - Thu, 28 Nov 2024 11:57:57 GMT
       Server:
       - scaffolding on HTTPServer2
       X-Xss-Protection:
@@ -603,5 +603,5 @@ http_interactions:
             "resultsPerPage": 1
           }
         }
-  recorded_at: Mon, 25 Nov 2024 07:20:34 GMT
+  recorded_at: Thu, 28 Nov 2024 11:57:57 GMT
 recorded_with: VCR 6.3.1

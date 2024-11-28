@@ -69,7 +69,20 @@ describe 'Integration Tests of NTHUSA API and Database' do
         _(rebuilt.credit).wont_be_nil
       end
     end
+  end
+end
 
+describe 'Tests OpenAI Syllabus' do
+  VcrHelper.setup_vcr
+  before do
+    VcrHelper.configure_vcr_for_summary
+  end
+
+  after do
+    VcrHelper.eject_vcr
+  end
+
+  describe 'Fetch OpenAI successfully' do
     it 'HAPPY: fetch summary response from openai' do
       summary = RoutePlanner::OpenAPI::MapMapper
         .new(SYLLABUS, OPENAI_KEY)
@@ -81,7 +94,35 @@ describe 'Integration Tests of NTHUSA API and Database' do
       _(rebuilt.map_description).must_be_kind_of String
       _(rebuilt.map_evaluation).must_be_kind_of String
       _(rebuilt.map_ai).must_be_kind_of String
-
     end
   end
 end
+
+describe 'Tests OpenAI Skillset' do
+  VcrHelper.setup_vcr
+  before do
+    VcrHelper.configure_vcr_for_skill
+  end
+
+  after do
+    VcrHelper.eject_vcr
+  end
+
+  describe 'Fetch OpenAI successfully' do
+    it 'HAPPY: fetches syllabus and analyze prerequisite successfully' do
+      skillset = RoutePlanner::OpenAPI::SkillMapper
+        .new(SYLLABUS, OPENAI_KEY)
+        .call
+
+      _(skillset).must_be_kind_of Array
+
+      skillset.each do |skill|
+        _(skill).must_be_kind_of RoutePlanner::Entity::Skill
+        rebuilt = RoutePlanner::Repository::For.entity(skill).build_skill(skill)
+        _(rebuilt.skill_name).must_be_kind_of String
+        _(rebuilt.challenge_score).must_be_kind_of Integer
+      end
+    end
+  end
+end
+
