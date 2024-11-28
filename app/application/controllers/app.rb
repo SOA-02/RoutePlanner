@@ -95,16 +95,17 @@ module RoutePlanner
         routing.is do
           # POST /RoutePlanner
           routing.post do
-            # a = routing.params
+            response = Forms::SkillsFormValidation.new.call(routing.params)
+            routing.redirect '/' if response.failure?
             map = routing.params.keys.first.split('_').first
             session[:skills] = routing.params.values.first
             routing.redirect "RoutePlanner/#{map}"
           end
         end
 
-        routing.on String do |skills_str|
+        routing.on String do |map|
           # GET /RoutePlanner/:skills
-          routing.get do
+          routing.get do # rubocop:disable Metrics/BlockLength
             results = []
             errors = []
             session[:skills].each_key do |skill|
@@ -138,7 +139,6 @@ module RoutePlanner
                 res[:physical_resources]
               end.flatten)
 
-              binding.irb
               view 'ability_recs',
                    locals: { online_resources: online_resources, physical_resources: physical_resources }
             else
