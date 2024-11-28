@@ -27,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Thu, 28 Nov 2024 11:57:54 GMT
+      - Thu, 28 Nov 2024 16:12:26 GMT
       Server:
       - scaffolding on HTTPServer2
       X-Xss-Protection:
@@ -229,7 +229,151 @@ http_interactions:
             }
           ]
         }
-  recorded_at: Thu, 28 Nov 2024 11:57:54 GMT
+  recorded_at: Thu, 28 Nov 2024 16:12:26 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/videos?id=xiWUL3M9D8c&key=<API_KEY>&part=contentDetails
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - close
+      Host:
+      - www.googleapis.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin,Accept-Encoding
+      - Referer
+      - X-Origin
+      Date:
+      - Thu, 28 Nov 2024 16:12:29 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Accept-Ranges:
+      - none
+      Transfer-Encoding:
+      - chunked
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "kind": "youtube#videoListResponse",
+          "etag": "_PJJ6ulm8p9YOWR3gHIo-CsQo0w",
+          "items": [
+            {
+              "kind": "youtube#video",
+              "etag": "kcbOp_jOJeNe2Xw2rCd60PZgpHY",
+              "id": "xiWUL3M9D8c",
+              "contentDetails": {
+                "duration": "PT3H13M",
+                "dimension": "2d",
+                "definition": "hd",
+                "caption": "true",
+                "licensedContent": false,
+                "contentRating": {},
+                "projection": "rectangular"
+              }
+            }
+          ],
+          "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 1
+          }
+        }
+  recorded_at: Thu, 28 Nov 2024 16:12:29 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/videos?id=xiWUL3M9D8c&key=<API_KEY>&part=contentDetails
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - close
+      Host:
+      - www.googleapis.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin,Accept-Encoding
+      - Referer
+      - X-Origin
+      Date:
+      - Thu, 28 Nov 2024 16:12:29 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Accept-Ranges:
+      - none
+      Transfer-Encoding:
+      - chunked
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "kind": "youtube#videoListResponse",
+          "etag": "_PJJ6ulm8p9YOWR3gHIo-CsQo0w",
+          "items": [
+            {
+              "kind": "youtube#video",
+              "etag": "kcbOp_jOJeNe2Xw2rCd60PZgpHY",
+              "id": "xiWUL3M9D8c",
+              "contentDetails": {
+                "duration": "PT3H13M",
+                "dimension": "2d",
+                "definition": "hd",
+                "caption": "true",
+                "licensedContent": false,
+                "contentRating": {},
+                "projection": "rectangular"
+              }
+            }
+          ],
+          "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 1
+          }
+        }
+  recorded_at: Thu, 28 Nov 2024 16:12:29 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/youtube/v3/search?key=<API_KEY>&maxResults=5&part=snippet&q=Ruby%20one%20hour%20lectures%20tutorials&type=video
@@ -257,7 +401,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Thu, 28 Nov 2024 11:57:54 GMT
+      - Thu, 28 Nov 2024 16:13:50 GMT
       Server:
       - scaffolding on HTTPServer2
       X-Xss-Protection:
@@ -459,149 +603,5 @@ http_interactions:
             }
           ]
         }
-  recorded_at: Thu, 28 Nov 2024 11:57:54 GMT
-- request:
-    method: get
-    uri: https://www.googleapis.com/youtube/v3/videos?id=xiWUL3M9D8c&key=<API_KEY>&part=contentDetails
-    body:
-      encoding: ASCII-8BIT
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Connection:
-      - close
-      Host:
-      - www.googleapis.com
-      User-Agent:
-      - http.rb/5.2.0
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Vary:
-      - Origin,Accept-Encoding
-      - Referer
-      - X-Origin
-      Date:
-      - Thu, 28 Nov 2024 11:57:57 GMT
-      Server:
-      - scaffolding on HTTPServer2
-      X-Xss-Protection:
-      - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      Accept-Ranges:
-      - none
-      Transfer-Encoding:
-      - chunked
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: |
-        {
-          "kind": "youtube#videoListResponse",
-          "etag": "_PJJ6ulm8p9YOWR3gHIo-CsQo0w",
-          "items": [
-            {
-              "kind": "youtube#video",
-              "etag": "kcbOp_jOJeNe2Xw2rCd60PZgpHY",
-              "id": "xiWUL3M9D8c",
-              "contentDetails": {
-                "duration": "PT3H13M",
-                "dimension": "2d",
-                "definition": "hd",
-                "caption": "true",
-                "licensedContent": false,
-                "contentRating": {},
-                "projection": "rectangular"
-              }
-            }
-          ],
-          "pageInfo": {
-            "totalResults": 1,
-            "resultsPerPage": 1
-          }
-        }
-  recorded_at: Thu, 28 Nov 2024 11:57:57 GMT
-- request:
-    method: get
-    uri: https://www.googleapis.com/youtube/v3/videos?id=xiWUL3M9D8c&key=<API_KEY>&part=contentDetails
-    body:
-      encoding: ASCII-8BIT
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Connection:
-      - close
-      Host:
-      - www.googleapis.com
-      User-Agent:
-      - http.rb/5.2.0
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Vary:
-      - Origin,Accept-Encoding
-      - Referer
-      - X-Origin
-      Date:
-      - Thu, 28 Nov 2024 11:57:57 GMT
-      Server:
-      - scaffolding on HTTPServer2
-      X-Xss-Protection:
-      - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      Accept-Ranges:
-      - none
-      Transfer-Encoding:
-      - chunked
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: |
-        {
-          "kind": "youtube#videoListResponse",
-          "etag": "_PJJ6ulm8p9YOWR3gHIo-CsQo0w",
-          "items": [
-            {
-              "kind": "youtube#video",
-              "etag": "kcbOp_jOJeNe2Xw2rCd60PZgpHY",
-              "id": "xiWUL3M9D8c",
-              "contentDetails": {
-                "duration": "PT3H13M",
-                "dimension": "2d",
-                "definition": "hd",
-                "caption": "true",
-                "licensedContent": false,
-                "contentRating": {},
-                "projection": "rectangular"
-              }
-            }
-          ],
-          "pageInfo": {
-            "totalResults": 1,
-            "resultsPerPage": 1
-          }
-        }
-  recorded_at: Thu, 28 Nov 2024 11:57:57 GMT
+  recorded_at: Thu, 28 Nov 2024 16:13:50 GMT
 recorded_with: VCR 6.3.1

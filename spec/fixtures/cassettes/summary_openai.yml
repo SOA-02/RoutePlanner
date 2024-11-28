@@ -103,7 +103,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Nov 2024 11:57:59 GMT
+      - Thu, 28 Nov 2024 16:12:28 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -115,7 +115,7 @@ http_interactions:
       Openai-Organization:
       - user-puxbhrdszzsz9p2xhyhw7spz
       Openai-Processing-Ms:
-      - '1354'
+      - '1583'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -123,47 +123,47 @@ http_interactions:
       X-Ratelimit-Limit-Tokens:
       - '200000'
       X-Ratelimit-Remaining-Requests:
-      - '9998'
+      - '9999'
       X-Ratelimit-Remaining-Tokens:
       - '198452'
       X-Ratelimit-Reset-Requests:
-      - 11.592s
+      - 8.64s
       X-Ratelimit-Reset-Tokens:
       - 464ms
       X-Request-Id:
-      - req_4b7255112fc12e6f89705658b6d5f74f
+      - req_236f378da4b00dd8e365935c72eb9658
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=7xAf6vEJKwN7BXIEPEDA55cL8FgZWavfyadlVKJd6sM-1732795079-1.0.1.1-spLVm6cXwlC8ZPwB22U9Y5_2Oa3k4YqXkAlGBgYcGbxafyn4R8DcT_yZDfJW69mEax5928BGrzx.y8DPZ8voVg;
-        path=/; expires=Thu, 28-Nov-24 12:27:59 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=.3eo0LVdLSswpb.YfI5uJx2IJOrzeVDFTrivHvuer7c-1732810348-1.0.1.1-R5frwr08s_w1KcmTG.qJxtAYkpLsluF3T9iju5.syM1PIzAIyyCxQHgi3gwta7HTN46qiXkxRAzXC_nBJZ3drQ;
+        path=/; expires=Thu, 28-Nov-24 16:42:28 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=Rl50ePCGYj07WPHUFkXjscTdeS9szN3NgbUtuJyjQMI-1732795079201-0.0.1.1-604800000;
+      - _cfuvid=5FxsFiHQvkD8TxstCog._zcSgDEw5NAeVewjWvxDPbA-1732810348420-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e9a2ef33e188457-TPE
+      - 8e9ba3ba7adea9ce-TPE
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AYXRdnV4hAFeQ5jHsWFMxXc4r3Fnx",
+          "id": "chatcmpl-AYbPuzedy327bgv4e8OEIK0nL80AR",
           "object": "chat.completion",
-          "created": 1732795077,
+          "created": 1732810346,
           "model": "gpt-3.5-turbo-0125",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "{\n\"CourseName\": \"Business Analytics using Machine Learning\",\n\"CourseDescription\": \"Business analytics is the use of data-driven decision making. Companies, governments, and other organizations now collect and have access to large amounts of data to detect actionable patterns and generate predictions. The course focuses on humane and socially-responsible business analytics, working with real business problems and data.\",\n\"CourseEvaluationMethods\": \"Individual assignments, team proposal, machine learning contest submission, final team project report, final team presentation, pre-class posts on online forum, 30-second online quizzes\",\n\"AIUsePolicy\": \"AI tools like ChatGPT and Copilot are not mentioned in the syllabus\"\n}",
+                "content": "{\n\"CourseName\": \"Business Analytics using Machine Learning\",\n\"CourseDescription\": \"Business analytics is the use of data-driven decision making. The course focuses on humane and socially-responsible business analytics, working on real business problems and data. Emphasis is on understanding machine learning techniques and their relation to specific business analytics situations. The course is offered in a flipped classroom model with a focus on interactive learning.\",\n\"CourseEvaluationMethods\": \"Individual assignments, team proposal, machine learning contest submission, final team project report, final team presentation, pre-class posts on online forum, 30-second online quizzes\",\n\"AIUsePolicy\": \"AI tools like ChatGPT, Copilot are not mentioned and therefore can't be confirmed as allowed\"\n}",
                 "refusal": null
               },
               "logprobs": null,
@@ -172,8 +172,8 @@ http_interactions:
           ],
           "usage": {
             "prompt_tokens": 1202,
-            "completion_tokens": 136,
-            "total_tokens": 1338,
+            "completion_tokens": 148,
+            "total_tokens": 1350,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -187,5 +187,5 @@ http_interactions:
           },
           "system_fingerprint": null
         }
-  recorded_at: Thu, 28 Nov 2024 11:57:59 GMT
+  recorded_at: Thu, 28 Nov 2024 16:12:28 GMT
 recorded_with: VCR 6.3.1

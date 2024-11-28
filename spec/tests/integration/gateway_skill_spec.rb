@@ -10,11 +10,12 @@ describe 'Tests OpenAI library' do
     VcrHelper.eject_vcr
   end
 
-  describe 'Fetch OpenAI successfully' do
+  describe 'Fetch OpenAI skill library successfully' do
     it 'HAPPY: fetches syllabus and analyze prerequisite successfully' do
       skillset = RoutePlanner::OpenAPI::SkillMapper
         .new(SYLLABUS, OPENAI_KEY)
         .call
+
       _(skillset).must_be_kind_of Array
 
       skillset.each do |skill|

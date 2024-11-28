@@ -10,7 +10,7 @@ describe 'Tests OpenAI library' do
     VcrHelper.eject_vcr
   end
 
-  describe 'Fetch OpenAI successfully' do
+  describe 'Fetch OpenAI summary successfully' do
     it 'HAPPY: fetches syllabus and summarize successfully' do
       summary = RoutePlanner::OpenAPI::MapMapper
         .new(SYLLABUS, OPENAI_KEY)
