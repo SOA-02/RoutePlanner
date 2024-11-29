@@ -103,7 +103,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 25 Nov 2024 07:20:30 GMT
+      - Fri, 29 Nov 2024 01:57:56 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -115,7 +115,7 @@ http_interactions:
       Openai-Organization:
       - user-puxbhrdszzsz9p2xhyhw7spz
       Openai-Processing-Ms:
-      - '1512'
+      - '1254'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -123,47 +123,47 @@ http_interactions:
       X-Ratelimit-Limit-Tokens:
       - '200000'
       X-Ratelimit-Remaining-Requests:
-      - '9999'
+      - '9998'
       X-Ratelimit-Remaining-Tokens:
-      - '198452'
+      - '198453'
       X-Ratelimit-Reset-Requests:
-      - 8.64s
+      - 16.067s
       X-Ratelimit-Reset-Tokens:
       - 464ms
       X-Request-Id:
-      - req_5437e4d5f96916cfdfd6494c5fdefa22
+      - req_7af99fc0a9f85bb6c0fd6021de6b091b
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=87gBim0lj0NXrqE2wITUsSDVKw0XArtc5n8CP_UiuLQ-1732519230-1.0.1.1-DrSSXYZ_Eg4nBg2ViudVIpo0S5hx8V.qv7c19ViCDWJo0GcQzPhSTMWQABR.Pn3qrgUWF8Gi8ppxe6AWD_CTbQ;
-        path=/; expires=Mon, 25-Nov-24 07:50:30 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=1CqRMRFWq4oleU34UJA_s_fZm_2vjFgd8rWiFy4ix1s-1732845476-1.0.1.1-BlqgW6i8q.814QGcblSiuMfj65_VKW6L2VxgjOsYOCPyox05emhP2tP.qRuwV2OhoQ2skmuM_YayuH.2.Lex5A;
+        path=/; expires=Fri, 29-Nov-24 02:27:56 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=QoHjl3gsQfiVXI1D8laOU1bDqE.7VnB0JqF58jAD5WM-1732519230919-0.0.1.1-604800000;
+      - _cfuvid=eA9gfX8m_BG8s2lRZoOIXFyXTkxD0qB1Z8piyJoYSYs-1732845476044-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e7fe05b99a94a07-TPE
+      - 8e9efd5839f2841c-TPE
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AXNgTQjJBjGse3FqY5lMZTB72axeu",
+          "id": "chatcmpl-AYkYUMpyOPaFPrGNJDBhLO3XrhVV3",
           "object": "chat.completion",
-          "created": 1732519229,
+          "created": 1732845474,
           "model": "gpt-3.5-turbo-0125",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "{\n\t\"CourseName\": \"Business Analytics using Machine Learning\",\n\t\"CourseDescription\": \"Business analytics is the use of data-driven decision making. Companies, governments, and organizations collect and have access to large amounts of data. Machine learning and predictive analytics detect actionable patterns and generate predictions. The course focuses on humane and socially-responsible business analytics, working with real business problems and data.\",\n\t\"CourseEvaluationMethods\": \"Individual assignments, team proposal, machine learning contest submission, final team project report, final team presentation, pre-class posts on online forum, 30-second online quizzes\",\n\t\"AIUsePolicy\": \"AI tools like ChatGPT or Copilot are not mentioned in the syllabus, so the policy is not explicitly defined\"\n}",
+                "content": "{\n\t\"CourseName\": \"Business Analytics using Machine Learning\",\n\t\"CourseDescription\": \"Business analytics is the use of data-driven decision making. The course focuses on humane and socially-responsible business analytics. It covers real business problems and real data, examining various types of questions that machine learning can answer and the appropriate machine learning tools for different situations. The course emphasizes practical application over theoretical mastery.\",\n\t\"CourseEvaluationMethods\": \"Individual assignments, Team proposal, Machine learning contest submission, Final team project report, Final team presentation, Pre-class posts on online forum, 30-second online quizzes\",\n\t\"AIUsePolicy\": \"The course does not specify any policy regarding the use of AI or machine learning tools like ChatGPT or Copilot.\"\n}",
                 "refusal": null
               },
               "logprobs": null,
@@ -172,8 +172,8 @@ http_interactions:
           ],
           "usage": {
             "prompt_tokens": 1202,
-            "completion_tokens": 151,
-            "total_tokens": 1353,
+            "completion_tokens": 152,
+            "total_tokens": 1354,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -187,5 +187,5 @@ http_interactions:
           },
           "system_fingerprint": null
         }
-  recorded_at: Mon, 25 Nov 2024 07:20:30 GMT
+  recorded_at: Fri, 29 Nov 2024 01:57:56 GMT
 recorded_with: VCR 6.3.1

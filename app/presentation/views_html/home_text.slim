@@ -1,8 +1,35 @@
-h1 OuterSpace
-
-form action="/analyze" method="post"
-  div class="form-group"
-    label for="syllabus_text" Enter your syllabus text:
-    textarea name="syllabus_text" id="syllabus_text" rows="10" cols="50" required=true
-    
-  button type="submit" class="button" Analyze Syllabus
+.container
+  form role="form" action="/analyze" method='POST' id='show-analyze-form'
+    .row.vertical-align.query-bar
+      .col-md-2.col-sm-3
+        .text-right Course Syllabus:
+      .col-md-8.col-sm-6
+        input { 
+          type='text' name='syllabus_text'
+          id='syllabus_text_input' class="form-control"
+          placeholder="e.g. Course Syllabus"
+        }
+      .col-md-2.col-sm-3
+        button { 
+          type='submit' id='syllabus-form-submit' class='submit' 
+          value='submit' class="btn btn-success" 
+        } Show Map
+    .row
+      .col-md-12.blank-row
+    - if maps.any?
+      table.table.table-hover#maps_table
+        thead
+          tr
+            th Map Name
+            th Description
+            th Evaluation
+            th AI Policy
+        tbody
+          - maps.each do |map|
+            tr.table-row.map_row
+              td= map.map_name
+              td= map.map_description
+              td= map.map_evaluation
+              td= map.map_ai
+    - else
+      p No maps recorded yet.

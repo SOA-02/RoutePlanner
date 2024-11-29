@@ -8,8 +8,8 @@ module RoutePlanner
     class FetchViewedRoadmap
       include Dry::Monads::Result::Mixin
 
-      def call(resource_list)
-        resources = Repository::For.klass(Entity::Online).all
+      def call(_resource_list)
+        resources = Repository::For.klass(Entity::Map).all
 
         Success(resources)
       rescue StandardError
