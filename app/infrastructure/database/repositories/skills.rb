@@ -24,7 +24,8 @@ module RoutePlanner
         Entity::Skill.new(
           id: db_resource.id,
           skill_name: db_resource.skill_name,
-          challenge_score: db_resource.challenge_score
+          challenge_score: db_resource.challenge_score,
+          # loot_resources: nil
         )
       end
 

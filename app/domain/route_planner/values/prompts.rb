@@ -22,9 +22,12 @@ module RoutePlanner
       def skill_prompt
         [
           'Provide valid JSON Output',
-          'Provide the top 5 prerequisite subjects for the course suitable for the syllabus',
-          'Provide one column prerequisite, subject name, and another column, difficulty level, from 1 to 100',
-          'Rank the difficulty from easiest to hardest for an average person'
+          'Provide the top 5 prerequisite keywords for the course suitable for the syllabus',
+          'Provide only the keyword and not "Introduction to..." or "Advanced..." or etc',
+          'Provide in this format: "SubjectName:", "DifficultyLevel:"',
+          'Example format: {"prerequisite_subjects"=>[{"SubjectName"=>"Statistics", "DifficultyLevel"=>50},...',
+          'Rank the difficulty from hardest to easiest for an average person',
+          'Please do not recommend none even if the class is easy'
         ]
       end
 

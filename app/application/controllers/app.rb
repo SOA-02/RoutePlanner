@@ -29,50 +29,84 @@ module RoutePlanner
       response['Content-Type'] = 'text/html; charset=utf-8'
       # GET /
       routing.root do
-        # Get cookie viewer's previously seen videos
         session[:watching] ||= []
+        # maps = Repository::For.klass(Entity::Map).all
         result = Service::FetchViewedRoadmap.new.call(session[:watching])
-        # watchout
         if result.failure?
           flash[:error] = result.failure
-          viewable_resource = []
+          maps = []
         else
-          resourcelist = result.value!
-          flash.now[:notice] = MSG_GET_STARTED if resourcelist.none?
-          session[:watching] = resourcelist.map(&:original_id)
-          viewable_resource = Views::RoadmapsList.new(resourcelist)
+          maps = result.value!
+          flash.now[:notice] = MSG_GET_STARTED if maps.none?
+          session[:watching] = maps.map(&:map_name)
         end
-        view 'home', locals: { roadmaps: viewable_resource }
-      end
-      routing.on 'search' do
-        routing.is do
-          # POST /search/
-          routing.post do
-            key_word_request = Forms::NewSearch.new.call(routing.params)
-            if key_word_request.errors.empty?
-              key_word = key_word_request[:search_key_word]
-              routing.redirect "search/#{key_word}"
-            else
-              flash[:error] = key_word_request.errors[:search_key_word].first
-              routing.redirect '/'
-            end
-          end
-        end
+        view 'home_text', locals: { maps: maps }
 
-        routing.on String do |key_word|
-          # GET /search/key_word
-          routing.get do
-            results = Service::SearchService.new.video_from_youtube(key_word)
-            if results.failure?
-              flash[:error] = results.failure
-              routing.redirect '/'
-            else
-              @search_results = results.value!
-              view 'search', locals: { search_results: @search_results }
-            end
-          end
+
+        # Get cookie viewer's previously seen videos
+        # session[:watching] ||= []
+        # result = Service::FetchViewedRoadmap.new.call(session[:watching])
+        # watchout
+        # if result.failure?
+        #   flash[:error] = result.failure
+        #   viewable_resource = []
+        # else
+        #   resourcelist = result.value!
+        #   flash.now[:notice] = MSG_GET_STARTED if resourcelist.none?
+        #   session[:watching] = resourcelist.map(&:original_id)
+        #   viewable_resource = Views::RoadmapsList.new(resourcelist)
+        # end
+        # view 'home', locals: { roadmaps: viewable_resource }
+      end
+
+      routing.on 'analyze' do
+        form = RoutePlanner::Forms::NewSyllabus.new.call(routing.params)
+        if form.failure?
+          flash[:error] = form.errors[:syllabus_text].first
+          routing.redirect '/'
+        else
+          syllabus_text = form[:syllabus_text]
+
+          map = RoutePlanner::Service::MapService
+            .new(syllabus_text, App.config.OPENAI_KEY)
+            .call
+
+          skillset = RoutePlanner::Service::SkillService
+            .new(syllabus_text, App.config.OPENAI_KEY)
+            .call
+          
+          view 'analyze', locals: { map: map, skills: skillset }
         end
       end
+      # routing.on 'search' do
+      #   routing.is do
+      #     # POST /search/
+      #     routing.post do
+      #       key_word_request = Forms::NewSearch.new.call(routing.params)
+      #       if key_word_request.errors.empty?
+      #         key_word = key_word_request[:syllabus]
+      #         routing.redirect "search/#{key_word}"
+      #       else
+      #         flash[:error] = key_word_request.errors[:syllabus].first
+      #         routing.redirect '/'
+      #       end
+      #     end
+      #   end
+
+      #   routing.on String do |key_word|
+      #     # GET /search/key_word
+      #     routing.get do
+      #       results = Service::SearchService.new.video_from_youtube(key_word)
+      #       if results.failure?
+      #         flash[:error] = results.failure
+      #         routing.redirect '/'
+      #       else
+      #         @search_results = results.value!
+      #         view 'search', locals: { search_results: @search_results }
+      #       end
+      #     end
+      #   end
+      # end
 
       routing.on 'LevelEvaluation' do
         routing.is do
