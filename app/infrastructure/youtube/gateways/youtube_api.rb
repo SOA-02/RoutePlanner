@@ -23,23 +23,21 @@ module RoutePlanner
       # Sends out HTTP requests to Youtube
       class Request
         YT_API_ROOT = 'https://www.googleapis.com/youtube/v3'
-        MAX_RESULTS = 5
+        MAX_RESULTS = RoutePlanner::Value::YoutubeSearch.max_results
         def initialize(api_key)
           @api_key = api_key
         end
 
         def yt_search_relevant_path(keyword)
-          modified_keyword = "#{keyword} one hour lectures tutorials"
+          modified_keyword = RoutePlanner::Value::YoutubeSearch.modified_keyword(keyword)
           get(YT_API_ROOT + "/search?part=snippet&maxResults=#{MAX_RESULTS}&type=video&q=#{modified_keyword}&key=#{@api_key}")
         end
 
         def yt_video_path(video_id)
-          #/videos?part=contentDetails&id=Ks-_Mh1QhMc&key=[YOUR_API_KEY] HTTP/1.1
           get(YT_API_ROOT + "/videos?part=contentDetails&id=#{video_id}&key=#{@api_key}")
         end
 
         def get(url)
-
           http_response = HTTP.headers('Accept' => 'application/json').get(url)
           Response.new(http_response).tap do |response|
             raise(response.error) unless response.successful?

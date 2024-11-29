@@ -41,72 +41,29 @@ module RoutePlanner
           session[:watching] = maps.map(&:map_name)
         end
         view 'home_text', locals: { maps: maps }
-
-
-        # Get cookie viewer's previously seen videos
-        # session[:watching] ||= []
-        # result = Service::FetchViewedRoadmap.new.call(session[:watching])
-        # watchout
-        # if result.failure?
-        #   flash[:error] = result.failure
-        #   viewable_resource = []
-        # else
-        #   resourcelist = result.value!
-        #   flash.now[:notice] = MSG_GET_STARTED if resourcelist.none?
-        #   session[:watching] = resourcelist.map(&:original_id)
-        #   viewable_resource = Views::RoadmapsList.new(resourcelist)
-        # end
-        # view 'home', locals: { roadmaps: viewable_resource }
       end
 
       routing.on 'analyze' do
-        form = RoutePlanner::Forms::NewSyllabus.new.call(routing.params)
-        if form.failure?
-          flash[:error] = form.errors[:syllabus_text].first
-          routing.redirect '/'
-        else
-          syllabus_text = form[:syllabus_text]
+        routing.is do
+          form = RoutePlanner::Forms::NewSyllabus.new.call(routing.params)
+          if form.failure?
+            flash[:error] = form.errors[:syllabus_text].first
+            routing.redirect '/'
+          else
+            syllabus_text = form[:syllabus_text]
 
-          map = RoutePlanner::Service::MapService
-            .new(syllabus_text, App.config.OPENAI_KEY)
-            .call
+            map = RoutePlanner::Service::MapService
+              .new(syllabus_text, App.config.OPENAI_KEY)
+              .call
 
-          skillset = RoutePlanner::Service::SkillService
-            .new(syllabus_text, App.config.OPENAI_KEY)
-            .call
-          
-          view 'analyze', locals: { map: map, skills: skillset }
+            skillset = RoutePlanner::Service::SkillService
+              .new(syllabus_text, App.config.OPENAI_KEY)
+              .call
+
+            view 'analyze', locals: { map: map, skills: skillset }
+          end
         end
       end
-      # routing.on 'search' do
-      #   routing.is do
-      #     # POST /search/
-      #     routing.post do
-      #       key_word_request = Forms::NewSearch.new.call(routing.params)
-      #       if key_word_request.errors.empty?
-      #         key_word = key_word_request[:syllabus]
-      #         routing.redirect "search/#{key_word}"
-      #       else
-      #         flash[:error] = key_word_request.errors[:syllabus].first
-      #         routing.redirect '/'
-      #       end
-      #     end
-      #   end
-
-      #   routing.on String do |key_word|
-      #     # GET /search/key_word
-      #     routing.get do
-      #       results = Service::SearchService.new.video_from_youtube(key_word)
-      #       if results.failure?
-      #         flash[:error] = results.failure
-      #         routing.redirect '/'
-      #       else
-      #         @search_results = results.value!
-      #         view 'search', locals: { search_results: @search_results }
-      #       end
-      #     end
-      #   end
-      # end
 
       routing.on 'LevelEvaluation' do
         routing.is do
@@ -129,8 +86,8 @@ module RoutePlanner
         routing.is do
           # POST /RoutePlanner
           routing.post do
-            response = Forms::SkillsFormValidation.new.call(routing.params)
-            routing.redirect '/' if response.failure?
+            # response = Forms::SkillsFormValidation.new.call(routing.params)
+            # routing.redirect '/' if response.failure?
             map = routing.params.keys.first.split('_').first
             session[:skills] = routing.params.values.first
             routing.redirect "RoutePlanner/#{map}"
@@ -156,8 +113,9 @@ module RoutePlanner
               routing.redirect '/'
             else
               results = []
-              desired_skill = session[:skills].reject { |_key, value| value == 'familiar' }
-              desired_skill.each_key do |skill|
+              desired_resource = RoutePlanner::Value::Recommendations.desired_resource(session[:skills])
+              # binding.irb
+              desired_resource.each_key do |skill|
                 viewable_resource = Service::FetchViewedResources.new.call(skill)
                 if viewable_resource.success?
                   results << viewable_resource.value!

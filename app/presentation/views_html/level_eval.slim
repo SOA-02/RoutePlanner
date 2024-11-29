@@ -24,23 +24,31 @@
           thead
             tr
               th Skill
-              th Familiar
-              th Average
-              th Unfamiliar
+              th Expert
+              th Proficient
+              th Basic
+              th Aware
+              th Unaware
           tbody
             - if skills.any?
               - skills.each do |skill|
                 tr
                   td = skill.skill_name
                   td
-                    input type="radio" name="#{map.map_name}_skills[#{skill.skill_name}]" value="familiar" id="#{skill.skill_name}_familiar"
-                    label for="#{skill.skill_name}_familiar" Familiar
+                    input type="radio" name="#{map.map_name}_skills[#{skill.skill_name}]" value="80" id="#{skill.skill_name}_familiar"
+                    label for="#{skill.skill_name}_familiar" Expert
                   td
-                    input type="radio" name="#{map.map_name}_skills[#{skill.skill_name}]" value="average" id="#{skill.skill_name}_average"
-                    label for="#{skill.skill_name}_average" Average
+                    input type="radio" name="#{map.map_name}_skills[#{skill.skill_name}]" value="60" id="#{skill.skill_name}_average"
+                    label for="#{skill.skill_name}_average" Proficient
                   td
-                    input type="radio" name="#{map.map_name}_skills[#{skill.skill_name}]" value="unfamiliar" id="#{skill.skill_name}_unfamiliar"
-                    label for="#{skill.skill_name}_unfamiliar" Unfamiliar
+                    input type="radio" name="#{map.map_name}_skills[#{skill.skill_name}]" value="40" id="#{skill.skill_name}_unfamiliar"
+                    label for="#{skill.skill_name}_unfamiliar" Basic
+                  td
+                    input type="radio" name="#{map.map_name}_skills[#{skill.skill_name}]" value="20" id="#{skill.skill_name}_unfamiliar"
+                    label for="#{skill.skill_name}_unfamiliar" Aware
+                  td
+                    input type="radio" name="#{map.map_name}_skills[#{skill.skill_name}]" value="0" id="#{skill.skill_name}_unfamiliar"
+                    label for="#{skill.skill_name}_unfamiliar" Unaware
             - else
               tr
                 td colspan="4" No skills available

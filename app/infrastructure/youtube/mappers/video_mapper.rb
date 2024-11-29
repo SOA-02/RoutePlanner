@@ -2,6 +2,7 @@
 
 module RoutePlanner
   module Youtube
+    # Maps Youtube video data to entity object
     class VideoMapper
       def initialize(yt_key, gateway_class = YoutubeApi)
         @api_key = yt_key
@@ -25,7 +26,6 @@ module RoutePlanner
         end
 
         def build_entity_map
-
           RoutePlanner::Entity::Youtubevideo.new(
             id: nil,
             video_id:,

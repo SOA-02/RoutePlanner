@@ -12,7 +12,6 @@ module RoutePlanner
       attribute :id, Integer.optional
       attribute :video_id, Strict::String
       attribute :video_duration, Strict::String
-
     end
   end
 end
