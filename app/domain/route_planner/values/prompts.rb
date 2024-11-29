@@ -26,7 +26,7 @@ module RoutePlanner
           'Provide only the keyword and not "Introduction to..." or "Advanced..." or etc',
           'Provide in this format: "SubjectName:", "DifficultyLevel:"',
           'Example format: {"prerequisite_subjects"=>[{"SubjectName"=>"Statistics", "DifficultyLevel"=>50},...',
-          'Rank the difficulty from easiest to hardest for an average person',
+          'Rank the difficulty from hardest to easiest for an average person',
           'Please do not recommend none even if the class is easy'
         ]
       end

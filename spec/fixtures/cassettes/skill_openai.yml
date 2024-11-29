@@ -11,7 +11,8 @@ http_interactions:
         only the keyword and not \"Introduction to...\" or \"Advanced...\" or etc"},{"role":"system","content":"Provide
         in this format: \"SubjectName:\", \"DifficultyLevel:\""},{"role":"system","content":"Example
         format: {\"prerequisite_subjects\"=>[{\"SubjectName\"=>\"Statistics\", \"DifficultyLevel\"=>50},..."},{"role":"system","content":"Rank
-        the difficulty from easiest to hardest for an average person"},{"role":"user","content":"Business
+        the difficulty from hardest to easiest for an average person"},{"role":"system","content":"Please
+        do not recommend none even if the class is easy"},{"role":"user","content":"Business
         Analytics using Machine Learning\nInstructor: Galit Shmueli (galit.shmueli@iss.nthu.edu.tw)
         TA: Cindy (Yu-Hsuan) Liu\nWebsite: canvas.instructure.com/courses/9474145\nCourse
         Description\nTerm: Fall 2024\nClass Time: Tuesdays, 14:20-17:20\nClass Location:
@@ -102,7 +103,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 28 Nov 2024 16:15:10 GMT
+      - Fri, 29 Nov 2024 01:57:54 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -114,7 +115,7 @@ http_interactions:
       Openai-Organization:
       - user-puxbhrdszzsz9p2xhyhw7spz
       Openai-Processing-Ms:
-      - '769'
+      - '897'
       Openai-Version:
       - '2020-10-01'
       X-Ratelimit-Limit-Requests:
@@ -124,45 +125,45 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '9999'
       X-Ratelimit-Remaining-Tokens:
-      - '198457'
+      - '198442'
       X-Ratelimit-Reset-Requests:
       - 8.64s
       X-Ratelimit-Reset-Tokens:
-      - 462ms
+      - 467ms
       X-Request-Id:
-      - req_2172e833af9c2f0c65203aab0f462e54
+      - req_de51b2443e9df8aeaabaf9a85754d352
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=7_Byhm.ThXgB2AOx2c23cU3lhTxnMoFecHWg_p21Z2s-1732810510-1.0.1.1-.nty33hLsBqpbu7GadsMYwwdUZ5btrvDaocMOqScTibxynfAhxFK.UMYrmde4C1jUPzGZzkChpoS1poazzGZIQ;
-        path=/; expires=Thu, 28-Nov-24 16:45:10 GMT; domain=.api.openai.com; HttpOnly;
+      - __cf_bm=.IT0YiBQ35ACsouQ1MjW6F3k58T8_uz8TIK4_ETu_5U-1732845474-1.0.1.1-k5tAhrCuwH9tYFghUhFdDilTL8DajU4gA9heycmSCNWZmWThYtUbBYaTIXLXu2vTjf0vnTOqerA9LRwShtCFKQ;
+        path=/; expires=Fri, 29-Nov-24 02:27:54 GMT; domain=.api.openai.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=1baWNklC918k35M_iBjPANBJ8CdVxgAbNipHn3kbuoU-1732810510273-0.0.1.1-604800000;
+      - _cfuvid=G5rJS6hXwWrODCQLwU6v9HIGDuYEXrTH0qrdV3dFA1E-1732845474474-0.0.1.1-604800000;
         path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None
       X-Content-Type-Options:
       - nosniff
       Server:
       - cloudflare
       Cf-Ray:
-      - 8e9ba7b31a574a74-TPE
+      - 8e9efd4f4faf8451-TPE
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: |
         {
-          "id": "chatcmpl-AYbSXWj0bWhlZ7XgQpgDNFo1JlW8H",
+          "id": "chatcmpl-AYkYTdgRIoHP9LgLuJsfgIgkuVPrk",
           "object": "chat.completion",
-          "created": 1732810509,
+          "created": 1732845473,
           "model": "gpt-3.5-turbo-0125",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "{\"prerequisite_subjects\": [\n    {\"SubjectName\": \"Statistics\", \"DifficultyLevel\": 50},\n    {\"SubjectName\": \"Data Mining\", \"DifficultyLevel\": 70},\n    {\"SubjectName\": \"Machine Learning\", \"DifficultyLevel\": 80},\n    {\"SubjectName\": \"Business Analytics\", \"DifficultyLevel\": 85},\n    {\"SubjectName\": \"Python Programming\", \"DifficultyLevel\": 90}\n]}",
+                "content": "{\n\t\"prerequisite_subjects\": [\n\t\t{\"SubjectName\": \"Data Mining\", \"DifficultyLevel\": 70},\n\t\t{\"SubjectName\": \"Statistics\", \"DifficultyLevel\": 60},\n\t\t{\"SubjectName\": \"Machine Learning\", \"DifficultyLevel\": 50},\n\t\t{\"SubjectName\": \"Business Analytics\", \"DifficultyLevel\": 40},\n\t\t{\"SubjectName\": \"Python Programming\", \"DifficultyLevel\": 30}\n\t]\n}",
                 "refusal": null
               },
               "logprobs": null,
@@ -170,9 +171,9 @@ http_interactions:
             }
           ],
           "usage": {
-            "prompt_tokens": 1192,
-            "completion_tokens": 87,
-            "total_tokens": 1279,
+            "prompt_tokens": 1207,
+            "completion_tokens": 96,
+            "total_tokens": 1303,
             "prompt_tokens_details": {
               "cached_tokens": 0,
               "audio_tokens": 0
@@ -186,5 +187,5 @@ http_interactions:
           },
           "system_fingerprint": null
         }
-  recorded_at: Thu, 28 Nov 2024 16:15:10 GMT
+  recorded_at: Fri, 29 Nov 2024 01:57:54 GMT
 recorded_with: VCR 6.3.1

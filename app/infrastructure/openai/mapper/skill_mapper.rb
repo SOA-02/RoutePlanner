@@ -15,7 +15,6 @@ module RoutePlanner
       def call
         skillset = @gateway.call
         skill = parse_response(skillset)
-        puts skill
         build_entity(skill)
       end
 

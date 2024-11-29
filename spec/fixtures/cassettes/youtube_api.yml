@@ -27,7 +27,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Thu, 28 Nov 2024 16:12:26 GMT
+      - Fri, 29 Nov 2024 01:57:52 GMT
       Server:
       - scaffolding on HTTPServer2
       X-Xss-Protection:
@@ -49,7 +49,7 @@ http_interactions:
       string: |
         {
           "kind": "youtube#searchListResponse",
-          "etag": "Stq4ZPKDOHSqDAmJM68u-iBztFA",
+          "etag": "rJizA9zi-IF_CIqdg7nXLKQjPAI",
           "nextPageToken": "CAUQAA",
           "regionCode": "TW",
           "pageInfo": {
@@ -93,40 +93,6 @@ http_interactions:
             },
             {
               "kind": "youtube#searchResult",
-              "etag": "I_XkVBXhjvq6BW3pZcLIpxC39Ww",
-              "id": {
-                "kind": "youtube#video",
-                "videoId": "fmyvWz5TUWg"
-              },
-              "snippet": {
-                "publishedAt": "2020-11-09T14:50:57Z",
-                "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
-                "title": "Learn Ruby on Rails - Full Course",
-                "description": "Learn Ruby on Rails in this full course for beginners. Ruby on Rails is a is a server-side web application framework used for ...",
-                "thumbnails": {
-                  "default": {
-                    "url": "https://i.ytimg.com/vi/fmyvWz5TUWg/default.jpg",
-                    "width": 120,
-                    "height": 90
-                  },
-                  "medium": {
-                    "url": "https://i.ytimg.com/vi/fmyvWz5TUWg/mqdefault.jpg",
-                    "width": 320,
-                    "height": 180
-                  },
-                  "high": {
-                    "url": "https://i.ytimg.com/vi/fmyvWz5TUWg/hqdefault.jpg",
-                    "width": 480,
-                    "height": 360
-                  }
-                },
-                "channelTitle": "freeCodeCamp.org",
-                "liveBroadcastContent": "none",
-                "publishTime": "2020-11-09T14:50:57Z"
-              }
-            },
-            {
-              "kind": "youtube#searchResult",
               "etag": "AZrLELWvDg42-neoGkkNo388PVw",
               "id": {
                 "kind": "youtube#video",
@@ -157,6 +123,40 @@ http_interactions:
                 "channelTitle": "Automation Step by Step",
                 "liveBroadcastContent": "none",
                 "publishTime": "2021-01-26T14:30:10Z"
+              }
+            },
+            {
+              "kind": "youtube#searchResult",
+              "etag": "I_XkVBXhjvq6BW3pZcLIpxC39Ww",
+              "id": {
+                "kind": "youtube#video",
+                "videoId": "fmyvWz5TUWg"
+              },
+              "snippet": {
+                "publishedAt": "2020-11-09T14:50:57Z",
+                "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
+                "title": "Learn Ruby on Rails - Full Course",
+                "description": "Learn Ruby on Rails in this full course for beginners. Ruby on Rails is a is a server-side web application framework used for ...",
+                "thumbnails": {
+                  "default": {
+                    "url": "https://i.ytimg.com/vi/fmyvWz5TUWg/default.jpg",
+                    "width": 120,
+                    "height": 90
+                  },
+                  "medium": {
+                    "url": "https://i.ytimg.com/vi/fmyvWz5TUWg/mqdefault.jpg",
+                    "width": 320,
+                    "height": 180
+                  },
+                  "high": {
+                    "url": "https://i.ytimg.com/vi/fmyvWz5TUWg/hqdefault.jpg",
+                    "width": 480,
+                    "height": 360
+                  }
+                },
+                "channelTitle": "freeCodeCamp.org",
+                "liveBroadcastContent": "none",
+                "publishTime": "2020-11-09T14:50:57Z"
               }
             },
             {
@@ -195,185 +195,41 @@ http_interactions:
             },
             {
               "kind": "youtube#searchResult",
-              "etag": "xu02JA1NeDc-ux2HU40uy1JwlCs",
+              "etag": "h-ZJkr1lwSYTA5H7b2M3OJXad9w",
               "id": {
                 "kind": "youtube#video",
-                "videoId": "LADHwoN2LMM"
+                "videoId": "FKTUzPT7244"
               },
               "snippet": {
-                "publishedAt": "2008-03-12T01:24:57Z",
-                "channelId": "UCFkid-1EIBbauJLbMFDp2Cg",
-                "title": "Ruby on Rails - Part 1: Hello World",
-                "description": "Ruby on Rails Intensive 1-Day Course Part 1 - Hello World Web Apps anatomy 101, Model-View-Controller 101, Rails 101, ...",
+                "publishedAt": "2021-12-29T21:00:13Z",
+                "channelId": "UCQf9BYcqr8pzKrY14ZyMsbg",
+                "title": "Crash Course: The Crash Course on Ruby Programming",
+                "description": "Learn the Ruby programming language basics crash course in this course / tutorial under one hour. The course is designed for ...",
                 "thumbnails": {
                   "default": {
-                    "url": "https://i.ytimg.com/vi/LADHwoN2LMM/default.jpg",
+                    "url": "https://i.ytimg.com/vi/FKTUzPT7244/default.jpg",
                     "width": 120,
                     "height": 90
                   },
                   "medium": {
-                    "url": "https://i.ytimg.com/vi/LADHwoN2LMM/mqdefault.jpg",
+                    "url": "https://i.ytimg.com/vi/FKTUzPT7244/mqdefault.jpg",
                     "width": 320,
                     "height": 180
                   },
                   "high": {
-                    "url": "https://i.ytimg.com/vi/LADHwoN2LMM/hqdefault.jpg",
+                    "url": "https://i.ytimg.com/vi/FKTUzPT7244/hqdefault.jpg",
                     "width": 480,
                     "height": 360
                   }
                 },
-                "channelTitle": "UC Berkeley Events",
+                "channelTitle": "Code With Prince",
                 "liveBroadcastContent": "none",
-                "publishTime": "2008-03-12T01:24:57Z"
+                "publishTime": "2021-12-29T21:00:13Z"
               }
             }
           ]
         }
-  recorded_at: Thu, 28 Nov 2024 16:12:26 GMT
-- request:
-    method: get
-    uri: https://www.googleapis.com/youtube/v3/videos?id=xiWUL3M9D8c&key=<API_KEY>&part=contentDetails
-    body:
-      encoding: ASCII-8BIT
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Connection:
-      - close
-      Host:
-      - www.googleapis.com
-      User-Agent:
-      - http.rb/5.2.0
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Vary:
-      - Origin,Accept-Encoding
-      - Referer
-      - X-Origin
-      Date:
-      - Thu, 28 Nov 2024 16:12:29 GMT
-      Server:
-      - scaffolding on HTTPServer2
-      X-Xss-Protection:
-      - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      Accept-Ranges:
-      - none
-      Transfer-Encoding:
-      - chunked
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: |
-        {
-          "kind": "youtube#videoListResponse",
-          "etag": "_PJJ6ulm8p9YOWR3gHIo-CsQo0w",
-          "items": [
-            {
-              "kind": "youtube#video",
-              "etag": "kcbOp_jOJeNe2Xw2rCd60PZgpHY",
-              "id": "xiWUL3M9D8c",
-              "contentDetails": {
-                "duration": "PT3H13M",
-                "dimension": "2d",
-                "definition": "hd",
-                "caption": "true",
-                "licensedContent": false,
-                "contentRating": {},
-                "projection": "rectangular"
-              }
-            }
-          ],
-          "pageInfo": {
-            "totalResults": 1,
-            "resultsPerPage": 1
-          }
-        }
-  recorded_at: Thu, 28 Nov 2024 16:12:29 GMT
-- request:
-    method: get
-    uri: https://www.googleapis.com/youtube/v3/videos?id=xiWUL3M9D8c&key=<API_KEY>&part=contentDetails
-    body:
-      encoding: ASCII-8BIT
-      string: ''
-    headers:
-      Accept:
-      - application/json
-      Connection:
-      - close
-      Host:
-      - www.googleapis.com
-      User-Agent:
-      - http.rb/5.2.0
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Vary:
-      - Origin,Accept-Encoding
-      - Referer
-      - X-Origin
-      Date:
-      - Thu, 28 Nov 2024 16:12:29 GMT
-      Server:
-      - scaffolding on HTTPServer2
-      X-Xss-Protection:
-      - '0'
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      Accept-Ranges:
-      - none
-      Transfer-Encoding:
-      - chunked
-      Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
-      Connection:
-      - close
-    body:
-      encoding: UTF-8
-      string: |
-        {
-          "kind": "youtube#videoListResponse",
-          "etag": "_PJJ6ulm8p9YOWR3gHIo-CsQo0w",
-          "items": [
-            {
-              "kind": "youtube#video",
-              "etag": "kcbOp_jOJeNe2Xw2rCd60PZgpHY",
-              "id": "xiWUL3M9D8c",
-              "contentDetails": {
-                "duration": "PT3H13M",
-                "dimension": "2d",
-                "definition": "hd",
-                "caption": "true",
-                "licensedContent": false,
-                "contentRating": {},
-                "projection": "rectangular"
-              }
-            }
-          ],
-          "pageInfo": {
-            "totalResults": 1,
-            "resultsPerPage": 1
-          }
-        }
-  recorded_at: Thu, 28 Nov 2024 16:12:29 GMT
+  recorded_at: Fri, 29 Nov 2024 01:57:52 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/youtube/v3/search?key=<API_KEY>&maxResults=5&part=snippet&q=Ruby%20one%20hour%20lectures%20tutorials&type=video
@@ -401,7 +257,7 @@ http_interactions:
       - Referer
       - X-Origin
       Date:
-      - Thu, 28 Nov 2024 16:13:50 GMT
+      - Fri, 29 Nov 2024 01:57:52 GMT
       Server:
       - scaffolding on HTTPServer2
       X-Xss-Protection:
@@ -603,5 +459,149 @@ http_interactions:
             }
           ]
         }
-  recorded_at: Thu, 28 Nov 2024 16:13:50 GMT
+  recorded_at: Fri, 29 Nov 2024 01:57:52 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/videos?id=xiWUL3M9D8c&key=<API_KEY>&part=contentDetails
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - close
+      Host:
+      - www.googleapis.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin,Accept-Encoding
+      - Referer
+      - X-Origin
+      Date:
+      - Fri, 29 Nov 2024 01:57:56 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Accept-Ranges:
+      - none
+      Transfer-Encoding:
+      - chunked
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "kind": "youtube#videoListResponse",
+          "etag": "_PJJ6ulm8p9YOWR3gHIo-CsQo0w",
+          "items": [
+            {
+              "kind": "youtube#video",
+              "etag": "kcbOp_jOJeNe2Xw2rCd60PZgpHY",
+              "id": "xiWUL3M9D8c",
+              "contentDetails": {
+                "duration": "PT3H13M",
+                "dimension": "2d",
+                "definition": "hd",
+                "caption": "true",
+                "licensedContent": false,
+                "contentRating": {},
+                "projection": "rectangular"
+              }
+            }
+          ],
+          "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 1
+          }
+        }
+  recorded_at: Fri, 29 Nov 2024 01:57:56 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/videos?id=xiWUL3M9D8c&key=<API_KEY>&part=contentDetails
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - close
+      Host:
+      - www.googleapis.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin,Accept-Encoding
+      - Referer
+      - X-Origin
+      Date:
+      - Fri, 29 Nov 2024 01:57:56 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Accept-Ranges:
+      - none
+      Transfer-Encoding:
+      - chunked
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "kind": "youtube#videoListResponse",
+          "etag": "_PJJ6ulm8p9YOWR3gHIo-CsQo0w",
+          "items": [
+            {
+              "kind": "youtube#video",
+              "etag": "kcbOp_jOJeNe2Xw2rCd60PZgpHY",
+              "id": "xiWUL3M9D8c",
+              "contentDetails": {
+                "duration": "PT3H13M",
+                "dimension": "2d",
+                "definition": "hd",
+                "caption": "true",
+                "licensedContent": false,
+                "contentRating": {},
+                "projection": "rectangular"
+              }
+            }
+          ],
+          "pageInfo": {
+            "totalResults": 1,
+            "resultsPerPage": 1
+          }
+        }
+  recorded_at: Fri, 29 Nov 2024 01:57:56 GMT
 recorded_with: VCR 6.3.1
