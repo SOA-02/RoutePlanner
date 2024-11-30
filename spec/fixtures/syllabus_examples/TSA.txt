@@ -1,0 +1,42 @@
+STAT5210: Time Series Analysis
+
+Lecture: Monday M234 (16 weeks)
+Instructor: Nan-Jung Hsu [njhsu@stat.nthu.edu.tw]
+office: General Building III 801
+phone number: 03-5742646
+Textbook:
+1. Shumway and Stoffer, Time Series Analysis and its Applications with R Examples.
+2nd edition (2006); 3rd edition (2011); 4th edition (2016) (e-Book).
+https://www.stat.pitt.edu/stoffer/tsa4/
+2. Tsay, Ruey S. (2012), An Introduction to Analysis of Financial Data with R.
+
+https://faculty.chicagobooth.edu/ruey-s-tsay/research/an-introduction-to-analysis3. Tsay, Ruey S. (2014), Multivariate Time Series Analysis.
+
+https://faculty.chicagobooth.edu/ruey-s-tsay/research/multivariate-time-series-ana
+Pre-requirement:
+Students taking this course must be familiar with regression and have at least one year of
+learning experience in statistics (or mathematical statistics), regression (or linear models)
+or equivalent courses.
+Grading: Homework (50%), Midterm (20%), Project (30%).
+Course Materials: https://eeclass.nthu.edu.tw/
+TA Hours: TBA
+Topics:
+Time series data patterns and dependence
+Stationary process and autocorrelation
+Linear process, ARMA models
+1
+
+Estimation and best linear prediction (forecasting)
+Model building and selection
+Financial time series and volatility model
+Multivariate time series
+State-space model and Kalman filter
+Neural network for time series (if time allowed)
+Frequency domain analysis: spectral density and its inference (if time allowed)
+Software:
+R: http://www.r-project.org
+RStudio: https://posit.co/
+
+2
+
+

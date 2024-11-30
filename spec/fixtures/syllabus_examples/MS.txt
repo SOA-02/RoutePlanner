@@ -1,0 +1,190 @@
+ISS5095: Marketing Strategies
+Customer management & multi-channel management
+9.00 – 12.00 Thursdays
+
+
+COURSE DESCRIPTION
+Marketing strategies aim to increase both customer and firm value. Examples of customer value are customer satisfaction, customer loyalty, customer engagement, customer experience, and consumer well-being. Examples of firm value are revenues/sales, profits, customer lifetime value (CLV), and Tobin’s q. 
+However, the business environment is complicated and dynamic. Thus, developing proper and effective marketing strategies is challenging. Also, decisions on strategies should be based on not only managers’ practical experiences, but empirical evidence (i.e., data analyses). The course will provide insight into the selection of proper and effective marketing strategies and how to collect empirical evidence.
+The scope of marketing strategies is extensive, which could not be completely covered in one course. This course will focus on the B2C (business to consumer) market, particularly in customer management and multi-channel management. Customer management aims to understand/connect customers and create value to customers, which hopefully subsequently improves firm value. In addition, while firms nowadays use different channels (e.g., offline and digital) to reach customers, understanding effective multi-channel management is critical to increase firms’ value. In the course, we will cover a bit “empirical evidence” mentioned above. That is, to achieve marketing objectives, we will discuss what data and analytical methods could be considered. 
+
+COURSE GOALS
+The goal of the course provides an overall understanding of marketing strategies in customer management and multi-channel management from a theoretical perspective and also an empirical perspective. From a theoretical perspective, the students will be able to apply learned theories/strategies to finding proper marketing solutions to specific marketing challenges/opportunities. From an empirical perspective, the students will be able to indicate what data and/or analytical methods managers should use to examine the effectiveness of marketing strategies. Examining effectiveness relies on good data and correct analytical methods, rather than own imaginations. 
+
+LEARNING MATERIALS
+Academic articles in marketing (see the weekly reading list below)
+Note: Academic articles are the main learning materials. I might provide additional articles one week before the class, as the publications are renewed every day. 
+
+Kotler, P., & Keller, K. (2012). Marketing Management (14th edition). Pearson Education Limited. 
+Note: You could also use the later editions (16th and 15th). The reason of using the 14th edition is that you have a free online access. The textbook aims to provide you a fundamental concept of marketing management. The discussion of the concept is similar among different editions. This is why using different editions does not matter for the course. The course will not cover every bit of this textbook in detail. However, I would encourage you to read through this textbook as self-learning, particularly if you are new to marketing. 
+COURSE EVALUATION
+Class attendance and engagement in class discussions: 20%
+Midterm individual exam (open book): 40%
+Final-term group presentation: 40%
+
+Note: Class attendanceTA will note the number of "sick leave", "absence", and "late arrival or early leave (more than 30 minutes)". 
+I do not mark down "sick leave", but more than one sick leave would need (medical/ strong) evidence. 
+One absence would have 6 points down (100/16 weeks=~6), except some reasons (e.g., attending sport competitions for NTHU) for the absence.
+One late or one early would have 3 points down. 
+Note: Class engagementTA will note the number of your engagement in classes (e.g., answering/ asking questions). Below is an example of how engagement scores are calculated. The baseline engagement score is 75 for everyone. 0 time: 75
+1 – 4 times: 805 – 7 times: 85
+8 – 10 times: 90
+11 – 13 times: 95> 13 times: 100
+Note: Peer evaluation
+To fairly assess each member’s participation and involvement in group work, there will be peer evaluation. The result of peer evaluation has the impact on group work’s marks. Peer evaluation is applied to group work, including the in-class group discussions and the final-term group presentations. I will announce the peer evaluation process during the course. 
+
+TARGET STUDENTS
+Open to only graduate students. 
+Prerequisites
+Have knowledge of marketing basics, such as STP, 4Ps, and customer metrics.  
+Have knowledge and experience of empirical methods, such as regressions. 
+Having the two prerequisites mentioned above is crucial for your own benefits to follow the course. If you lack the two or one of the prerequisites and intend to attend the course, additional learning outside the class is necessary.  COURSE PLANNING
+
+
+WEEKLY READING LIST (Note: additional articles and cases might be added, which will be announced one week before)
+
+Week 2: Relationship marketing & marketing in recessions
+Kotler & Keller (2012): Walmart in Ch3, Nordstrom and TESCO in Ch5, and The Ritz Carlton in Ch13 (Please check the Marketing Excellence in these chapters).
+
+Relationship marketing
+Gremler, D. D., Van Vaerenbergh, Y., Brüggen, E. C., & Gwinner, K. P. (2020). Understanding and managing customer relational benefits in services: a meta-analysis. Journal of the Academy of Marketing Science, 48(3), 565-583.
+Palmatier, R. W., Dant, R. P., Grewal, D., & Evans, K. R. (2006). Factors influencing the effectiveness of relationship marketing: A meta-analysis. Journal of Marketing, 70(4), 136-153.
+Verma, V., Sharma, D., & Sheth, J. (2016). Does relationship marketing matter in online retailing? A meta-analytic approach. Journal of the Academy of Marketing Science, 44(2), 206-217.
+
+Marketing during economic recessions
+Dekimpe, M. G., & Deleersnyder, B. (2018). Business cycle research in marketing: a review and research agenda. Journal of the Academy of Marketing Science, 46(1), 31-58.
+Ou, Y. C., de Vries, L., Wiesel, T., & Verhoef, P. C. (2014). The role of consumer confidence in creating customer loyalty. Journal of Service Research, 17(3), 339-354.
+Van Heerde, H. J., Gijsbrechts, E., & Pauwels, K. (2008). Winners and losers in a major price war. Journal of Marketing Research, 45(5), 499-518.
+
+Week 3: CSR & loyalty programs
+Kotler & Keller (2012): Walmart in Ch3, Nordstrom and TESCO in Ch5, and The Ritz Carlton in Ch13 (Please check the Marketing Excellence in these chapters).
+
+CSR
+Cakanlar, A., Nikolova, H., & Nenkov, G. Y. (2023). I Will Be Green for Us: When Consumers Compensate for Their Partners’ Unsustainable Behavior. Journal of Marketing Research, 60(1), 110-129.
+Luo, X., & Bhattacharya, C. B. (2006). Corporate social responsibility, customer satisfaction, and market value. Journal of Marketing, 70(4), 1-18.
+Mishra, S., & Modi, S. B. (2016). Corporate social responsibility and shareholder wealth: The role of marketing capability. Journal of Marketing, 80(1), 26-46.
+Van Doorn, J., Onrust, M., Verhoef, P. C., & Bügel, M. S. (2017). The impact of corporate social responsibility on customer attitudes and retention—the moderating role of brand success indicators. Marketing Letters, 28(4), 607-619.
+Vishwanathan, P., van Oosterhout, H., Heugens, P. P., Duran, P., & Van Essen, M. (2020). Strategic CSR: A concept building meta‐analysis. Journal of Management Studies, 57(2), 314-350.
+
+Loyalty programs
+Belli, A., O’Rourke, A. M., Carrillat, F. A., Pupovac, L., Melnyk, V., & Napolova, E. (2022). 40 years of loyalty programs: how effective are they? Generalizations from a meta-analysis. Journal of the Academy of Marketing Science, 50(1), 147-173.
+Berman, B. (2006). Developing an effective customer loyalty program. California Management Review, 49(1), 123-148.
+Kim, J. J., Steinhoff, L., & Palmatier, R. W. (2021). An emerging theory of loyalty program dynamics. Journal of the Academy of Marketing Science, 49(1), 71-95.
+Nunes, J. C., & Drèze, X. (2006). Your loyalty program is betraying you. Harvard Business Review, 84(4), 124-31.
+
+Week 4: Celebrities & influencers
+Kotler & Keller (2012): NIKE in Ch1 (Please check the Marketing Excellence in these chapters). 
+
+Selection of celebrities/ influencers for endorsement
+Eisend, M., & Tarrahi, F. (2022). Persuasion knowledge in the marketplace: A meta‐analysis. Journal of Consumer Psychology, 32(1), 3-22.
+Gerrath, M. H., & Usrey, B. (2021). The impact of influencer motives and commonness perceptions on follower reactions toward incentivized reviews. International Journal of Research in Marketing, 38(3), 531-548. 
+*Knoll, J., & Matthes, J. (2017). The effectiveness of celebrity endorsements: a meta-analysis. Journal of the Academy of Marketing Science, 45(1), 55-75.
+*Schimmelpfennig, C., & Hunt, J. B. (2020). Fifty years of celebrity endorser research: Support for a comprehensive celebrity endorsement strategy framework. Psychology & Marketing, 37(3), 488-505.
+*Winterich, K. P., Gangwar, M., & Grewal, R. (2018). When celebrities count: Power distance beliefs and celebrity endorsements. Journal of Marketing, 82(3), 70-86.
+Zhang, W., Chintagunta, P. K., & Kalwani, M. U. (2021). Social media, influencers, and adoption of an eco-friendly product: field experiment evidence from rural China. Journal of Marketing, 85(3), 10-27.
+
+Manage celebrities’/ influencers’ negative publicity
+Hock, S. J., & Raithel, S. (2020). Managing negative celebrity endorser publicity: How announcements of firm (non) responses affect stock returns. Management Science, 66(3), 1473-1495. 
+Bartz, S., Molchanov, A., & Stork, P. A. (2013). When a celebrity endorser is disgraced: A twenty-five-year event study. Marketing Letters, 24(2), 131-141.
+
+Week 5: Sponsorships
+Kotler & Keller (2012): NIKE in Ch1 (Please check the Marketing Excellence in these chapters). 
+
+Henderson, C. M., Mazodier, M., & Sundar, A. (2019). The color of support: The effect of sponsor–team visual congruence on sponsorship performance. Journal of Marketing, 83(3), 50-71.
+Mazodier, M., Henderson, C. M., & Beck, J. T. (2018). The long reach of sponsorship: How fan isolation and identification jointly shape sponsorship performance. Journal of Marketing, 82(6), 28-48.
+Wakefield, L., Wakefield, K., & Lane Keller, K. (2020). Understanding sponsorship: A consumer-centric model of sponsorship effects. Journal of Advertising, 49(3), 320-343.
+Woisetschläger, D. M., Backhaus, C., & Cornwell, T. B. (2017). Inferring corporate motives: How deal characteristics shape sponsorship perceptions. Journal of Marketing, 81(5), 121-141.
+Week 6: Social media & digital WoM
+Kotler & Keller (2012): Facebook in Ch19 (Please check the Marketing Excellence in these chapters). 
+
+Social media
+Chaffey, D. (2023). Global social media statistics research summary 2023. Accessed on January 31st 2023, at https://www.smartinsights.com/social-media-marketing/social-media-strategy/new-global-social-media-research/ 
+de Oliveira Santini, F., Ladeira, W. J., Pinto, D. C., Herter, M. M., Sampaio, C. H., & Babin, B. J. (2020). Customer engagement in social media: A framework and meta-analysis. Journal of the Academy of Marketing Science, 48(6), 1211-1228.
+Golmohammadi, A., Havakhor, T., Gauri, D. K., & Comprix, J. (2021). Complaint Publicization in Social Media. Journal of Marketing, 85(6), 1-23.
+
+(digital WoM)
+De Matos, C. A., & Rossi, C. A. V. (2008). Word-of-mouth communications in marketing: a meta-analytic review of the antecedents and moderators. Journal of the Academy of Marketing Science, 36(4), 578-596.
+You, Y., Vadakkepatt, G. G., & Joshi, A. M. (2015). A meta-analysis of electronic word-of-mouth elasticity. Journal of Marketing, 79(2), 19-39.
+
+Week 7: Luxury brands
+Kotler & Keller (2012): Louis Vuitton in Ch10 (Please check the Marketing Excellence in these chapters). 
+
+Amaral, N. B., & Loken, B. (2016). Viewing usage of counterfeit luxury goods: Social identity and social hierarchy effects on dilution and enhancement of genuine luxury brands. Journal of Consumer Psychology, 26(4), 483-495.
+Han, Y. J., Nunes, J. C., & Drèze, X. (2010). Signaling status with luxury goods: The role of brand prominence. Journal of Marketing, 74(4), 15-30.
+Jung, S., & Dubois, D. (2022). EXPRESS: When and How Slow Motion Makes Products More Luxurious. Journal of Marketing Research, 00222437221146728 (forthcoming).
+Nunes, J. C., Drèze, X., & Han, Y. J. (2011). Conspicuous consumption in a recession: Toning it down or turning it up? Journal of Consumer Psychology, 21(2), 199-205.
+Sun, J. J., Bellezza, S., & Paharia, N. (2021). Buy less, buy luxury: Understanding and overcoming product durability neglect for sustainable consumption. Journal of Marketing, 85(3), 28-43.
+Wilcox, K., Kim, H. M., & Sen, S. (2009). Why do consumers buy counterfeit luxury brands? Journal of Marketing Research, 46(2), 247-259.
+
+Weeks 9 & 10: Marketing is not only about profits (1) (2)
+Biswas, D., & Szocs, C. (2019). The smell of healthy choices: Cross-modal sensory compensation effects of ambient scent on food purchases. Journal of Marketing Research, 56(1), 123-141.
+Biswas, D., Szocs, C., Chacko, R., & Wansink, B. (2017). Shining light on atmospherics: how ambient light influences food choices. Journal of Marketing Research, 54(1), 111-123.
+Goldstein, D. G., Johnson, E. J., Herrmann, A., & Heitmann, M. (2008). Nudge your customers toward better choices. Harvard Business Review, 86(12), 99-105.
+Haws, K. L., & Winterich, K. P. (2013). When value trumps health in a supersized world. Journal of Marketing, 77(3), 48-64.
+Huang, X., & Labroo, A. A. (2020). Cueing morality: The effect of high-pitched music on healthy choice. Journal of Marketing, 84(6), 130-143.
+Mrkva, K., Posner, N. A., Reeck, C., & Johnson, E. J. (2021). Do nudges reduce disparities? Choice architecture compensates for low consumer knowledge. Journal of Marketing, 85(4), 67-84.
+Raghunathan, R., Naylor, R. W., & Hoyer, W. D. (2006). The unhealthy= tasty intuition and its effects on taste inferences, enjoyment, and choice of food products. Journal of Marketing, 70(4), 170-184.
+Talukdar, D., & Lindsey, C. (2013). To buy or not to buy: Consumers’ demand response patterns for healthy versus unhealthy food. Journal of Marketing, 77(2), 124-138.
+Weihrauch, A., & Huang, S. C. (2021). Portraying humans as machines to promote health: Unintended risks, mechanisms, and solutions. Journal of Marketing, 85(3), 184-203.
+
+Week 11: Marketing is not only about profits (3)
+Garbinsky, E. N., Mead, N. L., & Gregg, D. (2021). Popping the positive illusion of financial responsibility can increase personal savings: Applications in emerging and western markets. Journal of Marketing, 85(3), 97-112.
+Gonzalez-Arcos, C., Joubert, A. M., Scaraboto, D., Guesalaga, R., & Sandberg, J. (2021). “How do I carry all this now?” Understanding consumer resistance to sustainability interventions. Journal of Marketing, 85(3), 44-61.
+Mookerjee, S., Cornil, Y., & Hoegg, J. (2021). From waste to taste: How “ugly” labels can increase purchase of unattractive produce. Journal of Marketing, 85(3), 62-77.
+Rifkin, J. R., Du, K. M., & Berger, J. (2021). Penny for your preferences: leveraging self-expression to encourage small prosocial gifts. Journal of Marketing, 85(3), 204-219.
+Robitaille, N., Mazar, N., Tsai, C. I., Haviv, A. M., & Hardy, E. (2021). Increasing organ donor registrations with behavioral interventions: A field experiment. Journal of Marketing, 85(3), 168-183.
+Zhang, K., Cai, F., & Shi, Z. (2021). Do promotions make consumers more generous? The impact of price promotions on consumers’ donation behavior. Journal of Marketing, 85(3), 240-255.
+
+Weeks 12 & 13: Multi-channel management (1) (2)
+Avery, J., Steenburgh, T. J., Deighton, J., & Caravella, M. (2012). Adding bricks to clicks: Predicting the patterns of cross-channel elasticities over time. Journal of Marketing, 76(3), 96-111.
+Breugelmans, E., & Campo, K. (2016). Cross-channel effects of price promotions: an empirical analysis of the multi-channel grocery retail sector. Journal of Retailing, 92(3), 333-351.
+Dinner, I. M., Heerde Van, H. J., & Neslin, S. A. (2014). Driving online and offline sales: The cross-channel effects of traditional, online display, and paid search advertising. Journal of marketing research, 51(5), 527-545.
+Herhausen, D., Kleinlercher, K., Verhoef, P. C., Emrich, O., & Rudolph, T. (2019). Loyalty formation for different customer journey segments. Journal of Retailing, 95(3), 9-29.
+Narang, U., & Shankar, V. (2016). The effects of mobile apps on shopper purchases and product returns. Mays Business School Research Paper No, 2878903.
+Neslin, S. A. (2022). The omnichannel continuum: Integrating online and offline channels along the customer journey. Journal of Retailing, 98(1), 111-132.
+Pauwels, K., & Neslin, S. A. (2015). Building with bricks and mortar: The revenue impact of opening physical stores in a multichannel environment. Journal of Retailing, 91(2), 182-197.
+Valentini, S., Neslin, S. A., & Montaguti, E. (2020). Identifying omnichannel deal prone segments, their antecedents, and their consequences. Journal of Retailing, 96(3), 310-327.
+Verhoef, P. C., Neslin, S. A., & Vroomen, B. (2007). Multichannel customer management: Understanding the research-shopper phenomenon. International Journal of Research in Marketing, 24(2), 129-148.
+Wang, K., & Goldfarb, A. (2017). Can offline stores drive online sales? Journal of Marketing Research, 54(5), 706-719.
+Xu, K., Chan, J., Ghose, A., & Han, S. P. (2017). Battle of the channels: The impact of tablets on digital commerce. Management Science, 63(5), 1469-1492.
+Zhang, J. Z., Chang, C. W., & Neslin, S. A. (2021). How Physical Stores Enhance Customer Value: The Importance of Product Inspection Depth. Journal of Marketing, 86(2), 166-185. 
+Colicev, A., Malshe, A., Pauwels, K., & O'Connor, P. (2018). Improving consumer mindset metrics and shareholder value through social media: The different roles of owned and earned media. Journal of Marketing, 82(1), 37-56. 
+de Vries, L., Gensler, S., & Leeflang, P. S. (2017). Effects of traditional advertising and social messages on brand-building metrics and customer acquisition. Journal of Marketing, 81(5), 1-15.
+Kumar, A., Bezawada, R., Rishika, R., Janakiraman, R., & Kannan, P. K. (2016). From social to sale: The effects of firm-generated content in social media on customer behavior. Journal of Marketing, 80(1), 7-25. 
+Wiles, M. A., & Danielova, A. (2009). The worth of product placement in successful films: An event study analysis. Journal of Marketing, 73(4), 44-63.
+MIDTERM INDIVIDUAL EXAM
+The exam will be open book and take three hours. The students will bring their laptop to do the exam. If someone does not have a laptop, please let me know as soon as possible. 
+When the exam starts, the students will receive answering sheets in their email box. You will write down the answers in the sheets. When completing the exam, email the sheets back to me by emails. 
+In the exam you will read a case and apply what you learned to this case’s marketing challenges/opportunities. The topics include relationship marketing, do marketing during a downturn, CSR, loyalty programs, celebrities/influencers, sponsorships, social media, (digital) WoM, luxury brands, and counterfeits. Answers should be based on evidence/research findings, rather than own imaginations. Because this is an open book exam, I would encourage you to add references to your answers. That is, to well justify your answers, please extensively use knowledges/theories learned from the academic articles. You should use references for the answers, but do not need to write a reference list.
+
+
+FINAL-TERM GROUP PRESENTATION
+Each group will deliver a presentation. The topic should be selected from the topics from week 9, including marketing is not only about profits, multi-channel management, and better understanding of paid, owned, and earned media. Your presentation tasks are as follows.
+Select a company. 
+Example: Peloton, https://www.onepeloton.com/. 
+Look up the company’s activities in customer management (i.e., improving customer wellbeing) and multi-channel management. 
+Examples of improving customer wellbeing: https://www.engadget.com/2019-01-21-living-with-peloton-bike.html; https://www.mckinsey.com/industries/consumer-packaged-goods/our-insights/feeling-good-the-future-of-the-1-5-trillion-wellness-market; https://mehtaphysical.com/what-peloton-can-teach-us-about-community-and-customer-success/ 
+Marketing is not only about profits: potential nudges used by Peloton
+Marketing is not only about profits: motivations for regular exercising
+Marketing is not only about profits: customers’ perspective of well-being
+Examples of multichannel management: https://www.nytimes.com/wirecutter/reviews/peloton-review-what-to-know-before-you-buy/; https://www.indigo9digital.com/blog/jpelotonmarketingstrategy; https://nogood.io/2022/01/14/peloton-marketing-strategy/ 
+Multi-channel management: offline and online sales channels
+Product placement in “And Just Like That”
+Media: use paid (e.g., paid search engine), owned (e.g., own website/social media channels, product placement), and earned media (e.g., organic search engine)
+Note: Do not discuss too many activities mentioned above, as you could not cover all the activities in 30 minutes. Quality is more important than quantity. For example, you could select one activity regarding customer wellbeing and one regarding multichannel management. Describe the two activities in detail, that is, providing some real-life examples. 
+Based on what you learned from the course, discuss whether the company has done well in these two activities. Please justify your arguments based on theories (i.e., academic articles or the textbook), rather than “what you think”.
+Example: Note, below is a very brief discussion. In the presentation, you need to elaborate the discussion. You will also discuss the other selected activities.
+Product placement: Peloton placed its products in a reboot of a successful and an iconic series, Sex and the City, which may backfire. For example, the series may create audience absorption, which may reduce viewers’ attention to Peloton products. 
+Briefly discuss what data you need to collect by evaluating these activities’ effectiveness (optional: you do not have to answer this query).
+Example: To examine the effectiveness of product placement in “And Just Like That”, there are multiple ways. First, observe the sales before, during, and after the series. An initial insight could tell us if Peloton sales would increase during and after the series, compared to before the series. Second, survey and ask viewers the extent to which they are aware of Peloton after watching the series and their attitude about Peloton. This could have a basic understanding of whether the series improve customers’ preference to Peloton, for example. Third, we could collect data on social media channels regarding “And Just Like That”. For example, examine viewers’ opinions about Peloton. This way could provide more accurate and extensive information of customers’ attitude about Peloton. 
+Find opportunities for the company to create customer wellbeing, either topics in healthy choices or a better world. That is, you need to think of nudges. Justify why the nudges could work. I would prefer you to be creative. However, using the nudges learned from the academic articles is also acceptable. 
+Example: Retaining beginners (i.e., worse fitness ability) is often challenge, as they are more likely to drop out than advanced bikers (i.e., better fitness ability). Evidence shows that increasing performance and happiness are a key to retain gym-goers, for example. To increase beginners’ performance, Peloton could encourage beginner to attend a class which has advanced bikers. Such a class is called mixed-level. To increase beginners’ happiness, Peloton could encourage beginners to attend a class which has only beginners. Such a class is called same-level. 
+The potential theory for the nudge is social comparison theory. Beginners in the mixed-level classes notice that they perform worse than the advanced bikers, which may motivate them to catch up with the advanced bikers and increase performance. On the other hand, beginners in the same-level classes may feel happy, as they are less likely to feel inferior.
+Briefly discuss how you will implement the nudges. 
+Example: We may work with Peloton to create different classes, including mixed-level and same-level. Before allocating participants to different classes, we examine participants’ fitness level (using a questionnaire when participants start to join Peloton’s loyalty program). Subsequently, to examine if beginners perform better in mixed-level classes and become happier in same-level classes, we could track these participants’ performance and happiness over time (e.g., ten weeks). Tracking performance could use sport watch’s data, including calories burned or heart rates. Finally, after collecting the relevant data, compare whether beginners in mixed-level classes perform better than beginners in same-level classes. Also, compare whether beginners in same-level classes are happier than beginners in mixed-level classes.  
+Rules of group presentations
+Group presentations are 20-30 minutes. If a presentation takes less than 20 or more than 30 minutes, the presentation will be marked down. Following the presentation, there will be another 15-20 minutes for Q&A. The groups who do not present are required to ask questions. 
+Each group member's presentation time has to be (approximately) equal. When a group has four people, given 30 minutes, we expect that each person should present approximately 7.5 minutes. If someone presents far less than 7.5 minutes, this is not acceptable. 
+If someone does not present, he/she will not receive the presentation mark.
+
+Assessment criteria in group presentations
