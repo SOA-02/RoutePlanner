@@ -13,16 +13,23 @@ module RoutePlanner
         total_hours.ceil
       end
 
+      def self.compute_total_online_time(resources)
+        online_original_ids = resources.flat_map { |resource| resource[:online_resources].map(&:original_id) }
+        compute_online_resource(online_original_ids)
+      end
+
       def self.compute_physical_time(physical_credits)
         physical_credits.map { |credit| credit * 16 }.sum
       end
 
-      def self.compute_minimum_time(resources)
+      def self.compute_total_physical_time(resources)
         physical_credits = resources.flat_map { |resource| resource[:physical_resources].map(&:credit) }
-        total_physical_time = compute_physical_time(physical_credits)
+        compute_physical_time(physical_credits)
+      end
 
-        online_original_ids = resources.flat_map { |resource| resource[:online_resources].map(&:original_id) }
-        total_online_time = compute_online_resource(online_original_ids)
+      def self.compute_minimum_time(resources)
+        total_physical_time = compute_total_physical_time(resources)
+        total_online_time = compute_total_online_time(resources)
 
         total_physical_time + total_online_time
       end
