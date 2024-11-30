@@ -21,7 +21,7 @@ describe 'RoutePlanner Service Integration Test' do
     end
 
     it 'HAPPY: should be able to find and save remote physical resource to database' do
-      resources_made = RoutePlanner::Service::AddPhysicalResource.new.call(PRE_REQ)
+      resources_made = RoutePlanner::Service::AddPhysicalResource.new.call(SKILL)
       # THEN: the result should report success..
       _(resources_made.success?).must_equal true
 

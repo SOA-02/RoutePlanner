@@ -19,7 +19,7 @@ require_app
 CHANNEL_ID = 'UCpYf6C9QsP_BRf97vLuXlIA'
 VIDEO_ID = 'xiWUL3M9D8c'
 KEY_WORD = 'Ruby'
-PRE_REQ = 'Analytic'
+SKILL = 'Analytic'
 API_KEY = RoutePlanner::App.config.API_KEY
 OPENAI_KEY = RoutePlanner::App.config.OPENAI_KEY
 SYLLABUS = File.read(File.expand_path('../fixtures/syllabus_example.txt', __dir__))

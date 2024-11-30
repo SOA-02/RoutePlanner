@@ -604,4 +604,197 @@ http_interactions:
           }
         }
   recorded_at: Fri, 29 Nov 2024 01:57:56 GMT
+- request:
+    method: get
+    uri: https://www.googleapis.com/youtube/v3/search?key=<API_KEY>&maxResults=5&part=snippet&q=Analytic%20one%20hour%20lectures%20tutorials&type=video
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - close
+      Host:
+      - www.googleapis.com
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin,Accept-Encoding
+      - Referer
+      - X-Origin
+      Date:
+      - Sat, 30 Nov 2024 14:58:25 GMT
+      Server:
+      - scaffolding on HTTPServer2
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Accept-Ranges:
+      - none
+      Transfer-Encoding:
+      - chunked
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: "{\n  \"kind\": \"youtube#searchListResponse\",\n  \"etag\": \"BbmvJAT48Da5_p9263MVTHnBF0o\",\n
+        \ \"nextPageToken\": \"CAUQAA\",\n  \"regionCode\": \"TW\",\n  \"pageInfo\":
+        {\n    \"totalResults\": 1000000,\n    \"resultsPerPage\": 5\n  },\n  \"items\":
+        [\n    {\n      \"kind\": \"youtube#searchResult\",\n      \"etag\": \"2655wEQk3lRyeSwAueDILseBdm4\",\n
+        \     \"id\": {\n        \"kind\": \"youtube#video\",\n        \"videoId\":
+        \"Veb22xD0Ao0\"\n      },\n      \"snippet\": {\n        \"publishedAt\":
+        \"2021-01-07T16:00:06Z\",\n        \"channelId\": \"UCZovC61jTNT1aQ_JDFoeZwQ\",\n
+        \       \"title\": \"ALL OF GRADE 10 MATH IN ONLY 1 HOUR!!! | jensenmath.ca\",\n
+        \       \"description\": \"Learn or Review for your EXAM everything you need
+        for the grade 10 MATH course with concise and exact explanations that ...\",\n
+        \       \"thumbnails\": {\n          \"default\": {\n            \"url\":
+        \"https://i.ytimg.com/vi/Veb22xD0Ao0/default.jpg\",\n            \"width\":
+        120,\n            \"height\": 90\n          },\n          \"medium\": {\n
+        \           \"url\": \"https://i.ytimg.com/vi/Veb22xD0Ao0/mqdefault.jpg\",\n
+        \           \"width\": 320,\n            \"height\": 180\n          },\n          \"high\":
+        {\n            \"url\": \"https://i.ytimg.com/vi/Veb22xD0Ao0/hqdefault.jpg\",\n
+        \           \"width\": 480,\n            \"height\": 360\n          }\n        },\n
+        \       \"channelTitle\": \"JensenMath\",\n        \"liveBroadcastContent\":
+        \"none\",\n        \"publishTime\": \"2021-01-07T16:00:06Z\"\n      }\n    },\n
+        \   {\n      \"kind\": \"youtube#searchResult\",\n      \"etag\": \"PU_0B1-d_rpFBYxVcn4TC8bloI0\",\n
+        \     \"id\": {\n        \"kind\": \"youtube#video\",\n        \"videoId\":
+        \"eR-XRSKsuR4\"\n      },\n      \"snippet\": {\n        \"publishedAt\":
+        \"2022-04-27T13:00:32Z\",\n        \"channelId\": \"UCfJyQ3P2k_SuqfxVdqIEQNw\",\n
+        \       \"title\": \"R programming in one hour - a crash course for beginners\",\n
+        \       \"description\": \"R programming is easy. In this video, I'll walk
+        you though how to clean your data; how to manipulate (or wrangle) your data;
+        how ...\",\n        \"thumbnails\": {\n          \"default\": {\n            \"url\":
+        \"https://i.ytimg.com/vi/eR-XRSKsuR4/default.jpg\",\n            \"width\":
+        120,\n            \"height\": 90\n          },\n          \"medium\": {\n
+        \           \"url\": \"https://i.ytimg.com/vi/eR-XRSKsuR4/mqdefault.jpg\",\n
+        \           \"width\": 320,\n            \"height\": 180\n          },\n          \"high\":
+        {\n            \"url\": \"https://i.ytimg.com/vi/eR-XRSKsuR4/hqdefault.jpg\",\n
+        \           \"width\": 480,\n            \"height\": 360\n          }\n        },\n
+        \       \"channelTitle\": \"R Programming 101\",\n        \"liveBroadcastContent\":
+        \"none\",\n        \"publishTime\": \"2022-04-27T13:00:32Z\"\n      }\n    },\n
+        \   {\n      \"kind\": \"youtube#searchResult\",\n      \"etag\": \"iIy3Ty7GZA7dcMC7OWtSiVpWrnQ\",\n
+        \     \"id\": {\n        \"kind\": \"youtube#video\",\n        \"videoId\":
+        \"54zZ-8rs-CI\"\n      },\n      \"snippet\": {\n        \"publishedAt\":
+        \"2023-02-04T20:00:02Z\",\n        \"channelId\": \"UCglNXzBo6bmKc9otKf-OuGQ\",\n
+        \       \"title\": \"Understand Calculus in 1 minute\",\n        \"description\":
+        \"What is Calculus? This short video explains why Calculus is so powerful.
+        For more in-depth math help check out my catalog of ...\",\n        \"thumbnails\":
+        {\n          \"default\": {\n            \"url\": \"https://i.ytimg.com/vi/54zZ-8rs-CI/default.jpg\",\n
+        \           \"width\": 120,\n            \"height\": 90\n          },\n          \"medium\":
+        {\n            \"url\": \"https://i.ytimg.com/vi/54zZ-8rs-CI/mqdefault.jpg\",\n
+        \           \"width\": 320,\n            \"height\": 180\n          },\n          \"high\":
+        {\n            \"url\": \"https://i.ytimg.com/vi/54zZ-8rs-CI/hqdefault.jpg\",\n
+        \           \"width\": 480,\n            \"height\": 360\n          }\n        },\n
+        \       \"channelTitle\": \"TabletClass Math\",\n        \"liveBroadcastContent\":
+        \"none\",\n        \"publishTime\": \"2023-02-04T20:00:02Z\"\n      }\n    },\n
+        \   {\n      \"kind\": \"youtube#searchResult\",\n      \"etag\": \"GqZsCAHpb77ck5OTFYDXclH4i2U\",\n
+        \     \"id\": {\n        \"kind\": \"youtube#video\",\n        \"videoId\":
+        \"f9DzS6NdgwU\"\n      },\n      \"snippet\": {\n        \"publishedAt\":
+        \"2020-12-23T06:30:01Z\",\n        \"channelId\": \"UCsvqVGtbbyHaMoevxPAq9Fg\",\n
+        \       \"title\": \"Business Analyst Full Course In 2 Hours | Business Analyst
+        Training For Beginners | Simplilearn\",\n        \"description\": \"Business
+        Analyst Masters Program (Discount Code - YTBE15) ...\",\n        \"thumbnails\":
+        {\n          \"default\": {\n            \"url\": \"https://i.ytimg.com/vi/f9DzS6NdgwU/default.jpg\",\n
+        \           \"width\": 120,\n            \"height\": 90\n          },\n          \"medium\":
+        {\n            \"url\": \"https://i.ytimg.com/vi/f9DzS6NdgwU/mqdefault.jpg\",\n
+        \           \"width\": 320,\n            \"height\": 180\n          },\n          \"high\":
+        {\n            \"url\": \"https://i.ytimg.com/vi/f9DzS6NdgwU/hqdefault.jpg\",\n
+        \           \"width\": 480,\n            \"height\": 360\n          }\n        },\n
+        \       \"channelTitle\": \"Simplilearn\",\n        \"liveBroadcastContent\":
+        \"none\",\n        \"publishTime\": \"2020-12-23T06:30:01Z\"\n      }\n    },\n
+        \   {\n      \"kind\": \"youtube#searchResult\",\n      \"etag\": \"wHZkes9LmDR_Ux0zSWXcC6zaR10\",\n
+        \     \"id\": {\n        \"kind\": \"youtube#video\",\n        \"videoId\":
+        \"Lm9SZf2XFCc\"\n      },\n      \"snippet\": {\n        \"publishedAt\":
+        \"2022-07-01T21:00:11Z\",\n        \"channelId\": \"UCvU7RlKUbYYYNKx1bF0DmcQ\",\n
+        \       \"title\": \"Fundamentals of Quantum Physics. Basics of Quantum Mechanics
+        \U0001F31A Lecture for Sleep &amp; Study\",\n        \"description\": \"In
+        this lecture, you will learn about the prerequisites for the emergence of
+        such a science as quantum physics, its foundations, and ...\",\n        \"thumbnails\":
+        {\n          \"default\": {\n            \"url\": \"https://i.ytimg.com/vi/Lm9SZf2XFCc/default.jpg\",\n
+        \           \"width\": 120,\n            \"height\": 90\n          },\n          \"medium\":
+        {\n            \"url\": \"https://i.ytimg.com/vi/Lm9SZf2XFCc/mqdefault.jpg\",\n
+        \           \"width\": 320,\n            \"height\": 180\n          },\n          \"high\":
+        {\n            \"url\": \"https://i.ytimg.com/vi/Lm9SZf2XFCc/hqdefault.jpg\",\n
+        \           \"width\": 480,\n            \"height\": 360\n          }\n        },\n
+        \       \"channelTitle\": \"LECTURES FOR SLEEP & STUDY\",\n        \"liveBroadcastContent\":
+        \"none\",\n        \"publishTime\": \"2022-07-01T21:00:11Z\"\n      }\n    }\n
+        \ ]\n}\n"
+  recorded_at: Sat, 30 Nov 2024 14:58:25 GMT
+- request:
+    method: get
+    uri: https://api.nthusa.tw/courses/searches?field=english_title&limits=5&value=Analytic
+    body:
+      encoding: ASCII-8BIT
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Connection:
+      - close
+      Host:
+      - api.nthusa.tw
+      User-Agent:
+      - http.rb/5.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 30 Nov 2024 15:32:48 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '3178'
+      Connection:
+      - close
+      X-Process-Time:
+      - '0.005631923675537109'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=ooSWvr5JPU7Egl4PmMJ8FU9DnAWtrxFbGHOFNs9H0CyrFHcs5TfQuYEGASVvoFH9z0Nm4I0ZZalwHsB0nw1CMssZ%2BBzJ3ZvEpgL9AGd0yUJDdcDOHWO7Hj%2Fo1jZpSfqe"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8eabe46aaf6aa9af-TPE
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Server-Timing:
+      - cfL4;desc="?proto=TCP&rtt=20499&min_rtt=4939&rtt_var=11561&sent=5&recv=6&lost=0&retrans=0&sent_bytes=2296&recv_bytes=784&delivery_rate=586353&cwnd=213&unsent_bytes=0&cid=a515ea845ae5c80b&ts=150&x=0"
+    body:
+      encoding: UTF-8
+      string: '[{"id":"11210AES 520100","chinese_title":"環境分析化學","english_title":"Environmental
+        Analytical Chemistry","credit":"3","size_limit":"","freshman_reservation":"0","object":"
+        ","ge_type":"","language":"中","note":"本課程為16週課程","suspend":"","class_room_and_time":"BMES醫環501\tR5R6R7\n","teacher":"黃郁棻\tHUANG,
+        YU-FEN\n","prerequisite":"","limit_note":"","expertise":"環境科技學程(第二專長)","program":"","no_extra_selection":"","required_optional_note":"分環所112M  必修\t原科院學士班109B  選修\t"},{"id":"11210BME
+        500700","chinese_title":"生醫材料特性分析","english_title":"Analytical and Sensing
+        Technologies in Biomedical Sciences","credit":"3","size_limit":"","freshman_reservation":"0","object":"
+        ","ge_type":"","language":"英","note":"本課程為16週課程","suspend":"","class_room_and_time":"NTHU
+        Lab清實826\tT7T8T9\n","teacher":"萬德輝\tWAN, DE-HUI\n","prerequisite":"","limit_note":"限醫工所","expertise":"","program":"","no_extra_selection":"","required_optional_note":"醫工所112D  選修\t醫工所112M  選修\t"},{"id":"11210CHEM311000","chinese_title":"分析化學一","english_title":"Analytical
+        Chemistry (I)","credit":"3","size_limit":"100","freshman_reservation":"0","object":"
+        ","ge_type":"","language":"英","note":"本課程上150分鐘，其餘時間由教授彈性運用","suspend":"","class_room_and_time":"CHEM化   B07\tT3T4R3R4\n","teacher":"陳貴通\tTAN,
+        KUI THONG\n","prerequisite":"<div>\n  擋修對象 : 全校 <br>\n  先修科目 : <BR><BR>曾修普通化學二<BR><br>上述條件一定要有，則不擋修。</div>","limit_note":"限理學院","expertise":"化學(第二專長)\t化學(第一專長)","program":"","no_extra_selection":"","required_optional_note":"化學系110B  必修\t理學院學士班110B  必修\t"},{"id":"11210CHEM313001","chinese_title":"分析化學實驗一","english_title":"Analytical
+        Chemistry Laboratory (I)","credit":"2","size_limit":"33","freshman_reservation":"0","object":"
+        ","ge_type":"","language":"中","note":"加簽事宜請洽化207廖英孝；召集人陳貴通教授","suspend":"","class_room_and_time":"CHEM化   229\tF1F2F3F4\n","teacher":"廖英孝\tLIAO,
+        YING-HSIAO\n","prerequisite":"","limit_note":"化學系大學部3年級4年級,理學院學士班大學部3年級4年級優先，第3次選課起開放全校修習","expertise":"化學(第二專長)\t化學(第一專長)","program":"","no_extra_selection":"","required_optional_note":"化學系110B  必修\t"},{"id":"11210CHEM313002","chinese_title":"分析化學實驗一","english_title":"Analytical
+        Chemistry Laboratory (I)","credit":"2","size_limit":"33","freshman_reservation":"0","object":"
+        ","ge_type":"","language":"中","note":"加簽事宜請洽化207廖英孝；召集人陳貴通教授","suspend":"","class_room_and_time":"CHEM化   229\tW5W6W7W8\n","teacher":"廖英孝\tLIAO,
+        YING-HSIAO\n","prerequisite":"","limit_note":"限化學系大學部3年級4年級,理學院學士班大學部3年級4年級","expertise":"化學(第二專長)\t化學(第一專長)","program":"","no_extra_selection":"","required_optional_note":"化學系110B  必修\t"}]'
+  recorded_at: Sat, 30 Nov 2024 15:32:48 GMT
 recorded_with: VCR 6.3.1

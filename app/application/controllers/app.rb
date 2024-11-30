@@ -125,8 +125,9 @@ module RoutePlanner
               end
             end
 
-            time = Value::ResourceTimeCalculator.compute_minimum_time(results)
+
             if results.any?
+              time = Value::ResourceTimeCalculator.compute_minimum_time(results)
               online_resources = Views::OnlineResourceList.new(results.map { |res| res[:online_resources] }.flatten)
               physical_resources = Views::PhyicalResourcesList.new(results.map do |res|
                 res[:physical_resources]

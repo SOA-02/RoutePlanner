@@ -16,11 +16,11 @@ describe 'Tests NTHUSA API library' do
     before do
       @relevant_result = RoutePlanner::Nthusa::PhysicalRecommendMapper
         .new
-        .find(PRE_REQ)
+        .find(SKILL)
     end
 
     it 'HAPPY: search relevant gateway captures search relevant results' do
-      @search_relevant_data = RoutePlanner::Nthusa::NthusaApi.new.nthusa_search_recommend(PRE_REQ)
+      @search_relevant_data = RoutePlanner::Nthusa::NthusaApi.new.nthusa_search_recommend(SKILL)
       assert_kind_of Array, @search_relevant_data
       refute_empty @search_relevant_data
     end
