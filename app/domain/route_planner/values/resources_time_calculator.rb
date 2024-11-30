@@ -1,0 +1,40 @@
+# frozen_string_literal: true
+
+module RoutePlanner
+  module Value
+    # Calculate time spent on resources
+    class ResourceTimeCalculator
+      def self.compute_online_resource(original_ids)
+        total_hours = original_ids.sum do |original_id|
+          iso8601_duration_to_hours(
+            RoutePlanner::Youtube::VideoMapper.new(App.config.API_KEY).find(original_id).video_duration
+          )
+        end
+        total_hours.ceil
+      end
+
+      def self.compute_physical_time(physical_credits)
+        physical_credits.map { |credit| credit * 16 }.sum
+      end
+
+      def self.compute_minimum_time(resources)
+        physical_credits = resources.flat_map { |resource| resource[:physical_resources].map(&:credit) }
+        total_physical_time = compute_physical_time(physical_credits)
+
+        online_original_ids = resources.flat_map { |resource| resource[:online_resources].map(&:original_id) }
+        total_online_time = compute_online_resource(online_original_ids)
+
+        total_physical_time + total_online_time
+      end
+
+      # Helper method to convert ISO 8601 duration to hours
+      def self.iso8601_duration_to_hours(duration)
+        match = /PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/.match(duration)
+        hours = match[1].to_i
+        minutes = match[2].to_i / 60.0
+        seconds = match[3].to_i / 3600.0
+        hours + minutes + seconds
+      end
+    end
+  end
+end

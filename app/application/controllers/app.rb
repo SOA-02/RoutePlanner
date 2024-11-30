@@ -113,8 +113,8 @@ module RoutePlanner
               routing.redirect '/'
             else
               results = []
-              desired_resource = RoutePlanner::Value::Recommendations.desired_resource(session[:skills])
-              # binding.irb
+              desired_resource = RoutePlanner::Mixins::Recommendations.desired_resource(session[:skills])
+
               desired_resource.each_key do |skill|
                 viewable_resource = Service::FetchViewedResources.new.call(skill)
                 if viewable_resource.success?
@@ -125,6 +125,7 @@ module RoutePlanner
               end
             end
 
+            time = Value::ResourceTimeCalculator.compute_minimum_time(results)
             if results.any?
               online_resources = Views::OnlineResourceList.new(results.map { |res| res[:online_resources] }.flatten)
               physical_resources = Views::PhyicalResourcesList.new(results.map do |res|
@@ -132,7 +133,7 @@ module RoutePlanner
               end.flatten)
 
               view 'ability_recs',
-                   locals: { online_resources: online_resources, physical_resources: physical_resources }
+                   locals: { online_resources: online_resources, physical_resources: physical_resources, time: time }
             else
               flash[:error] = "Some errors occurred: #{errors.join(', ')}" if errors.any?
               routing.redirect '/'

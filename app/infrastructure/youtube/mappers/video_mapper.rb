@@ -4,8 +4,8 @@ module RoutePlanner
   module Youtube
     # Maps Youtube video data to entity object
     class VideoMapper
-      def initialize(yt_key, gateway_class = YoutubeApi)
-        @api_key = yt_key
+      def initialize(api_key, gateway_class = YoutubeApi)
+        @api_key = api_key
         @gateway_class = gateway_class
         @gateway = gateway_class.new(@api_key)
       end
