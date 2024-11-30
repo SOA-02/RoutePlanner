@@ -43,7 +43,7 @@ module RoutePlanner
       end
 
       def fetch_skill_id(map_id)
-        Repository::For.klass(RoutePlanner::Entity::MapSkill).find_by_mapid(map_id)
+        Repository::For.klass(Entity::MapSkill).find_by_mapid(map_id)
       rescue StandardError
         Failure(MSG_MAPSKILL_NOT_FOUND)
       end

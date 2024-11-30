@@ -7,7 +7,7 @@ module RoutePlanner
       def self.compute_online_resource(original_ids)
         total_hours = original_ids.sum do |original_id|
           iso8601_duration_to_hours(
-            RoutePlanner::Youtube::VideoMapper.new(App.config.API_KEY).find(original_id).video_duration
+            Youtube::VideoMapper.new(App.config.API_KEY).find(original_id).video_duration
           )
         end
         total_hours.ceil

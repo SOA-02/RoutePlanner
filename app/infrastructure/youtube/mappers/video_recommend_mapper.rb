@@ -37,7 +37,7 @@ module RoutePlanner
       end
 
       def filter_video_items(item_data)
-        resource_type = RoutePlanner::Value::YoutubeSearch.resource_type
+        resource_type = Value::YoutubeSearch.resource_type
         item_data.select { |item| item['id']['kind'] == resource_type }
       end
 
@@ -75,7 +75,7 @@ module RoutePlanner
         end
 
         def platform
-          RoutePlanner::Value::YoutubeSearch.platform
+          Value::YoutubeSearch.platform
         end
       end
     end

@@ -23,7 +23,7 @@ module RoutePlanner
       # Sends out HTTP requests to Youtube
       class Request
         YT_API_ROOT = 'https://www.googleapis.com/youtube/v3'
-        MAX_RESULTS = RoutePlanner::Value::YoutubeSearch.max_results
+        MAX_RESULTS = Value::YoutubeSearch.max_results
         def initialize(api_key)
           @api_key = api_key
         end

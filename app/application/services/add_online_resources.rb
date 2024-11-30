@@ -50,7 +50,7 @@ module RoutePlanner
       end
 
       def online_resource_find_original_id(original_id)
-        Repository::For.klass(RoutePlanner::Entity::Online).find_original_id(original_id)
+        Repository::For.klass(Entity::Online).find_original_id(original_id)
       end
 
       def store_online_resource(entity)
