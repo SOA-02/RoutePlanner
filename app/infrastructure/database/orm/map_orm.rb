@@ -16,7 +16,7 @@ module RoutePlanner
                    left_key: :map_id, right_key: :skill_id
 
       plugin :timestamps, update_on_create: true
-      
+
       def self.db_find_or_create(map)
         first(map_name: map[:map_name]) || create(map)
       end

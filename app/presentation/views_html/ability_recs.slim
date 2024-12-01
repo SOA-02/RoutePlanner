@@ -9,7 +9,16 @@
             .card-body(style="margin: 2%; height: 100%;")
                 canvas#radarChart(style="display: block; height: 100%; width: 100%;")
       .col-6
-        p 123
+          p
+            strong MinTime(/hr): 
+            = time
+
+          p
+            strong pressure_index: 
+            =  stress_index[:pressure_index]
+          p
+            strong stress_level: 
+            = stress_index[:stress_level]
   .row
     .col
       h2 Recommended Pyiscal resources

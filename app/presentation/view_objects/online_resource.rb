@@ -2,7 +2,7 @@
 
 module Views
   # View for a single online_resource entity
-  class OnlineResources
+  class OnlineResource
     def initialize(online_resource, index = nil)
       @online_resource = online_resource
       @index = index

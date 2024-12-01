@@ -8,7 +8,12 @@ module RoutePlanner
         Database::SkillOrm.all.map { |db_resource| rebuild_entity(db_resource) }
       end
 
-      def self.find_id(id)
+      def self.get_skill_socre(skill_name)
+        results = Database::SkillOrm.select(:skill_name, :challenge_score).where(skill_name:).all
+        results.map { |result| result.values.slice(:skill_name, :challenge_score) }
+      end
+
+      def self.find_skillid(id)
         db_resource = Database::SkillOrm.first(id:)
         rebuild_entity(db_resource)
       end
@@ -24,7 +29,7 @@ module RoutePlanner
         Entity::Skill.new(
           id: db_resource.id,
           skill_name: db_resource.skill_name,
-          challenge_score: db_resource.challenge_score,
+          challenge_score: db_resource.challenge_score
           # loot_resources: nil
         )
       end

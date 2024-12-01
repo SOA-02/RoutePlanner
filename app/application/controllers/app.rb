@@ -32,113 +32,125 @@ module RoutePlanner
       routing.root do
         maps = Repository::For.klass(Entity::Map).all
         view 'home_text', locals: { maps: maps }
-
-
-        # Get cookie viewer's previously seen videos
-        # session[:watching] ||= []
-        # result = Service::FetchViewedRoadmap.new.call(session[:watching])
-        # watchout
-        # if result.failure?
-        #   flash[:error] = result.failure
-        #   viewable_resource = []
-        # else
-        #   resourcelist = result.value!
-        #   flash.now[:notice] = MSG_GET_STARTED if resourcelist.none?
-        #   session[:watching] = resourcelist.map(&:original_id)
-        #   viewable_resource = Views::RoadmapsList.new(resourcelist)
-        # end
-        # view 'home', locals: { roadmaps: viewable_resource }
       end
-
-      # routing.post 'match_title' do
-      #   form = RoutePlanner::Forms::NewTitle.new.call(routing.params)
-      # end
 
       routing.on 'analyze' do
         form_syllabus = Forms::NewSyllabus.new.call(routing.params)
+
         if form_syllabus.failure?
           errors = form_syllabus.errors.to_h
-          flash[:error_title] = errors[:syllabus_title].first if errors[:syllabus_title]
-          flash[:error_text] = errors[:syllabus_text].first if errors[:syllabus_text]
+          flash[:error] = errors[:syllabus_title].first if errors[:syllabus_title]
+          flash[:error] = errors[:syllabus_text].first if errors[:syllabus_text]
           routing.redirect '/'
         end
 
-        syllabus_title = form_syllabus[:syllabus_title]
-        syllabus_text = form_syllabus[:syllabus_text]
+        result = Service::AddMap.new.call(
+          syllabus_title: form_syllabus[:syllabus_title],
+          syllabus_text: form_syllabus[:syllabus_text]
+        )
 
-        existing_map = Repository::For.klass(Entity::Map).find_map_name(syllabus_title)
-
-        if existing_map
-          existing_skills = Repository::For.klass(Entity::Map).find_map_skills(syllabus_title)
-          view 'analyze', locals: { map: existing_map, skills: existing_skills }
+        if result.success?
+          view 'analyze', locals: {
+            map: result.value![:map],
+            skills: result.value![:skills]
+          }
         else
-          map = RoutePlanner::OpenAPI::MapMapper
-            .new(syllabus_text, App.config.OPENAI_KEY)
-            .call
-          skillset = RoutePlanner::OpenAPI::SkillMapper
-            .new(syllabus_text, App.config.OPENAI_KEY)
-            .call
-
-          Repository::For.entity(map).build_map(map)
-
-          skillset.each do |skill|
-            Repository::For.entity(skill).build_skill(skill)
-          end
-
-          RoutePlanner::Repository::MapSkills.join_map_skill(map, skillset)
-
-          view 'analyze', locals: { map: map, skills: skillset }
+          flash[:error] = result.failure
+          routing.redirect '/'
         end
       end
-      # routing.on 'search' do
-      #   routing.is do
-      #     # POST /search/
-      #     routing.post do
-      #       key_word_request = Forms::NewSearch.new.call(routing.params)
-      #       if key_word_request.errors.empty?
-      #         key_word = key_word_request[:syllabus]
-      #         routing.redirect "search/#{key_word}"
-      #       else
-      #         flash[:error] = key_word_request.errors[:syllabus].first
-      #         routing.redirect '/'
-      #       end
-      #     end
-      #   end
-
-      #   routing.on String do |key_word|
-      #     # GET /search/key_word
-      #     routing.get do
-      #       results = Service::SearchService.new.video_from_youtube(key_word)
-      #       if results.failure?
-      #         flash[:error] = results.failure
-      #         routing.redirect '/'
-      #       else
-      #         @search_results = results.value!
-      #         view 'search', locals: { search_results: @search_results }
-      #       end
-      #     end
-      #   end
-      # end
 
       routing.on 'LevelEvaluation' do
         routing.is do
-          view 'level_eval'
+          form_syllabus = Forms::NewSyllabus.new.call(routing.params)
+
+          if form_syllabus.failure?
+            errors = form_syllabus.errors.to_h
+            flash[:error] = errors[:syllabus_title].first if errors[:syllabus_title]
+            flash[:error] = errors[:syllabus_text].first if errors[:syllabus_text]
+            routing.redirect '/'
+          end
+
+          result = Service::AddMap.new.call(
+            syllabus_title: form_syllabus[:syllabus_title],
+            syllabus_text: form_syllabus[:syllabus_text]
+          )
+
+          if result.success?
+            view 'level_eval', locals: {
+              map: result.value![:map],
+              skills: result.value![:skills]
+            }
+          else
+            flash[:error] = result.failure
+            routing.redirect '/'
+          end
         end
       end
-
-      routing.on 'RoutePlanner' do
+      routing.on 'RoutePlanner' do # rubocop:disable Metrics/BlockLength
         routing.is do
-          # temp for test
-
-          result = Service::AddResources.new.call(key_word: 'A++', pre_req: 'System')
-          if result.failure?
-            flash[:error] = result.failure
-          else
-            online_resources = Views::OnlineResourceList.new(result.value![:online_resources])
-            physical_resources = Views::PhyicalResourcesList.new(result.value![:physical_resources])
-            view 'ability_recs', locals: { online_resources: online_resources, physical_resources: physical_resources }
+          # POST /RoutePlanner
+          routing.post do
+            response = Forms::SkillsFormValidation.new.call(routing.params)
+            routing.redirect '/' if response.failure?
+            map = routing.params.keys.first.split('_').first
+            session[:skills] = routing.params.values.first
+            binding.irb
+            routing.redirect "RoutePlanner/#{map}"
           end
-          # view 'ability_recs', locals: { online_resources: online_resources }
+        end
+
+        routing.on String do |map|
+          # GET /RoutePlanner/:skills
+          routing.get do # rubocop:disable Metrics/BlockLength
+            results = []
+            errors = []
+            session[:skills].each_key do |skill|
+              result = Service::AddResources.new.call(online_skill: skill, physical_skill: skill)
+              if result.success?
+                results << result.value!
+              else
+                errors << result.failure
+              end
+            end
+            binding.irb
+            if results.any?
+              results = []
+              desired_resource = RoutePlanner::Mixins::Recommendations.desired_resource(session[:skills])
+
+              desired_resource.each_key do |skill|
+                viewable_resource = Service::FetchViewedResources.new.call(skill)
+                if viewable_resource.success?
+                  results << viewable_resource.value!
+                else
+                  errors << viewable_resource.failure
+                end
+              end
+            elsif errors.any?
+              flash[:error] = "Error processing skill: #{errors.join(', ')}"
+              routing.redirect '/'
+            else
+              flash[:notice] = 'No resources found.'
+              routing.redirect '/'
+            end
+
+            if results.any?
+              time = Value::ResourceTimeCalculator.compute_minimum_time(results)
+              stress_index = Value::EvaluateStudyStress.evaluate_stress_level(desired_resource, time)
+              binding.irb
+              online_resources = Views::OnlineResourceList.new(results.map { |res| res[:online_resources] }.flatten)
+              physical_resources = Views::PhyicalResourcesList.new(results.map do |res|
+                res[:physical_resources]
+              end.flatten)
+
+              view 'ability_recs',
+                   locals: { online_resources: online_resources, physical_resources: physical_resources, time: time,
+stress_index: stress_index }
+            else
+              flash[:error] = "Some errors occurred: #{errors.join(', ')}" if errors.any?
+              routing.redirect '/'
+            end
+          end
         end
       end
     end

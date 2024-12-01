@@ -1,0 +1,255 @@
+Programming for Data-Driven Systems
+
+Brief course description:
+This course is designed to equip students with fundamental programming and database skills, empowering them to think algorithmically and address both everyday and business challenges. It begins with an introduction to databases, covering the basics of SQL and conceptual data modeling, and then transitions to Python programming. In the latter half of the course, students will engage in hands-on learning, developing simple, web-based interactive dashboards that support data-driven decision-making.
+
+Tailored specifically for business school students with little to no prior experience in programming or databases, this course combines theoretical insights with practical applications. Through project-based learning, case studies, and collaborative problem-solving, students will be prepared to meet the demands of a data-driven world. By the end of this course, students will have developed not only technical proficiency but also the analytical mindset essential for success in today’s business environment.
+
+Course learning objectives:
+Grasp the critical roles databases play in the modern business landscape and how data-driven systems support informed decision-making.
+Develop skills in conceptual data modeling and SQL for designing a relational database and crafting effective database queries to tackle real-world business challenges.
+Employ fundamental programming constructs and data structures in Python to craft solutions tailored to individual and organizational demands.
+Leverage modern software development frameworks and essential Python libraries to build a simple web-based application that focuses on data-driven decision-making.
+Keywords: Database, Data modeling, SQL, Python, dashboard, programming, Algorithmic Thinking in Business
+
+ 
+
+Weekly Schedule
+WK
+
+Dates
+
+Topics
+
+1
+
+9/6
+
+Introduction to the course & Database basics
+
+·   What is Database Management? What is a Database? What is an Enterprise System? What are queries?
+
+·   A brief introduction to decision-making, and issues that can affect human decision-making
+
+2
+
+9/13
+
+Database Modelling
+
+·       Database modelling, including Entity-Relationship (ER) notation
+
+·       Relationships between entities
+
+·       The relational model
+
+3
+
+9/20
+
+Normal Forms and normalisation
+
+·       Normalisation: why do we have normal forms, and how to transform a database design into a normal form
+
+4
+
+9/27
+
+Introduction of the basics of SQL
+
+·       SQL as a Data Definition Language
+
+·       SQL as a Data Manipulation Language
+
+·       Demonstration of importing data from a CSV file to DB Browser
+
+·       SQL as a Data Query Language
+
+5
+
+10/4
+
+Introduction of the functions of SQL (1)
+
+·       SQL as a Data Query Language
+
+·       More SQL operations
+
+·       Manipulate text fields in SQL
+
+·       Tips for writing SQL
+
+6
+
+10/11
+
+Introduction of the functions of SQL (2)
+
+·       SQL numerical operators
+
+·       SQL logical operator
+
+·       Date and times operation
+
+·       Matching tables
+
+·       Nesting and combining queries in SQL
+
+7
+
+10/18
+
+Database wrap-up
+
+·       Data in the real world
+
+·       Complexity of models
+
+·       Types of database platforms
+
+·       Integrating databases into larger systems
+
+·       Different types of databases
+
+8
+
+10/25
+
+Basics of Python programming (1)
+
+·       Setting up Python environment
+
+·       Overview of Data Types, Numeric, Define Variables
+
+·       Strings, Common Functions, and Method
+
+·       Lists, Tuples, Sets, Dictionaries, Booleans
+
+9
+
+11/1
+
+Basics of Python programming (2)
+
+·       If Statements, Loops
+
+·       Define Functions, Use Packages
+
+·       Basics of Pandas and Numpy
+
+10
+
+11/8
+
+Data visualisations and Plotly basics
+
+11
+
+11/15
+
+Dash
+
+·       Basics, HTML components, Core components
+
+·       Connect to different data sources
+
+·       Interactivity with Callbacks and Components
+
+12
+
+11/22
+
+Interactive dashboard project – Planning & Analysis
+
+13
+
+11/29
+
+Interactive dashboard project – Prototyping & Design
+
+14
+
+12/6
+
+Interactive dashboard project – Evaluation and Deployment
+
+15
+
+12/13
+
+Presentation (4-hour class, starting at 1:20 pm)
+
+16
+
+12/20
+
+Wrap-up & Reflection Assignment (No formal class)
+
+ 
+
+Learning Resources
+We will be using DataCamp (https://www.datacamp.com/) as the primary platform for technical content. Access to the platform will be provided by Week 4, with licenses made available to all students.
+
+There is no required text.  We will use online resources and class notes. The detailed information will be available on the course website later. Below are recommended books: 
+(1) Hernandez, M. J. (2013). Database design for mere mortals: A hands-on guide to relational database design (3rd ed.). Addison-Wesley.
+(2) Dabbas, O. (2021). Interactive dashboards and data apps with Plotly and Dash. Packt Publishing.
+(3) Berinato, S. (2023). Good charts, updated and expanded: The HBR guide to making smarter, more persuasive data visualizations. Harvard Business Review Press.
+
+
+Assessment
+Requirement
+
+Due Date
+
+Weight
+
+Quizzes on data modeling and database queries
+
+Week 4 & Week 7
+
+10%
+
+Data modeling assignment (1,500 words technical report, ER model, developed database, queries)
+
+Week 9
+
+30%
+
+Practical Python programming exercise and quiz
+
+Week 11
+
+10%
+
+Dashboard project
+
+Presentation (Week 15) and Group submission (IT artifact and codes) (12/20)
+
+25%
+
+Individual reflective report (12/20)
+
+10%
+
+Professionalism and engagement
+
+continuous
+
+15%
+
+Notes: (1) Specific due dates and detailed assignment briefs along with marking guidelines will be provided on the course website; (2) Assignments should be submitted according to the procedures specified in the assignment briefs that are posted on the course website; (3) For Dashboard Project, marks for each project member may vary based on individual contributions. Instructors reserve the right to adjust individual marks based on additional information about the contributions of individuals to group task results (e.g., peer assessment survey, the interaction with individual students in and out of class.)  We will consider all factors by cross-validating multiple sources of data.
+
+Extension
+For individual assignments, students have four slip days across the course that will be granted automatically.
+
+ 
+
+Any further extensions will only be granted in exceptional personal circumstances and should be negotiated with the course coordinator before the deadline whenever possible. Documentation (e.g., medical certificate) may be requested.
+
+Penalties
+Late submissions will incur an automatic penalty of 10% of the final mark per day.
+
+AI use
+You are permitted to use generative AI tools (e.g., ChatGPT, GitHub Copilot, Google Bard) to enhance your learning experience in this course. Acceptable uses such as brainstorming, debugging, and code review. However, all final submissions for assignments must reflect your original work and not consist entirely of AI-generated content.
+When utilizing generative AI, you are required to document the assistance received. This documentation should detail what specific AI-generated content was used and how it contributed to your work.
+Please note that excessive reliance on generative AI without proper explanation may lead to academic consequences, including an oral examination or a score of zero for the assignment.

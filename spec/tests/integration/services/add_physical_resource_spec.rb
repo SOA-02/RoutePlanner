@@ -20,25 +20,14 @@ describe 'RoutePlanner Service Integration Test' do
       DatabaseHelper.wipe_database
     end
 
-    it 'HAPPY: should be able to find and save remote course to database' do
-      # GIVEN: a valid request for an existing remote course:
-      courses = RoutePlanner::Nthusa::PhysicalRecommendMapper.new.find(PRE_REQ)
-
-      # WHEN: the service is called with the request form object
-      courses_made = RoutePlanner::Service::AddPhysicalResource.new.call(PRE_REQ)
+    it 'HAPPY: should be able to find and save remote physical resource to database' do
+      resources_made = RoutePlanner::Service::AddPhysicalResource.new.call(SKILL)
       # THEN: the result should report success..
-      _(courses_made.success?).must_equal true
+      _(resources_made.success?).must_equal true
 
       # ..and provide a course entity with the right details
-      rebuilt_videos = courses_made.value!
-      rebuilt_videos.zip(courses).each do |rebuilt, course|
-        _(rebuilt.course_id).must_equal(course.course_id)
-        _(rebuilt.course_name).must_equal(course.course_name)
-        _(rebuilt.language).must_equal(course.language)
-        _(rebuilt.provider).must_equal(course.provider)
-        _(rebuilt.timeloc).must_equal(course.timeloc)
-        _(rebuilt.for_skill).must_equal(course.for_skill)
-      end
+      rebuilt_message = resources_made.value!
+      _(rebuilt_message).must_equal 'Physical resource saved successfully.'
     end
   end
 end

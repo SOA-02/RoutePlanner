@@ -8,6 +8,11 @@ module RoutePlanner
         Database::MapOrm.all.map { |db_resource| rebuild_entity(db_resource) }
       end
 
+      def self.find_mapid(map_name)
+        map = Database::MapOrm.where(map_name:).select(:id).first
+        map.id
+      end
+
       def self.find_id(id)
         db_resource = Database::MapOrm.first(id:)
         rebuild_entity(db_resource)

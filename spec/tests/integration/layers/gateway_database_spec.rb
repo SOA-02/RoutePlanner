@@ -55,7 +55,7 @@ describe 'Integration Tests of NTHUSA API and Database' do
     end
 
     it 'HAPPY: save nthusa api to database' do
-      courses = RoutePlanner::Nthusa::PhysicalRecommendMapper.new.find(PRE_REQ)
+      courses = RoutePlanner::Nthusa::PhysicalRecommendMapper.new.find(SKILL)
       _(courses).wont_be_empty
       _(courses).must_be_kind_of Array
       courses.each do |course|
@@ -173,4 +173,3 @@ describe 'Tests OpenAI Skillset' do
     end
   end
 end
-

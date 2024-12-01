@@ -6,6 +6,7 @@ module RoutePlanner
   module Forms
     # Validation for new search form
     class NewSyllabus < Dry::Validation::Contract
+      INPUTS_REGEX = /\A(?!.*<script>|.*javascript:)[\p{L}\p{N}\p{P}\s]*\p{L}[\p{L}\p{N}\p{P}\s]*\z/
       MSG_INVALID_TITLE = 'Course Title must be filled.'
       MSG_INVALID_TEXT = 'Course Syllabus must be filled.'
 
@@ -15,7 +16,7 @@ module RoutePlanner
       end
 
       rule(:syllabus_title) do
-        key.failure(MSG_INVALID_TITLE) if value.strip.empty?
+        key.failure(MSG_INVALID_TITLE) unless INPUTS_REGEX.match?(value)
       end
 
       rule(:syllabus_text) do
