@@ -36,6 +36,7 @@ module RoutePlanner
 
       routing.on 'analyze' do
         form_syllabus = Forms::NewSyllabus.new.call(routing.params)
+
         if form_syllabus.failure?
           errors = form_syllabus.errors.to_h
           flash[:error] = errors[:syllabus_title].first if errors[:syllabus_title]
@@ -43,31 +44,19 @@ module RoutePlanner
           routing.redirect '/'
         end
 
-        syllabus_title = form_syllabus[:syllabus_title]
-        syllabus_text = form_syllabus[:syllabus_text]
+        result = Service::AddMap.new.call(
+          syllabus_title: form_syllabus[:syllabus_title],
+          syllabus_text: form_syllabus[:syllabus_text]
+        )
 
-        existing_map = Repository::For.klass(Entity::Map).find_map_name(syllabus_title)
-
-        if existing_map
-          existing_skills = Repository::For.klass(Entity::Map).find_map_skills(syllabus_title)
-          view 'analyze', locals: { map: existing_map, skills: existing_skills }
+        if result.success?
+          view 'analyze', locals: {
+            map: result.value![:map],
+            skills: result.value![:skills]
+          }
         else
-          map = RoutePlanner::OpenAPI::MapMapper
-            .new(syllabus_text, App.config.OPENAI_KEY)
-            .call
-          skillset = RoutePlanner::OpenAPI::SkillMapper
-            .new(syllabus_text, App.config.OPENAI_KEY)
-            .call
-
-          Repository::For.entity(map).build_map(map)
-
-          skillset.each do |skill|
-            Repository::For.entity(skill).build_skill(skill)
-          end
-
-          RoutePlanner::Repository::MapSkills.join_map_skill(map, skillset)
-
-          view 'analyze', locals: { map: map, skills: skillset }
+          flash[:error] = result.failure
+          routing.redirect '/'
         end
       end
 
