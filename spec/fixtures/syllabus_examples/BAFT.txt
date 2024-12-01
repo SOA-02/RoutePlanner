@@ -1,0 +1,422 @@
+1
+
+Business Analytics Using Forecasting (BAFT)
+Instructor:​ ​Galit Shmueli​ (galit.shmueli@iss.nthu.edu.tw)
+TA: ​Nicholas Danks (nicholasdanks@iss.nthu.edu.tw)
+Websites:
+1. Canvas:
+https://canvas.instructure.com/courses/1017982
+2. MOOC:
+www.futurelearn.com/courses/business­analytics­forec
+asting
+
+Term: ​Fall 2016
+Class Time: ​Tuesdays, 14:20­17:20
+Classroom: ​Room 321, TSMC Building
+
+Course Description
+Business analytics is the use of data­driven decision making. Companies, governments and other organizations now collect
+and analyze large amounts of data about suppliers, clients, employees, citizens, transactions, etc. Forecasting is the arm of
+predictive analytics that provides a powerful toolkit for analyzing time series data. This course focuses on forecasting time
+series, where past and present values are used to forecast future values of a series of interest. The course covers issues
+relating to different steps of the forecasting process, from goal definition, through data visualization, modeling, and
+performance evaluation to model deployment.
+Quantitative forecasting uses statistical and data mining methods to generating numerical forecasts, an important
+component of decision making across many business functions, including economic forecasting, workload projections,
+sales forecasts, and transportation demand. Forecasting is now applied to Big Data with many series, often measured at
+high frequency. Examples include daily demand of thousands of products at retail chains, hourly statistics of wind turbines,
+and minute­by­minute web traffic or call volume to call centers. Forecasting can be combined with statistical monitoring
+methods for purposes of anomaly detection – for example, public health organizations collect and monitor clinical and
+other data for detecting disease outbreaks. Forecasting is also often combined with simulation for purposes of scenario
+building.
+The focus of this course is on using forecasting for improving service, with a special emphasis on humane and
+socially­responsible forecasting.
+In the course we’ll work with real business problems and real data. We will examine types of applications where
+forecasting is potentially useful, and learn how to deploy the forecasting process. The emphasis is on understanding the
+concepts and logic behind a wide set of forecasting techniques and their relation to specific business analytics situation.
+The course is not about mastering the theoretical underpinnings of the techniques. ​The course will be driven by a
+business forecasting project that will encapsulate the different steps of practical forecasting.
+
+Software
+An important feature of this course is hands­on learning using forecasting and data visualization software. We will use the
+Excel add­in ​XLMiner​ and the open­source ​R software​. For data visualization we will use ​Tableau​.
+
+Course Objectives
+Upon successful completion of the course, you should possess valuable practical analytical skills that will equip you with a
+competitive skill in almost any contemporary workplace. In particular, the knowledge acquired in this course will benefit
+those who plan careers in business and strategic consulting.
+More formally, the course will provide participants with the following skills and knowledge:
+●
+●
+●
+●
+●
+●
+●
+
+Be familiar of business analytics potential and dangers in today’s data rich­environment
+Gain experience using key data mining methods of classification, prediction, data reduction and exploration
+Know how to decide when to use which technique
+Be able to implement major data mining techniques using software
+Become a smart and critical use and consumer of data mining techniques
+Gain the intellectual capital required to provide responsible business analytics services
+Be conscious of humanistic and societal implications of deploying data mining in organizations
+BAFT, Institute of Service Science, College of Technology Management, National Tsing Hua University
+
+2
+
+Learning Goals
+In addition to the course objectives, students should expect to develop the following by the end of the course:
+1. Effective Oral Communication​ ­ Each student will be able to communicate verbally in an organized, clear, and
+persuasive manner, and be a responsive listener. (Assessment: Project presentations)
+2. Critical and Integrative Thinking​ ­ Each student will be able to identify key issues in a business setting, develop a
+perspective that is supported with relevant information and integrative thinking, to draw and assess conclusions.
+(Assessment: Individual Assignments, project proposal, team project report and presentations)
+3. Interpersonal Awareness and Working in Teams​ ­ Each student will demonstrate an ability to work effectively in a
+team, exhibiting behavior that reflects an understanding of the importance of individual roles and tasks, and the
+ability to manage conflict and compromise, so that team goals are achieved. (Assessment: Team project report
+and team presentations, team meetings with instructor)
+
+Flipped Classroom
+The course is designed as a “flipped classroom”: students are expected to watch videos, read the textbook, take short
+quizzes, post on an online forum, and work on an assignment prior to each on­ground session. Face­to­face class time will
+be devoted to discussions, developing the team projects, gaining hands­on experience, invited lectures, and other forms of
+interactive learning. We will use two online platforms: ​Canvas​ (only for our course), and ​FutureLearn.com​ (open course
+with 1000+ participants, opens 17 Oct, 2016).
+
+Required Textbook
+​ Practical Time Series Forecasting: A Hands­On Guide, 3rd Edition (2016), by Shmueli
+
+­
+or ­
+Practical Time Series Forecasting with R, 2nd edition (2016), by Shmueli & Lichtendahl
+● Kindle eBook available on Amazon.com
+● A few copies of a Chinese edition (Amazon.cn) available for borrowing
+● Book website:​ ​forecastingbook.com​ (for downloading data)
+
+Grading
+Deliverable
+
+Weight
+
+Individual assignments
+
+40%
+
+Online forum posts and quizzes (on Canvas)
+
+10%
+
+MOOC completion (on FutureLearn)
+
+10%
+
+Midterm team proposal presentation & report
+
+15%
+
+Final team project report
+
+10%
+
+Final team presentation
+
+10%
+
+Each student is required to fill a peer evaluation report. If multiple team members indicate insufficient contribution of a
+member, a deduction of 30% of the presentation/report grade will be applied to that member.
+
+Guidelines for Deliverables
+Individual Assignments
+●
+●
+●
+
+Assignments should be completed independently, without discussing with other students
+Hardcopy submitted at beginning of the class meeting; Files uploaded to course website before class.
+Late assignments accepted, subject to a penalty of 25% on assignment grade per late day
+
+BAFT, Institute of Service Science, College of Technology Management, National Tsing Hua University
+
+3
+
+On‐Ground Attendance
+Full attendance is mandatory in all sessions. You can miss maximum one class due to emergency (e.g. illness).
+
+Online Component and MOOC
+1.
+2.
+
+Canvas: Before each class, watch videos, read the book chapters, post online, and take the online short quiz.
+Complete the individual assignment and submit a hardcopy in class.
+MOOC: Complete the online course (​www.futurelearn.com/courses/business­analytics­forecasting​) before its
+end­date. Participate in each Discussion by posting, and take each Quiz. Share your username with our TA.
+
+Midterm Team Proposal
+Each team should find a dataset (at least 5 series to analyze) and a business/social idea that can be approached using
+forecasting with the collected data.
+Written Proposal Format:​ 2­pages, 11­point font, 1­inch margins, 1.15 line space, PDF format.
+In class Presentation:​ 10­15 min, maximum 10 slides.
+The proposal report and slides should include the following components:
+1. Suitable Title ­ Should reflect the business goal and forecasting goal
+2. Business Goal:
+a. Who is the stakeholder or client?
+b. A description of the business goal. What are the business benefits of implementing this idea? What
+opportunity is it creating? What shortcoming does it address?
+c. What would be considered a success?
+3. Forecasting Goal:
+a. A description of the forecasting objective (what are you forecasting? Forecasting horizon, etc.).
+b. Is the goal retrospective or forward­looking?
+c. How will the forecasts be used? For what purpose? (Examples: building scenarios/anomaly
+detection/optimizing planning/etc.)
+4. Data:
+a. Brief description of available data (source, what they measure, time period, amount of data).
+b. Some guidance on the data subset that will be used and the re­processing or preparation that might be
+needed based on your past experience.
+c. Time plot of each relevant series (at least 5 series).
+5. Methods:
+a. What are some forecasting methods to consider? (show initial results with smoothing)
+b. Which performance measures are appropriate? How do they map to the business goal?
+6. Implementation/Production:
+a. Operational requirements or constraints (for example, will the forecasting system be run in real­time?
+will it require collecting new data? will it be a one­time analysis or ongoing?)
+
+Final Project Presentation (15 minutes)
+Each team presents their project to the class on session #17. The project is based on the ideation submission, where the
+idea is then developed into a forecasting solution with final recommendations.
+Create the following 7 slides (no more than 10 slides):
+1. Cover: Informative title, team number and member names
+2. Business problem (stakeholder, challenge/opportunity, humanistic implications)
+3. Forecasting goal (forecast/time series analysis, retrospective/prospective, how to be used?)
+4. Data description (source, what is measured, how much, how often)
+5. Methods (forecasting methods, relevant outputs)
+6. Evaluation (metrics of interest, benchmark, comparison)
+7. Recommendations
+
+Final Project Report (5 pages)
+The project report details the team project, from the business problem through the forecasting problem and solution, to
+recommendations.
+BAFT, Institute of Service Science, College of Technology Management, National Tsing Hua University
+
+4
+
+Format:​ 5­pages, 11­point font, 1­inch margins, 1.15 line space, PDF format.
+The report should be written clearly and professionally and include the following sections:
+1. Cover page ​with informative title, team number and member names
+2. One­page executive summary​: summarizes the entire report for a non­technical manager (the business problem,
+data, the forecasting solution and recommendations)
+3. Detailed report:
+a. Problem description (business goal and forecasting goal)
+b. Data description (source, what is measured, how much, how often, sample of a 10 rows per series, and
+time plots).
+c. Brief data preparation details (how your data were created from the raw data).
+d. Forecasting solution: ​methods applied​ (with sufficient detail and screenshots; use Appendix if needed)
+and appropriate ​performance evaluation​ (proper choice of measures, benchmarking). Charts with
+training and validation periods.
+e. Time plot of series with future forecasts, for each of the 5 series.
+f. Conclusions (advantages and limitations) and operational recommendations
+
+Session‐Wise Schedule
+Week
+
+Topics
+
+Prepare before class
+
+In­Class Deliverable
+
+#1
+Sept 13
+
+1.​ ​Introduction to business analytics
+2.​ ​Forecasting applications
+3.​ ​Humanity and social responsibility
+4.​ ​Forecasting process, language & notation
+5. Goal definition
+
+#2
+Sept 20
+
+1.​ ​Goal definition
+2. Data collection and characteristics
+3. Matching data with goal
+Project guidelines & examples
+
+Canvas Session 2
+Read: Chap 1, Sec 2.1
+
+Team formation
+Assignment 1 (goal):
+Chap 1, Problems #1­5
+
+#3
+Sept 27
+
+1.​ ​Data visualization
+2.​ ​Data Pre­processing
+
+Canvas Session 3
+Read: Chap 2
+Install Tableau
+
+Assignment 2​ (Viz):
+Ch 2 Prob #1
+
+#4
+Oct 4
+
+Performance Evaluation
+1. Data Partitioning
+2. Naïve forecasts
+3. Predictive Charts & Measures
+
+Canvas Session 4
+Read: Chap 3
+Install XLMiner, R
+
+Assignment 3
+(Performance):
+Ch 3 Prob #1 and #2
+
+#5
+Oct 11
+
+Smoothing­based methods
+1.​ ​Moving Average (centered/trailing)
+2. Differencing, Seasonal indexes
+3.​ ​Simple Exponential Smoothing
+4. ​Advanced Exponential Smoothing
+Case 11.1: transportation demand using smoothing
+
+Canvas Session 5
+Read: Chap 5
+
+Assignment 4
+(Smoothing):
+Ch 5 Prob #5
+
+#6
+Oct 18
+
+In­Class Team Project Proposal Presentations
+MOOC opens
+
+#7
+Oct 25
+
+Regression­based forecasting
+1.​ ​Linear regression refresher
+2.​ ​Regression for forecasting vs. inference
+3.​ ​Trend models
+4. Models for seasonality
+
+Project Proposal
+Report
+Canvas Session 2
+Read: Chap 6
+
+Assignment 5
+(Linear Regression):
+Ch 6 Prob #5
+
+BAFT, Institute of Service Science, College of Technology Management, National Tsing Hua University
+
+5
+
+Case 11.1: transportation demand using regression
+Assignment 6​ (AR):
+Ch 7 Prob #3
+
+#8
+Nov 1
+
+Regression­based forecasting – cont.
+1.​ ​Autocorrelation
+2.​ ​AR models (for forecast errors)
+3.​ ​ARIMA models
+4. Evaluating predictability; random walk
+
+Read: Chap 7 (7.1­7.3)
+
+#9
+Nov 8
+
+Regression­based forecasting ­ cont.
+Including external information
+
+Read: Chap 7, Sec 7.4
+
+#10
+Nov 15
+
+MOOC [no on­ground class]
+
+#11
+Nov 22
+
+MOOC [no on­ground class]
+
+#12
+Nov 29
+
+Team projects: updates
+Ensembles
+Forecasting bike sharing usage (Kaggle)
+
+Read: Chap 4
+
+#13
+Dec 6
+
+Forecasting binary events
+Logistic regression
+
+Read: Chap 8
+
+Assignment 7
+(logistic regression):
+Ch 8 Prob #1­10
+
+#14
+Dec 13
+
+Project meetings with professor (15 min each team)
+
+#15
+Dec 20
+
+Neural networks
+
+Read: Chap 9
+
+Assignment 8​ (NN):
+Ch 9 Prob #1­3
+
+#16
+Dec 27
+
+Communication and maintenance
+
+Read: Chap 10
+
+#17
+Jan 3
+
+Team Project Presentations
+
+Upload PPT to Canvas
+
+#18
+Jan 10
+
+Submit Team Project Reports
+
+Upload project report
+(pdf) to Canvas
+
+Complete MOOC on
+FutureLearn.com
+
+BAFT, Institute of Service Science, College of Technology Management, National Tsing Hua University
+
+

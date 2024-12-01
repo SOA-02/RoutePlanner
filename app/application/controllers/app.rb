@@ -20,6 +20,7 @@ module RoutePlanner
     plugin :common_logger, $stderr
 
     use Rack::MethodOverride # allows HTTP verbs beyond GET/POST (e.g., DELETE)
+
     MSG_GET_STARTED = 'Please enter the keywords you are interested in to get started.'
     MSG_SERVER_ERROR = 'Internal Server Error'
 
@@ -29,17 +30,7 @@ module RoutePlanner
       response['Content-Type'] = 'text/html; charset=utf-8'
       # GET /
       routing.root do
-        session[:watching] ||= []
-        # maps = Repository::For.klass(Entity::Map).all
-        result = Service::FetchViewedRoadmap.new.call(session[:watching])
-        if result.failure?
-          flash[:error] = result.failure
-          maps = []
-        else
-          maps = result.value!
-          flash.now[:notice] = MSG_GET_STARTED if maps.none?
-          session[:watching] = maps.map(&:map_name)
-        end
+        maps = Repository::For.klass(Entity::Map).all
         view 'home_text', locals: { maps: maps }
 
 
@@ -59,22 +50,43 @@ module RoutePlanner
         # view 'home', locals: { roadmaps: viewable_resource }
       end
 
+      # routing.post 'match_title' do
+      #   form = RoutePlanner::Forms::NewTitle.new.call(routing.params)
+      # end
+
       routing.on 'analyze' do
-        form = RoutePlanner::Forms::NewSyllabus.new.call(routing.params)
-        if form.failure?
-          flash[:error] = form.errors[:syllabus_text].first
+        form_syllabus = Forms::NewSyllabus.new.call(routing.params)
+        if form_syllabus.failure?
+          errors = form_syllabus.errors.to_h
+          flash[:error_title] = errors[:syllabus_title].first if errors[:syllabus_title]
+          flash[:error_text] = errors[:syllabus_text].first if errors[:syllabus_text]
           routing.redirect '/'
+        end
+
+        syllabus_title = form_syllabus[:syllabus_title]
+        syllabus_text = form_syllabus[:syllabus_text]
+
+        existing_map = Repository::For.klass(Entity::Map).find_map_name(syllabus_title)
+
+        if existing_map
+          existing_skills = Repository::For.klass(Entity::Map).find_map_skills(syllabus_title)
+          view 'analyze', locals: { map: existing_map, skills: existing_skills }
         else
-          syllabus_text = form[:syllabus_text]
-
-          map = RoutePlanner::Service::MapService
+          map = RoutePlanner::OpenAPI::MapMapper
+            .new(syllabus_text, App.config.OPENAI_KEY)
+            .call
+          skillset = RoutePlanner::OpenAPI::SkillMapper
             .new(syllabus_text, App.config.OPENAI_KEY)
             .call
 
-          skillset = RoutePlanner::Service::SkillService
-            .new(syllabus_text, App.config.OPENAI_KEY)
-            .call
-          
+          Repository::For.entity(map).build_map(map)
+
+          skillset.each do |skill|
+            Repository::For.entity(skill).build_skill(skill)
+          end
+
+          RoutePlanner::Repository::MapSkills.join_map_skill(map, skillset)
+
           view 'analyze', locals: { map: map, skills: skillset }
         end
       end

@@ -28,10 +28,6 @@ module RoutePlanner
           # loot_resources: nil
         )
       end
-
-      def initialize(entity)
-        @entity = entity
-      end
     end
   end
 end
