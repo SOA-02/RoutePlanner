@@ -50,6 +50,12 @@ module RoutePlanner
       def store_entities(input)
         return Success(input) if input[:map].id
 
+        Repository::For.entity(input[:map]).build_map(input[:map])
+
+        input[:skills].each do |skill|
+          Repository::For.entity(skill).build_skill(skill)
+        end
+
         db_map = Repository::MapSkills.join_map_skill(input[:map], input[:skills])
 
         Success(map: db_map, skills: db_map.skills)
