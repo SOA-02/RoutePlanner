@@ -160,13 +160,16 @@ module RoutePlanner
 
             if results.any?
               time = Value::ResourceTimeCalculator.compute_minimum_time(results)
+              stress_index = Value::EvaluateStudyStress.evaluate_stress_level(desired_resource, time)
+              binding.irb
               online_resources = Views::OnlineResourceList.new(results.map { |res| res[:online_resources] }.flatten)
               physical_resources = Views::PhyicalResourcesList.new(results.map do |res|
                 res[:physical_resources]
               end.flatten)
 
               view 'ability_recs',
-                   locals: { online_resources: online_resources, physical_resources: physical_resources, time: time }
+                   locals: { online_resources: online_resources, physical_resources: physical_resources, time: time,
+stress_index: stress_index }
             else
               flash[:error] = "Some errors occurred: #{errors.join(', ')}" if errors.any?
               routing.redirect '/'

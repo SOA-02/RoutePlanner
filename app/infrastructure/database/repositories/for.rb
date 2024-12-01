@@ -15,7 +15,7 @@ module RoutePlanner
         Entity::Physical => Physicals,
         Entity::Skill    => Skills,
         Entity::Map      => Maps,
-        Entity::MapSkill  => MapSkills
+        Entity::MapSkill => MapSkills
       }.freeze
 
       def self.klass(entity_klass)

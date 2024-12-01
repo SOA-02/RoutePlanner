@@ -12,6 +12,13 @@
           p
             strong MinTime(/hr): 
             = time
+
+          p
+            strong pressure_index: 
+            =  stress_index[:pressure_index]
+          p
+            strong stress_level: 
+            = stress_index[:stress_level]
   .row
     .col
       h2 Recommended Pyiscal resources
