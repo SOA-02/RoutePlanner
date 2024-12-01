@@ -1,0 +1,55 @@
+Management Information Systems
+
+Instructor: Pei-Fang Hsu   	     			Email: pfhsu@iss.nthu.edu.tw	
+Time: 1:20-4:20 PM, Friday
+Classroom: TSMC 905 
+TA: Sara Tsai						Email: sara.tsai@iss.nthu.edu.tw
+
+Course Overview
+The purpose of this course is to provide an understanding of strategic use and impact of information systems from both a business and a technical perspective. We will introduce enterprise information systems (IS) that are frequently used in businesses, examine how these enterprise information systems create value, and discuss how companies manage these information systems to capture the value. Students with different backgrounds are welcome to the course. Computer programing skills are not required.
+
+Course Websites
+Course reading materials: eLearn System (https://elearn.nthu.edu.tw)
+Mooc course website: https://www.futurelearn.com/courses/fundamentals-of-digital-transformation-and-data-analytics
+
+TextbookCh1~3, Management Information Systems: Managing the Digital Firm, 16th Edition, Kenneth C. Laudon, 2020
+
+Course Outline
+Grading
+(Individual)
+Class Participation					20%
+Reading Critiques and Midterm project		20% 
+Final Exam						20%
+
+ (Group)
+Case/Tech Presentations or Debate			40%
+
+Do not miss classes more than 2 times during the semester. Email TA before class if you will be absent.
+Plagiarism check will be performed. Chatgpt is used only for grammar check.
+Peer evaluation will be used to adjust your final grade.
+
+
+Guideline for Assignments:
+
+Reading Critiques (Individual) (One page, due before the start of class, turn it to eLearn) 
+(Case Opening Groups due that week do NOT need to turn in this individual assignment)
+One major takeaway (i.e., what you learned from studying the materials)
+One question that you want to discuss in class
+Your opinions/thoughts/answer to the question
+*Mark your point (1), (2), (3) clearly.
+
+Case Presentation (group):
+The case opening group presents the case analysis in 30 minutes. 
+The presentation should focus on case summary, critical issues, in-depth analysis, your suggestions to the case company, and new update (such as market or financial data, what happened recently in that case company or industry). DO NOT repeat the case content.
+The case opening group should prepare some questions to lead the class discussion. 
+
+Technology Presentation (group):
+The technology presentation group present the assigned technologies in 30 minutes. 
+The presentation should focus on introduction level to guide non-technical background students understand what these technologies are, how these technologies are used in company or in society, etc. 
+The presentation group can search materials online or offline by itself, and the instructor do not provide materials. However, it is strongly suggest that the presentation group to discuss their presentation content/slides with the instructor in advance to ensure the direction and materials are appropriate for class. 
+
+Debate: For & Against teams (group)
+One leading speaker from each team lays out major arguments (3 minutes) 
+Each subsequent speaker takes turn to make one point, or counter-attack the other team’s statement (3 minutes). 
+One closing speaker makes a summary speech (3 minutes). 
+PPT (less than 5 slides) and equipment are allowed.

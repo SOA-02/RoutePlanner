@@ -20,6 +20,7 @@ module RoutePlanner
     plugin :common_logger, $stderr
 
     use Rack::MethodOverride # allows HTTP verbs beyond GET/POST (e.g., DELETE)
+
     MSG_GET_STARTED = 'Please enter the keywords you are interested in to get started.'
     MSG_SERVER_ERROR = 'Internal Server Error'
 
@@ -29,56 +30,84 @@ module RoutePlanner
       response['Content-Type'] = 'text/html; charset=utf-8'
       # GET /
       routing.root do
-        session[:watching] ||= []
-        # maps = Repository::For.klass(Entity::Map).all
-        result = Service::FetchViewedRoadmap.new.call(session[:watching])
-        if result.failure?
-          flash[:error] = result.failure
-          maps = []
-        else
-          maps = result.value!
-          flash.now[:notice] = MSG_GET_STARTED if maps.none?
-          session[:watching] = maps.map(&:map_name)
-        end
+        maps = Repository::For.klass(Entity::Map).all
         view 'home_text', locals: { maps: maps }
       end
 
       routing.on 'analyze' do
-        routing.is do
-          form = RoutePlanner::Forms::NewSyllabus.new.call(routing.params)
-          if form.failure?
-            flash[:error] = form.errors[:syllabus_text].first
-            routing.redirect '/'
-          else
-            syllabus_text = form[:syllabus_text]
+        form_syllabus = Forms::NewSyllabus.new.call(routing.params)
+        if form_syllabus.failure?
+          errors = form_syllabus.errors.to_h
+          flash[:error] = errors[:syllabus_title].first if errors[:syllabus_title]
+          flash[:error] = errors[:syllabus_text].first if errors[:syllabus_text]
+          routing.redirect '/'
+        end
 
-            map = RoutePlanner::Service::MapService
-              .new(syllabus_text, App.config.OPENAI_KEY)
-              .call
+        syllabus_title = form_syllabus[:syllabus_title]
+        syllabus_text = form_syllabus[:syllabus_text]
 
-            skillset = RoutePlanner::Service::SkillService
-              .new(syllabus_text, App.config.OPENAI_KEY)
-              .call
+        existing_map = Repository::For.klass(Entity::Map).find_map_name(syllabus_title)
 
-            view 'analyze', locals: { map: map, skills: skillset }
+        if existing_map
+          existing_skills = Repository::For.klass(Entity::Map).find_map_skills(syllabus_title)
+          view 'analyze', locals: { map: existing_map, skills: existing_skills }
+        else
+          map = RoutePlanner::OpenAPI::MapMapper
+            .new(syllabus_text, App.config.OPENAI_KEY)
+            .call
+          skillset = RoutePlanner::OpenAPI::SkillMapper
+            .new(syllabus_text, App.config.OPENAI_KEY)
+            .call
+
+          Repository::For.entity(map).build_map(map)
+
+          skillset.each do |skill|
+            Repository::For.entity(skill).build_skill(skill)
           end
+
+          RoutePlanner::Repository::MapSkills.join_map_skill(map, skillset)
+
+          view 'analyze', locals: { map: map, skills: skillset }
         end
       end
 
       routing.on 'LevelEvaluation' do
         routing.is do
-          map_name = 'sorry'
-          session[:skills] ||= []
-          result_map = Service::FetchMapInfo.new.call(map_name)
+          form_syllabus = Forms::NewSyllabus.new.call(routing.params)
+          if form_syllabus.failure?
+            errors = form_syllabus.errors.to_h
+            flash[:error] = errors[:syllabus_title].first if errors[:syllabus_title]
+            flash[:error] = errors[:syllabus_text].first if errors[:syllabus_text]
+            routing.redirect '/'
+          end
 
-          result_skill = Service::FetchSkillListInfo.new.call(map_name)
-          binding.irb
-          if result_map.failure? || result_skill.failure?
-            flash[:error] = result.failure
+          syllabus_title = form_syllabus[:syllabus_title]
+          syllabus_text = form_syllabus[:syllabus_text]
+
+          existing_map = Repository::For.klass(Entity::Map).find_map_name(syllabus_title)
+
+          if existing_map
+            existing_skills = Repository::For.klass(Entity::Map).find_map_skills(syllabus_title)
+            view 'level_eval', locals: { map: existing_map, skills: existing_skills }
+            # view 'analyze', locals: { map: existing_map, skills: existing_skills }
           else
-            skills = Views::SkillList.new(result_skill.value!)
-            map = Views::Map.new(result_map.value!)
-            view 'level_eval', locals: { map: map, skills: skills }
+            map = RoutePlanner::OpenAPI::MapMapper
+              .new(syllabus_text, App.config.OPENAI_KEY)
+              .call
+            skillset = RoutePlanner::OpenAPI::SkillMapper
+              .new(syllabus_text, App.config.OPENAI_KEY)
+              .call
+
+            Repository::For.entity(map).build_map(map)
+
+            skillset.each do |skill|
+              Repository::For.entity(skill).build_skill(skill)
+            end
+
+            RoutePlanner::Repository::MapSkills.join_map_skill(map, skillset)
+
+            view 'level_eval', locals: { map: map, skills: skillset }
+
           end
         end
       end
@@ -86,10 +115,11 @@ module RoutePlanner
         routing.is do
           # POST /RoutePlanner
           routing.post do
-            # response = Forms::SkillsFormValidation.new.call(routing.params)
-            # routing.redirect '/' if response.failure?
+            response = Forms::SkillsFormValidation.new.call(routing.params)
+            routing.redirect '/' if response.failure?
             map = routing.params.keys.first.split('_').first
             session[:skills] = routing.params.values.first
+            binding.irb
             routing.redirect "RoutePlanner/#{map}"
           end
         end
@@ -107,11 +137,8 @@ module RoutePlanner
                 errors << result.failure
               end
             end
-
-            if errors.any?
-              flash[:error] = "Error processing skill: #{errors.join(', ')}"
-              routing.redirect '/'
-            else
+            binding.irb
+            if results.any?
               results = []
               desired_resource = RoutePlanner::Mixins::Recommendations.desired_resource(session[:skills])
 
@@ -123,8 +150,13 @@ module RoutePlanner
                   errors << viewable_resource.failure
                 end
               end
+            elsif errors.any?
+              flash[:error] = "Error processing skill: #{errors.join(', ')}"
+              routing.redirect '/'
+            else
+              flash[:notice] = 'No resources found.'
+              routing.redirect '/'
             end
-
 
             if results.any?
               time = Value::ResourceTimeCalculator.compute_minimum_time(results)

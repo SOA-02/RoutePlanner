@@ -2,7 +2,7 @@
 
 module RoutePlanner
   module Repository
-    # Repository for Skills
+    # Repository for Maps
     class Maps
       def self.all
         Database::MapOrm.all.map { |db_resource| rebuild_entity(db_resource) }
@@ -18,9 +18,15 @@ module RoutePlanner
         rebuild_entity(db_resource)
       end
 
-      def self.find_by_mapname(map_name)
-        db_resource = Database::MapOrm.where(map_name:).first
+      def self.find_map_name(map_name)
+        db_resource = Database::MapOrm.first(map_name: map_name)
         rebuild_entity(db_resource)
+      end
+
+      def self.find_map_skills(map_name)
+        db_resource = Database::MapOrm.first(map_name: map_name)
+        # db_resource.skills >> Type: Database::SkillOrm
+        db_resource.skills.map { |db_skill| Skills.rebuild_entity(db_skill) }
       end
 
       def self.build_map(entity)
@@ -40,8 +46,8 @@ module RoutePlanner
         )
       end
 
-      def initialize(entity)
-        @entity = entity
+      def self.db_find_or_create(map_entity)
+        Database::MapOrm.db_find_or_create(map_entity.to_attr_hash)
       end
     end
   end
