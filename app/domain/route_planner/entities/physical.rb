@@ -18,9 +18,12 @@ module RoutePlanner
       attribute :timeloc, Strict::String
       attribute :for_skill, Strict::String
 
-
       def to_attr_hash
         to_hash.except(:id)
+      end
+
+      def self.minimum_time_required(credit)
+        credit * 16
       end
     end
   end

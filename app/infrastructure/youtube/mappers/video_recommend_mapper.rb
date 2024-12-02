@@ -56,6 +56,7 @@ module RoutePlanner
             topic:,
             url:,
             platform:,
+            video_duration: nil,
             for_skill: @key_word
           )
         end

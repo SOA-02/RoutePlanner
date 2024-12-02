@@ -12,9 +12,11 @@ module RoutePlanner
       MSG_ONLINE_RESOURCE_SAVE_SUCCESS = 'Online resource saved successfully.'
       MSG_SERVER_ERROR = 'An unexpected error occurred on the server. Please try again later.'
       MSG_ONLINE_RESOURCE_SAVE_FAIL = 'Online resource could not be saved.'
+      MSG_VIDEO_DURATION_SAVE_FAIL = 'Video duration could not be saved.'
 
       step :find_oneline_resources
       step :store_oneline_resources
+      step :store_video_duration
 
       private
 
@@ -33,9 +35,20 @@ module RoutePlanner
         online_resources.each do |entity|
           store_online_resource(entity) unless online_resource_find_original_id(entity.original_id)
         end
-        Success(MSG_ONLINE_RESOURCE_SAVE_SUCCESS)
+        Success(online_resources)
       rescue StandardError
         Failure(MSG_ONLINE_RESOURCE_SAVE_FAIL)
+      end
+
+      # Step 3: Store video duration
+      def store_video_duration(online_resources)
+        online_resources.each do |entity|
+          video_duration = fetch_video_duration(entity.original_id)
+          update_video_duration(entity.original_id, video_duration)
+        end
+        Success(MSG_ONLINE_RESOURCE_SAVE_SUCCESS)
+      rescue StandardError
+        Failure(MSG_VIDEO_DURATION_SAVE_FAIL)
       end
 
       # Helper methods
@@ -57,6 +70,16 @@ module RoutePlanner
         Repository::For.entity(entity).build_online_resource(entity)
       rescue StandardError
         Failure(MSG_ONLINE_RESOURCE_SAVE_FAIL)
+      end
+
+      def fetch_video_duration(original_id)
+        Youtube::VideoMapper.new(App.config.API_KEY).find(original_id).video_duration
+      rescue StandardError
+        Failure('Video duration not found')
+      end
+
+      def update_video_duration(original_id, video_duration)
+        Repository::Onlines.update_video_duration(original_id, video_duration)
       end
     end
   end

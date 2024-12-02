@@ -95,7 +95,6 @@ module RoutePlanner
             routing.redirect '/' if response.failure?
             map = routing.params.keys.first.split('_').first
             session[:skills] = routing.params.values.first
-            binding.irb
             routing.redirect "RoutePlanner/#{map}"
           end
         end
@@ -105,8 +104,10 @@ module RoutePlanner
           routing.get do # rubocop:disable Metrics/BlockLength
             results = []
             errors = []
+            binding.irb
             session[:skills].each_key do |skill|
               result = Service::AddResources.new.call(online_skill: skill, physical_skill: skill)
+              binding.irb
               if result.success?
                 results << result.value!
               else
