@@ -26,9 +26,12 @@ module RoutePlanner
         end
 
         def build_entity_map
-          RoutePlanner::Entity::Youtubevideo.new(
-            id: nil,
-            video_id:,
+          # RoutePlanner::Entity::Youtubevideo.new(
+          #   id: nil,
+          #   video_id:,
+          #   video_duration:
+          # )
+          Entity::Online(
             video_duration:
           )
         end

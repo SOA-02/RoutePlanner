@@ -22,6 +22,15 @@ module RoutePlanner
         to_hash.except(:id)
       end
 
+      def self.compute_minimum_time(resources)
+        physical_credits = resources.flat_map { |resource| resource[:physical_resources].map(&:credit) }
+        compute_physical_time(physical_credits)
+      end
+
+      def self.compute_physical_time(physical_credits)
+        physical_credits.map { |credit| minimum_time_required(credit) }.sum
+      end
+
       def self.minimum_time_required(credit)
         credit * 16
       end

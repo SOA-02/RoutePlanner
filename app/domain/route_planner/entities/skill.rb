@@ -3,6 +3,8 @@
 require 'dry-types'
 require 'dry-struct'
 
+require_relative 'physical'
+require_relative 'online'
 module RoutePlanner
   module Entity
     # Domain entity for team members
@@ -16,6 +18,23 @@ module RoutePlanner
 
       def to_attr_hash
         to_hash.except(:id)
+      end
+
+      def self.compute_total_physical_time(resources)
+        # Implement the logic to compute total physical time
+        Entity::Physical.compute_minimum_time(resources)
+      end
+
+      def self.compute_total_online_time(resources)
+        # Implement the logic to compute total online time
+        Entity::Online.compute_minimum_time(resources)
+      end
+
+      def self.compute_minimum_time(resources)
+        total_physical_time = compute_total_physical_time(resources)
+        total_online_time = compute_total_online_time(resources)
+
+        total_physical_time + total_online_time
       end
     end
   end

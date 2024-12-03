@@ -136,7 +136,7 @@ module RoutePlanner
             end
 
             if results.any?
-              time = Value::ResourceTimeCalculator.compute_minimum_time(results)
+              time = Entity::Skill.compute_minimum_time(results)
               stress_index = Value::EvaluateStudyStress.evaluate_stress_level(desired_resource, time)
               binding.irb
               online_resources = Views::OnlineResourceList.new(results.map { |res| res[:online_resources] }.flatten)

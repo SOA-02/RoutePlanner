@@ -21,13 +21,26 @@ module RoutePlanner
         to_hash.except(:id)
       end
 
-      def self.iso8601_duration_to_hours(video_duration)
-        match = /PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/.match(video_duration)
-        hours = match[1].to_i
-        minutes = match[2].to_i / 60.0
-        seconds = match[3].to_i / 3600.0
-        hours + minutes + seconds
+      def self.compute_minimum_time(resources)
+        online_video_duration = resources.flat_map { |resource| resource[:online_resources].map(&:video_duration) }
+        compute_online_resource(online_video_duration)
       end
+
+      def self.compute_online_resource(online_video_duration)
+        total_hours = online_video_duration.sum do |video_duration|
+          Mixins::DurationConverter.iso8601_duration_to_hours(video_duration)
+        end
+        total_hours.ceil
+      end
+      # def self.iso8601_duration_to_hours(video_duration)
+      #   match = /PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/.match(video_duration)
+      #   return 0 unless match
+
+      #   hours = match[1].to_i
+      #   minutes = match[2].to_i / 60.0
+      #   seconds = match[3].to_i / 3600.0
+      #   hours + minutes + seconds
+      # end
     end
   end
 end
