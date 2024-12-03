@@ -16,7 +16,6 @@ module RoutePlanner
 
       step :find_oneline_resources
       step :store_oneline_resources
-      # step :store_video_duration
 
       private
 
@@ -40,17 +39,6 @@ module RoutePlanner
         Failure(MSG_ONLINE_RESOURCE_SAVE_FAIL)
       end
 
-      # # Step 3: Store video duration
-      # def store_video_duration(online_resources)
-      #   online_resources.each do |entity|
-      #     video_duration = fetch_video_duration(entity.original_id)
-      #     update_video_duration(entity.original_id, video_duration)
-      #   end
-      #   Success(MSG_ONLINE_RESOURCE_SAVE_SUCCESS)
-      # rescue StandardError
-      #   Failure(MSG_VIDEO_DURATION_SAVE_FAIL)
-      # end
-
       # Helper methods
       def online_resource_in_database(skill)
         Repository::For.klass(Entity::Online).find_all_resource_of_skills(skill)
@@ -70,16 +58,6 @@ module RoutePlanner
         Repository::For.entity(entity).build_online_resource(entity)
       rescue StandardError
         Failure(MSG_ONLINE_RESOURCE_SAVE_FAIL)
-      end
-
-      def fetch_video_duration(original_id)
-        Youtube::VideoMapper.new(App.config.API_KEY).find(original_id).video_duration
-      rescue StandardError
-        Failure('Video duration not found')
-      end
-
-      def update_video_duration(original_id, video_duration)
-        Repository::Onlines.update_video_duration(original_id, video_duration)
       end
     end
   end

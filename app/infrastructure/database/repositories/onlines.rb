@@ -52,7 +52,7 @@ module RoutePlanner
           topic: online_entity.topic,
           url: online_entity.url,
           platform: online_entity.platform,
-          video_duration: '',
+          video_duration: online_entity.video_duration,
           for_skill: online_entity.for_skill
         )
       end
