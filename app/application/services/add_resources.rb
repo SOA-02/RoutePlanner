@@ -14,18 +14,28 @@ module RoutePlanner
         @physical_service = physical_service
       end
 
-      def call(online_skill:, physical_skill:)
-        results = [
-          @online_service.call(online_skill),
-          @physical_service.call(physical_skill)
-        ]
+      def call(online_skill:, physical_skill:) # rubocop:disable Metrics/MethodLength
+        online_result = @online_service.call(online_skill)
+        physical_result = @physical_service.call(physical_skill)
+        failures = [online_result, physical_result].compact.select(&:failure?)
 
-        failures = results.compact.select(&:failure?)
-        return Failure(failures.map(&:failure).join(', ')) if failures.any?
+        if failures.any?
+          partial_results = {
+            online_resources: online_result.success? ? online_result.value! : nil,
+            physical_resources: physical_result.success? ? physical_result.value! : nil
+          }
+
+          return Success(partial_results) if online_result.success? || physical_result.success?
+
+          return Failure(
+            message: failures.map(&:failure).join(', '),
+            partial_results: partial_results
+          )
+        end
 
         Success(
-          online_resources: results[0].value!,
-          physical_resources: results[1].value!
+          online_resources: online_result.success? ? online_result.value! : nil,
+          physical_resources: physical_result.success? ? physical_result.value! : nil
         )
       end
 

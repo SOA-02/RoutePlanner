@@ -104,7 +104,7 @@ module RoutePlanner
           routing.get do # rubocop:disable Metrics/BlockLength
             results = []
             errors = []
-            binding.irb
+
             session[:skills].each_key do |skill|
               result = Service::AddResources.new.call(online_skill: skill, physical_skill: skill)
               binding.irb
@@ -114,7 +114,7 @@ module RoutePlanner
                 errors << result.failure
               end
             end
-            binding.irb
+
             if results.any?
               results = []
               desired_resource = RoutePlanner::Mixins::Recommendations.desired_resource(session[:skills])
@@ -136,7 +136,8 @@ module RoutePlanner
             end
 
             if results.any?
-              time = Entity::Skill.compute_minimum_time(results)
+
+              time = Value::EvaluateStudyStress.compute_minimum_time(results)
               stress_index = Value::EvaluateStudyStress.evaluate_stress_level(desired_resource, time)
               binding.irb
               online_resources = Views::OnlineResourceList.new(results.map { |res| res[:online_resources] }.flatten)

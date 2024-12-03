@@ -28,10 +28,10 @@ module RoutePlanner
       end
 
       def self.compute_physical_time(physical_credits)
-        physical_credits.map { |credit| minimum_time_required(credit) }.sum
+        physical_credits.map { |credit| time_required(credit) }.sum
       end
 
-      def self.minimum_time_required(credit)
+      def self.time_required(credit)
         credit * 16
       end
     end

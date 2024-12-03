@@ -16,7 +16,7 @@ module RoutePlanner
 
       step :find_oneline_resources
       step :store_oneline_resources
-      step :store_video_duration
+      # step :store_video_duration
 
       private
 
@@ -35,21 +35,21 @@ module RoutePlanner
         online_resources.each do |entity|
           store_online_resource(entity) unless online_resource_find_original_id(entity.original_id)
         end
-        Success(online_resources)
+        Success(MSG_ONLINE_RESOURCE_SAVE_SUCCESS)
       rescue StandardError
         Failure(MSG_ONLINE_RESOURCE_SAVE_FAIL)
       end
 
-      # Step 3: Store video duration
-      def store_video_duration(online_resources)
-        online_resources.each do |entity|
-          video_duration = fetch_video_duration(entity.original_id)
-          update_video_duration(entity.original_id, video_duration)
-        end
-        Success(MSG_ONLINE_RESOURCE_SAVE_SUCCESS)
-      rescue StandardError
-        Failure(MSG_VIDEO_DURATION_SAVE_FAIL)
-      end
+      # # Step 3: Store video duration
+      # def store_video_duration(online_resources)
+      #   online_resources.each do |entity|
+      #     video_duration = fetch_video_duration(entity.original_id)
+      #     update_video_duration(entity.original_id, video_duration)
+      #   end
+      #   Success(MSG_ONLINE_RESOURCE_SAVE_SUCCESS)
+      # rescue StandardError
+      #   Failure(MSG_VIDEO_DURATION_SAVE_FAIL)
+      # end
 
       # Helper methods
       def online_resource_in_database(skill)
