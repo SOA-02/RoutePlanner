@@ -30,10 +30,10 @@ module RoutePlanner
       response['Content-Type'] = 'text/html; charset=utf-8'
       # GET /
       routing.root do
+        # session[:watching] ||= []
+        # result = Service::FetchViewedRoadmap.new.call(session[:watching])
         maps = Repository::For.klass(Entity::Map).all
         view 'home_text', locals: { maps: maps }
-
-
         # Get cookie viewer's previously seen videos
         # session[:watching] ||= []
         # result = Service::FetchViewedRoadmap.new.call(session[:watching])
