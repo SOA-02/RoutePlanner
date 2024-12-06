@@ -56,7 +56,7 @@ module RoutePlanner
           Repository::For.entity(skill).build_skill(skill)
         end
 
-        db_map = Repository::MapSkills.join_map_skill(input[:map], input[:skills])
+        db_map = Repository::Maps.join_map_skill(input[:map], input[:skills])
 
         Success(map: db_map, skills: db_map.skills)
       rescue StandardError => e
