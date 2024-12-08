@@ -2,7 +2,7 @@
   background-image: url('/galaxy@bg.jpg');
   background-size: cover;
   background-position: center;
-  height: 80vh;
+  height: 100%;
   width: 100%;
   position: relative;
 }
@@ -11,18 +11,11 @@
   background-color: #123456; /* Replace #123456 with your desired color */
 }
 
-.home {
-  padding: 5% 5% 0;
-}
 
-.home h1 {
-  margin-top: 20vh;
-  font-weight: bold;
-  color: rgb(254, 254, 254);
-}
-
-.home p {
-  color: rgb(254, 254, 254);
+.custom-textarea {
+  overflow-x:visible; 
+  overflow-y:visible;
+  resize: none; /* 禁止右下角大小調整 */
 }
 
 .text-underline-hover {
@@ -107,4 +100,28 @@ footer {
 #radarChart {
   width: 20%;
   height: 20%;
+}
+
+.form-container {
+  background-color: rgba(255, 255, 255, 0.9); /* 半透明白色背景 */
+  border-radius: 10px; /* 圓角 */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* 柔和陰影 */
+  max-width: 600px; /* 限制最大寬度 */
+  width: 90%; /* 適配小螢幕 */
+}
+
+.min-vh-100 {
+  min-height: 100vh; /* 滿屏高度 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+textarea.form-control {
+  resize: none; /* 禁止手動調整大小 */
+  border: 1px solid #ccc; /* 邊框 */
+}
+
+button#syllabus-form-submit {
+  width: 100%; /* 滿寬度 */
+  font-weight: bold; /* 加粗字體 */
 }
