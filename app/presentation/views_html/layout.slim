@@ -37,12 +37,13 @@ html
       crossorigin="anonymous"
     }
 
-    .container-fluid 
-      section
+    .container-fluid
+      .row
         nav.navbar.navbar-custom
           a.text-white.navbar-brand href="/"
             i.fa-solid.fa-rocket.p-2
             | Outspace
-      section
+      .row  
+        section
         == yield
 
