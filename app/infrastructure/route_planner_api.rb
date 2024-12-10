@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require_relative 'list_request'
 require 'http'
 
 module RoutePlanner
@@ -22,6 +21,10 @@ module RoutePlanner
 
       def add_map(syllabus_title, syllabus_text)
         @request.add_map(syllabus_title, syllabus_text)
+      end
+
+      def fetch_anaylze_result(skills)
+        @request.fetch_anaylze_result(skills)
       end
 
       # Gets appraisal of a project folder rom API
@@ -47,9 +50,10 @@ module RoutePlanner
           call_api('post', ['maps'], {}, body)
         end
 
-        def get_appraisal(req)
-          call_api('get', ['projects',
-                           req.owner_name, req.project_name, req.folder_name])
+        def fetch_anaylze_result(skills)
+          body = skills.to_json
+          binding.irb
+          call_api('post', ['RoutePlanner'], {}, body)
         end
 
         private
