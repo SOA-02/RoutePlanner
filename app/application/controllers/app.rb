@@ -31,7 +31,7 @@ module RoutePlanner
       # GET /
       routing.root do
         maps = Repository::For.klass(Entity::Map).all
-        view 'home_text', locals: { maps: maps }
+        view 'home', locals: { maps: maps }
       end
 
       routing.on 'analyze' do

@@ -1,47 +1,23 @@
 .container-fluid.bg
-  .row.d-flex.justify-content-center.align-items-center.home
-    .text-center
-      h1.display-4 Welcome to OuterSpace
-      p.lead Your gateway to the universe of knowledge
+  include :flash_bar
 
-  / Corrected form structure to contain input and button elements
-  form role="form" action="/search" method="POST" id="pdf-upload-form"
-    .row.d-flex.justify-content-center.align-items-center
-      .col-md-2 
-        label.text-light for="textareaInput" Add your syllabus:
-      .col-md-8
-        textarea.form-control#textareaInput name="syllabus" rows="5" style="overflow:auto; resize:none;"
-      .col-md-2
-        button.btn.btn-primary#pdf-upload-submit type="submit" upload
+  .row.d-flex.justify-content-center.align-items-center.min-vh-100
+    .form-container.p-4.rounded.shadow
+      form#show-analyze-form role="form" action="/LevelEvaluation" method="POST"
+        h4.text-center Prepare for Liftoff
+        p.text-center.lead Together, let's explore the wonders of learning!
 
-.container
-  section
-    include :flash_bar
-  .row
-    - if roadmaps.any?
-      table.table.table-hover#roadmaps_table
-        thead
-          tr
-            th Action
-            th Topic
-            th URL
-            th Platfrom
-        tbody
-          - roadmaps.each do |roadmap|
-            tr.table-row.roadmap_row
-              td#delete_roadmap
-                form role="form" method="post" action=roadmap.praise_link 
-                  input type="hidden" name="_method" value="delete"
-                  button.btn.btn-sm.btn-link type="submit" id="roadmap[#{@index}].delete"
-                    i.fas.fa-trash-alt
+        .form-group.mb-3
+          label.form-label for="syllabus_title_input" Course Title:
+          textarea.form-control.custom-textarea#syllabus_title_input name="syllabus_title" placeholder="e.g. Course Title" rows="1"
 
-              td#td_roadmap_title
-                span.roadmap_table_roadmap_title id="index_str.roadmap_topic"
-                  a href=roadmap.praise_link target="_blank"
-                    = roadmap.topic
-              td#td_roadmap_url
-                span.roadmap_table_roadmap_url id="index_str.roadmap_url"
-                  = roadmap.url
-              td#td_roadmap_platform
-                span.roadmap_table_roadmap_platform id="index_str.roadmap_platform"
-                    = roadmap.platform
+        .form-group.mb-3
+          label.form-label for="syllabus_text_input" Course Syllabus:
+          textarea.form-control.custom-textarea#syllabus_text_input name="syllabus_text" placeholder="e.g. Course Syllabus" rows="6"
+
+        .text-center.mt-4
+          button.btn.btn-success.btn-lg#syllabus-form-submit type="submit" Analyze Syllabus
+
+  .fixed-container
+    p.dialog-box "Let's Explore Together!."
+    img#fixed-image src="/astronaut.png" alt="Fixed Image"

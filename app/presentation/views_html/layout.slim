@@ -37,14 +37,13 @@ html
       crossorigin="anonymous"
     }
 
-    .container-fluid 
-      section
+    .container-fluid
+      .row
         nav.navbar.navbar-custom
           a.text-white.navbar-brand href="/"
             i.fa-solid.fa-rocket.p-2
             | Outspace
-      section
+      .row  
+        section
         == yield
 
-      footer
-        = "OuterSpace is made for demonstration purposes. We cannot warrant full correctness of all content. Outerspace may use cookies for sessions but does not track users."
