@@ -30,52 +30,26 @@ module RoutePlanner
       response['Content-Type'] = 'text/html; charset=utf-8'
       # GET /
       routing.root do
-        maps = Repository::For.klass(Entity::Map).all
-        view 'home', locals: { maps: maps }
+        view 'home'
       end
 
-      routing.on 'analyze' do
-        form_syllabus = Forms::NewSyllabus.new.call(routing.params)
-
-        if form_syllabus.failure?
-          errors = form_syllabus.errors.to_h
-          flash[:error] = errors[:syllabus_title].first if errors[:syllabus_title]
-          flash[:error] = errors[:syllabus_text].first if errors[:syllabus_text]
-          routing.redirect '/'
-        end
-
-        result = Service::AddMap.new.call(
-          syllabus_title: form_syllabus[:syllabus_title],
-          syllabus_text: form_syllabus[:syllabus_text]
-        )
-
-        if result.success?
-          view 'analyze', locals: {
-            map: result.value![:map],
-            skills: result.value![:skills]
-          }
-        else
-          flash[:error] = result.failure
-          routing.redirect '/'
-        end
-      end
-
+      # GET /LevelEvaluation
       routing.on 'LevelEvaluation' do
         routing.is do
           form_syllabus = Forms::NewSyllabus.new.call(routing.params)
-
           if form_syllabus.failure?
             errors = form_syllabus.errors.to_h
             flash[:error] = errors[:syllabus_title].first if errors[:syllabus_title]
             flash[:error] = errors[:syllabus_text].first if errors[:syllabus_text]
             routing.redirect '/'
           end
-
-          result = Service::AddMap.new.call(
-            syllabus_title: form_syllabus[:syllabus_title],
-            syllabus_text: form_syllabus[:syllabus_text]
+          syllabus_title=form_syllabus[:syllabus_title]
+          syllabus_text=form_syllabus[:syllabus_text]
+          binding.irb
+          result = RoutePlanner::Service::AddMapandSkill.new.call(
+            syllabus_title: syllabus_title, syllabus_text: syllabus_text
           )
-
+          binding.irb
           if result.success?
             view 'level_eval', locals: {
               map: result.value![:map],
