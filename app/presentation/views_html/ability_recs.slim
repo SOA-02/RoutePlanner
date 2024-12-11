@@ -1,7 +1,7 @@
 .container
   .row
     .col
-      h2 Course Name
+      h2 = map_name
   .row
       .col-5
         .card (style="height: 65vh; overflow-y: hidden;")
@@ -15,10 +15,10 @@
 
           p
             strong pressure_index: 
-            =  stress_index[:pressure_index]
+            =  stress_index["pressure_index"]
           p
             strong stress_level: 
-            = stress_index[:stress_level]
+            = stress_index["stress_level"]
   .row
     .col
       h2 Recommended Pyiscal resources

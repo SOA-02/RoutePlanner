@@ -30,52 +30,26 @@ module RoutePlanner
       response['Content-Type'] = 'text/html; charset=utf-8'
       # GET /
       routing.root do
-        maps = Repository::For.klass(Entity::Map).all
-        view 'home', locals: { maps: maps }
+        view 'home'
       end
 
-      routing.on 'analyze' do
-        form_syllabus = Forms::NewSyllabus.new.call(routing.params)
-
-        if form_syllabus.failure?
-          errors = form_syllabus.errors.to_h
-          flash[:error] = errors[:syllabus_title].first if errors[:syllabus_title]
-          flash[:error] = errors[:syllabus_text].first if errors[:syllabus_text]
-          routing.redirect '/'
-        end
-
-        result = Service::AddMap.new.call(
-          syllabus_title: form_syllabus[:syllabus_title],
-          syllabus_text: form_syllabus[:syllabus_text]
-        )
-
-        if result.success?
-          view 'analyze', locals: {
-            map: result.value![:map],
-            skills: result.value![:skills]
-          }
-        else
-          flash[:error] = result.failure
-          routing.redirect '/'
-        end
-      end
-
+      # GET /LevelEvaluation
       routing.on 'LevelEvaluation' do
         routing.is do
           form_syllabus = Forms::NewSyllabus.new.call(routing.params)
-
           if form_syllabus.failure?
             errors = form_syllabus.errors.to_h
             flash[:error] = errors[:syllabus_title].first if errors[:syllabus_title]
             flash[:error] = errors[:syllabus_text].first if errors[:syllabus_text]
             routing.redirect '/'
           end
-
-          result = Service::AddMap.new.call(
-            syllabus_title: form_syllabus[:syllabus_title],
-            syllabus_text: form_syllabus[:syllabus_text]
+          syllabus_title=form_syllabus[:syllabus_title]
+          syllabus_text=form_syllabus[:syllabus_text]
+          binding.irb
+          result = RoutePlanner::Service::AddMapandSkill.new.call(
+            syllabus_title: syllabus_title, syllabus_text: syllabus_text
           )
-
+          binding.irb
           if result.success?
             view 'level_eval', locals: {
               map: result.value![:map],
@@ -93,65 +67,38 @@ module RoutePlanner
           routing.post do
             response = Forms::SkillsFormValidation.new.call(routing.params)
             routing.redirect '/' if response.failure?
-            map = routing.params.keys.first.split('_').first
-            session[:skills] = routing.params.values.first
             binding.irb
-            routing.redirect "RoutePlanner/#{map}"
-          end
-        end
+            result = Service::FethcAnayzleResult.new.call(routing.params)
 
-        routing.on String do |map|
-          # GET /RoutePlanner/:skills
-          routing.get do # rubocop:disable Metrics/BlockLength
-            results = []
-            errors = []
-            session[:skills].each_key do |skill|
-              result = Service::AddResources.new.call(online_skill: skill, physical_skill: skill)
-              if result.success?
-                results << result.value!
-              else
-                errors << result.failure
-              end
-            end
             binding.irb
-            if results.any?
-              results = []
-              desired_resource = RoutePlanner::Mixins::Recommendations.desired_resource(session[:skills])
-
-              desired_resource.each_key do |skill|
-                viewable_resource = Service::FetchViewedResources.new.call(skill)
-                if viewable_resource.success?
-                  results << viewable_resource.value!
-                else
-                  errors << viewable_resource.failure
-                end
-              end
-            elsif errors.any?
-              flash[:error] = "Error processing skill: #{errors.join(', ')}"
-              routing.redirect '/'
-            else
-              flash[:notice] = 'No resources found.'
-              routing.redirect '/'
-            end
-
-            if results.any?
-              time = Value::ResourceTimeCalculator.compute_minimum_time(results)
-              stress_index = Value::EvaluateStudyStress.evaluate_stress_level(desired_resource, time)
+            if result.success?
               binding.irb
-              online_resources = Views::OnlineResourceList.new(results.map { |res| res[:online_resources] }.flatten)
-              physical_resources = Views::PhyicalResourcesList.new(results.map do |res|
-                res[:physical_resources]
-              end.flatten)
 
               view 'ability_recs',
-                   locals: { online_resources: online_resources, physical_resources: physical_resources, time: time,
-stress_index: stress_index }
+              locals: {  map_name: result.value![:map],
+                            online_resources:  result.value![:online_resources],
+                            physical_resources: result.value![:physical_resources],
+                            time:  result.value![:time],
+                            stress_index: result.value![:stress_index] }
             else
-              flash[:error] = "Some errors occurred: #{errors.join(', ')}" if errors.any?
+              flash[:error] = result.failure
               routing.redirect '/'
             end
+
           end
         end
+
+#         routing.on String do |map|
+#           # GET /RoutePlanner/:skills
+#           routing.get do # rubocop:disable Metrics/BlockLength
+
+
+#               view 'ability_recs',
+#                    locals: { online_resources: online_resources, physical_resources: physical_resources, time: time,
+# stress_index: stress_index }
+
+#           end
+#         end
       end
     end
   end
