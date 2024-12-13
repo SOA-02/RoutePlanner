@@ -15,7 +15,7 @@ module Views
       # Clean up and map the matches
       timestamps.map do |time, title|
         # Remove emojis and special characters from title, keeping alphanumeric and basic punctuation
-        clean_title = title.gsub(/[\u{1F300}-\u{1F9FF}]/, '')  # Remove emojis
+        clean_title = title.gsub(/[\u{1F300}-\u{1F9FF}]/, '') # Remove emojis
           .gsub(/[^\p{L}\p{N}\s\-_.,!?()]/, '') # Keep only alphanumeric and basic punctuation
           .strip
 

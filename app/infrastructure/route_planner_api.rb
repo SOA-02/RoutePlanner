@@ -15,10 +15,6 @@ module RoutePlanner
         @request.get_root.success?
       end
 
-      def projects_list(list)
-        @request.projects_list(list)
-      end
-
       def add_map(syllabus_title, syllabus_text)
         @request.add_map(syllabus_title, syllabus_text)
       end
@@ -38,7 +34,7 @@ module RoutePlanner
       class Request
         def initialize(config)
           @api_host = config.API_HOST
-          @api_root = config.API_HOST + '/api/v1'
+          @api_root = "#{config.API_HOST}/api/v1"
         end
 
         def get_root # rubocop:disable Naming/AccessorMethodName
@@ -52,27 +48,26 @@ module RoutePlanner
 
         def fetch_anaylze_result(skills)
           body = skills.to_json
-          binding.irb
+
           call_api('post', ['RoutePlanner'], {}, body)
         end
 
         private
 
+        def call_api(method, resources = [], _params = {}, body = nil)
+          api_path = resources.empty? ? @api_host : @api_root
+          url = [api_path, resources].flatten.join('/')
 
-        def call_api(method, resources = [], params = {},body = nil)
-        api_path = resources.empty? ? @api_host : @api_root
-        url = [api_path, resources].flatten.join('/')
-        binding.irb
-        headers = {
-          'Accept' => 'application/json',
-          'Content-Type' => 'application/json; charset=utf-8' # 加入 charset=utf-8
-        }
-      
-        # 傳送請求時檢查 body 是否存在並使用 JSON 格式
-        response = HTTP.headers(headers)
-                       .send(method, url, body: body) # 傳送原始 JSON 字串作為 body
-        
-        Response.new(response)
+          headers = {
+            'Accept'       => 'application/json',
+            'Content-Type' => 'application/json; charset=utf-8' # 加入 charset=utf-8
+          }
+
+          # 傳送請求時檢查 body 是否存在並使用 JSON 格式
+          response = HTTP.headers(headers)
+            .send(method, url, body: body) # 傳送原始 JSON 字串作為 body
+
+          Response.new(response)
         rescue StandardError
           raise "Invalid URL request: #{url}"
         end

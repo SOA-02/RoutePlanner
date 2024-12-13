@@ -63,8 +63,6 @@ task :new_session_secret do
   puts "SESSION_SECRET: #{secret}"
 end
 
-
-
 desc 'Run application console'
 task :console do
   sh 'pry -r ./load_all'
