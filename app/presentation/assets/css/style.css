@@ -99,7 +99,9 @@ button#syllabus-form-submit {
   text-align: center; /* 文字居中 */
   color: #ffffff; /* 字體顏色 */
 }
-
+.hidden {
+  display: none !important;
+}
 .dialog-box {
   position: relative;
   background-color: rgba(255, 255, 255, 0.9); /* 半透明白色背景 */

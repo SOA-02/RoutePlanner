@@ -4,6 +4,9 @@ require 'rack' # for Rack::MethodOverride
 require 'roda'
 require 'slim'
 require 'slim/include'
+require 'json'
+require 'cgi'
+
 module RoutePlanner
   # Web App
   class App < Roda
@@ -69,8 +72,11 @@ module RoutePlanner
 
             if result.success?
 
+              binding.irb
               view 'ability_recs',
                    locals: { map_name: result.value![:map],
+                             user_ability_value: result.value![:user_ability_value],
+                             require_ability_value: result.value![:require_ability_value],
                              online_resources: result.value![:online_resources],
                              physical_resources: result.value![:physical_resources],
                              time: result.value![:time],

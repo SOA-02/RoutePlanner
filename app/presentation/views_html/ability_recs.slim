@@ -2,93 +2,85 @@
   .row
     .col
       h2 = map_name
-  .row
-      .col-5
-        .card (style="height: 65vh; overflow-y: hidden;")
-            .p Analyze
-            .card-body(style="margin: 2%; height: 100%;")
-                canvas#radarChart(style="display: block; height: 100%; width: 100%;")
-      .col-6
-          p
-            strong MinTime(/hr): 
-            = time
 
-          p
-            strong pressure_index: 
-            =  stress_index["pressure_index"]
-          p
-            strong stress_level: 
-            = stress_index["stress_level"]
   .row
-    .col
-      h2 Recommended Pyiscal resources
+    .col-5
+      .card(style="height: 65vh; overflow-y: hidden;")
+        .card-body(style="margin: 2%; height: 80%;")
+          canvas#radarChart(style="display: block; height: 100%; width: 100%;")
+        .card-text(style="height: 65vh; overflow-y: hidden;")
+          - user_ability_value.keys.each_with_index do |key, index|
+            li #{ ('A'.ord + index).chr}>#{key}
+
+    .col-6
+      p
+        strong MinTime(/hr): 
+        = time
+
+      p
+        strong pressure_index: 
+        = stress_index["pressure_index"]
+      p
+        strong stress_level: 
+        = stress_index["stress_level"]
+
   .row
     - if physical_resources.any?
-      table.table.table-hover#online_resources_table
+      h2 Recommended Physical Resources
+      table.table.table-hover
         thead
           tr
-            th course_id
-            th course_name          
-            th credit
-            th language
-            th provider          
-            th timeloc 
+            th Course ID
+            th Course Name
+            th Credit
+            th Language
+            th Provider
+            th Time/Location
         tbody
           - physical_resources.each do |physical_resource|
             tr
-              td
-                = physical_resource.course_id
-              td
-                = physical_resource.course_name
-              td
-                =physical_resource.credit
-              td
-                =physical_resource.language
-              td
-                =physical_resource.provider
-              td
-                =physical_resource.timeloc
+              td = physical_resource.course_id
+              td = physical_resource.course_name
+              td = physical_resource.credit
+              td = physical_resource.language
+              td = physical_resource.provider
+              td = physical_resource.timeloc
 
   .row
-    .col
-      h2 Recommended Online resources
-  .row
     - if online_resources.any?
-      table.table.table-hover#online_resources_table
+      h2 Recommended Online Resources
+      table.table.table-hover
         thead
           tr
             th Topic
-            th Platform          
+            th Platform
             th URL
         tbody
           - online_resources.each do |online_resource|
             tr
+              td = online_resource.topic
+              td = online_resource.platform
               td
-                = online_resource.topic
-              td
-                = online_resource.platform
-              td
-                a href=online_resource.url target="_blank"
-                  | #{online_resource.url}
+                a href=online_resource.url target="_blank" = online_resource.url
 
+/ Include Chart.js
+script src="https://cdn.jsdelivr.net/npm/chart.js"
 
-  script src="https://cdn.jsdelivr.net/npm/chart.js"
-  script
-    |
-      const ctx = document.getElementById('radarChart').getContext('2d');
-      const data = {
-        labels: [
-          'OOP',
-          'Web Design (HTML+CSS)',
-          'Database Management',
-          'Automated Software Tests',
-          'Command line',
-          'Version Control',
-          'Cloud Platforms'
-        ],
-        datasets: [{
+javascript:
+  document.addEventListener('DOMContentLoaded', function () {
+    const ctx = document.getElementById('radarChart').getContext('2d');
+
+    // 動態標籤和數據
+    let labels = ['A', 'B', 'C', 'D', 'E'];
+    const UserAbilityData = #{user_ability_value.values.map(&:to_f).to_json}; 
+    const RequireAbilityData = #{require_ability_value.values.map(&:to_f).to_json}; 
+
+    const data = {
+      labels: labels,
+      datasets: [
+        {
           label: 'Course requirements',
-          data: [85, 60, 90, 90, 70, 95, 70],
+          data: RequireAbilityData,
           fill: true,
           backgroundColor: 'rgba(255, 99, 132, 0.2)',
           borderColor: 'rgb(255, 99, 132)',
@@ -96,9 +88,10 @@
           pointBorderColor: '#fff',
           pointHoverBackgroundColor: '#fff',
           pointHoverBorderColor: 'rgb(255, 99, 132)'
-        }, {
+        },
+        {
           label: 'Your current ability',
-          data: [28, 48, 40, 19, 96, 27, 100],
+          data: UserAbilityData,
           fill: true,
           backgroundColor: 'rgba(54, 162, 235, 0.2)',
           borderColor: 'rgb(54, 162, 235)',
@@ -106,17 +99,27 @@
           pointBorderColor: '#fff',
           pointHoverBackgroundColor: '#fff',
           pointHoverBorderColor: 'rgb(54, 162, 235)'
-        }]
-      };
-      const config = {
-        type: 'radar',
-        data: data,
-        options: {
-          elements: {
-            line: {
-              borderWidth: 3
-            }
+        }
+      ]
+    };
+
+    const config = {
+      type: 'radar',
+      data: data,
+      options: {
+        elements: {
+          line: {
+            borderWidth: 3
+          }
+        },
+        scales: {
+          r: {
+            min: 0,
+            max: 100
           }
         }
-      };
-      new Chart(ctx, config);
+      }
+    };
+
+    new Chart(ctx, config);
+  });
