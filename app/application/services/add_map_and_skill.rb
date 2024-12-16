@@ -16,7 +16,6 @@ module RoutePlanner
         syllabus_text = input[:syllabus_text]
         result = Gateway::Api.new(RoutePlanner::App.config)
           .add_map(syllabus_title, syllabus_text)
-        binding.irb
 
         result.success? ? Success(result.payload) : Failure(result.message)
       rescue StandardError => e

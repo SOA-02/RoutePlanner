@@ -1,9 +1,10 @@
-  # frozen_string_literal: true
+# frozen_string_literal: true
 
 require 'dry/transaction'
 
 module RoutePlanner
   module Service
+    # Transaction to fetch anaylze result and retrieve skill insights and resources
     class FethcAnayzleResult
       include Dry::Transaction
 
@@ -11,10 +12,8 @@ module RoutePlanner
       step :retrieveSkillInsightsAndResources
 
       def request_anayzle(input)
-        binding.irb
         result = Gateway::Api.new(RoutePlanner::App.config)
           .fetch_anaylze_result(input)
-        binding.irb
 
         result.success? ? Success(result.payload) : Failure(result.message)
       rescue StandardError => e

@@ -1,75 +1,106 @@
-.container
-  .row
-    .col
-      h2 Course Name
-      .card
+.container-fluid.bg
+
+  .row#courseInfo
+    .col(style="margin: 2vw;")
+      h2.text-center Welcome to Planet #{map.map_name}!🪐
+      .card(style='background-color:#0F2540; border-radius: 0.25rem; color: white;')
         .card-body
           p
-            strong Course Name: 
+            strong 【Planet Name】:
             = map.map_name
           p
-            strong Course Description: 
+            strong 【Planet Description】:
             = map.map_description
           p
-            strong Course Evaluation: 
+            strong 【Exploration Assessment】:
             = map.map_evaluation
           p
-            strong AI POLICY: 
+            strong 【AI POLICY】:
             = map.map_ai
-  .row
-    .col
-      h2 Skills Survey
-      form#skillsForm role="form" method="post" action="/RoutePlanner"
-        table.table.table-hover#skills_table
-          thead
-            tr
-              th Skill
-              th Expert
-              th Proficient
-              th Basic
-              th Aware
-              th Unaware
-          tbody
-            - if skills.any?
-              - skills.each do |skill|
-                tr
-                  td = skill
-                  td
-                    input type="radio" name="#{map.map_name}_skills[#{skill}]" value="80" id="#{skill}_familiar"
-                    label for="#{skill}_familiar" Expert
-                  td
-                    input type="radio" name="#{map.map_name}_skills[#{skill}]" value="60" id="#{skill}_average"
-                    label for="#{skill}_average" Proficient
-                  td
-                    input type="radio" name="#{map.map_name}_skills[#{skill}]" value="40" id="#{skill}_unfamiliar"
-                    label for="#{skill}_unfamiliar" Basic
-                  td
-                    input type="radio" name="#{map.map_name}_skills[#{skill}]" value="20" id="#{skill}_unfamiliar"
-                    label for="#{skill}_unfamiliar" Aware
-                  td
-                    input type="radio" name="#{map.map_name}_skills[#{skill}]" value="1" id="#{skill}_unfamiliar"
-                    label for="#{skill}_unfamiliar" Unaware
-            - else
-              tr
-                td colspan="4" No skills available
-        button.btn.btn-primary.mt-3 type="submit" Submit
+          p.text-muted Tip: Every successful explorer needs a diverse set of skills. Let’s evaluate your abilities to ensure you’re ready for this journey!
+      .d-flex.justify-content-center.mt-3
+        button.btn.btn-primary#goToSkillsBtn type="button" Proceed to Skills Assessment📝✅
 
-script
-  | document.getElementById("skillsForm").addEventListener("submit", function(event) {
-  |   const rows = document.querySelectorAll("#skills_table tbody tr");
-  |   let allSelected = true;
-  |   rows.forEach(row => {
-  |     const radios = row.querySelectorAll("input[type='radio']");
-  |     const selected = Array.from(radios).some(radio => radio.checked);
-  |     if (!selected) {
-  |       allSelected = false;
-  |       row.style.backgroundColor = "#ffcccc";
-  |     } else {
-  |       row.style.backgroundColor = "";
-  |     }
-  |   });
-  |   if (!allSelected) {
-  |     event.preventDefault();
-  |     alert("Please select an option for all skills.");
-  |   }
-  | });
+  / Skills Survey - 預設隱藏
+  .row#skillsSurvey(style="display:none")
+    .col-12(style="margin: 2vw 0;")
+        h2.text-center  Skills Survey
+        .col-12(style="border-radius: 0.25rem; width= 80vw; padding: 1rem; ")
+          form#skillsForm role="form" method="post" action="/RoutePlanner"
+            table.table.table-hover#skills_table(style="background-color: #0F2540; color: white;")
+              thead
+                tr
+                  th Skill
+                  th colspan="5" Self assessment
+              tbody
+                - if skills.any?
+                  - skills.each do |skill|
+                    tr
+                      td = skill
+                      td
+                        input type="radio" name="#{map.map_name}_skills[#{skill}]" value="80" id="#{skill}_familiar"
+                        label for="#{skill}_familiar" Expert
+                      td
+                        input type="radio" name="#{map.map_name}_skills[#{skill}]" value="60" id="#{skill}_average"
+                        label for="#{skill}_average" Proficient
+                      td
+                        input type="radio" name="#{map.map_name}_skills[#{skill}]" value="40" id="#{skill}_basic"
+                        label for="#{skill}_basic" Basic
+                      td
+                        input type="radio" name="#{map.map_name}_skills[#{skill}]" value="20" id="#{skill}_aware"
+                        label for="#{skill}_aware" Aware
+                      td
+                        input type="radio" name="#{map.map_name}_skills[#{skill}]" value="1" id="#{skill}_unaware"
+                        label for="#{skill}_unaware" Unaware
+                - else
+                  tr
+                    td colspan="6" No skills available
+            .d-flex.justify-content-center.gap-3.mt-3
+              button.btn.btn-secondary#goToCourseBtn type="button" Review planet introduction🪐
+              button.btn.btn-primary type="submit"  Begin the Journey!🚀
+
+
+/ JavaScript 控制頁面邏輯
+javascript:
+    document.addEventListener("DOMContentLoaded", function () {
+    const courseInfo = document.getElementById("courseInfo");
+    const skillsSurvey = document.getElementById("skillsSurvey");
+    const goToSkillsBtn = document.getElementById("goToSkillsBtn");
+    const goToCourseBtn = document.getElementById("goToCourseBtn");
+
+    // 切換到 Skills Survey 頁面
+    goToSkillsBtn.addEventListener("click", function () {
+      courseInfo.style.display = "none";
+      skillsSurvey.style.display = "block";
+    });
+
+    // 返回 Course Info 頁面
+    goToCourseBtn.addEventListener("click", function () {
+      skillsSurvey.style.display = "none";
+      courseInfo.style.display = "block";
+    });
+
+    // 表單提交前檢查是否每個技能都選擇了
+    document.getElementById("skillsForm").addEventListener("submit", function (event) {
+      const rows = document.querySelectorAll("#skills_table tbody tr");
+      let allSelected = true;
+
+      rows.forEach((row) => {
+        const radios = row.querySelectorAll("input[type='radio']");
+        const selected = Array.from(radios).some((radio) => radio.checked);
+        if (!selected) {
+          allSelected = false;
+          row.style.color = "#FF567B"; 
+          row.style.fontWeight = "bold";
+        } else {
+          row.style.color = ""; 
+          row.style.fontWeight = "normal"; 
+        }
+      });
+
+      if (!allSelected) {
+        event.preventDefault(); 
+        alert("Please select an option for all skills.🥲"); 
+      }
+    });
+  });

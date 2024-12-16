@@ -19,6 +19,5 @@ module RoutePlanner
     def self.config = Figaro.env
 
     use Rack::Session::Cookie, secret: config.SESSION_SECRET
-
   end
 end

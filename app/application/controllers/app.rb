@@ -4,6 +4,9 @@ require 'rack' # for Rack::MethodOverride
 require 'roda'
 require 'slim'
 require 'slim/include'
+require 'json'
+require 'cgi'
+
 module RoutePlanner
   # Web App
   class App < Roda
@@ -43,13 +46,13 @@ module RoutePlanner
             flash[:error] = errors[:syllabus_text].first if errors[:syllabus_text]
             routing.redirect '/'
           end
-          syllabus_title=form_syllabus[:syllabus_title]
-          syllabus_text=form_syllabus[:syllabus_text]
-          binding.irb
+          syllabus_title = form_syllabus[:syllabus_title]
+          syllabus_text = form_syllabus[:syllabus_text]
+
           result = RoutePlanner::Service::AddMapandSkill.new.call(
             syllabus_title: syllabus_title, syllabus_text: syllabus_text
           )
-          binding.irb
+
           if result.success?
             view 'level_eval', locals: {
               map: result.value![:map],
@@ -61,44 +64,40 @@ module RoutePlanner
           end
         end
       end
-      routing.on 'RoutePlanner' do # rubocop:disable Metrics/BlockLength
+      routing.on 'RoutePlanner' do
         routing.is do
           # POST /RoutePlanner
           routing.post do
-            response = Forms::SkillsFormValidation.new.call(routing.params)
-            routing.redirect '/' if response.failure?
-            binding.irb
             result = Service::FethcAnayzleResult.new.call(routing.params)
 
-            binding.irb
             if result.success?
-              binding.irb
 
+              binding.irb
               view 'ability_recs',
-              locals: {  map_name: result.value![:map],
-                            online_resources:  result.value![:online_resources],
-                            physical_resources: result.value![:physical_resources],
-                            time:  result.value![:time],
-                            stress_index: result.value![:stress_index] }
+                   locals: { map_name: result.value![:map],
+                             user_ability_value: result.value![:user_ability_value],
+                             require_ability_value: result.value![:require_ability_value],
+                             online_resources: result.value![:online_resources],
+                             physical_resources: result.value![:physical_resources],
+                             time: result.value![:time],
+                             stress_index: result.value![:stress_index] }
             else
               flash[:error] = result.failure
               routing.redirect '/'
             end
-
           end
         end
 
-#         routing.on String do |map|
-#           # GET /RoutePlanner/:skills
-#           routing.get do # rubocop:disable Metrics/BlockLength
+        #         routing.on String do |map|
+        #           # GET /RoutePlanner/:skills
+        #           routing.get do
 
+        #               view 'ability_recs',
+        #                    locals: { online_resources: online_resources, physical_resources: physical_resources, time: time,
+        # stress_index: stress_index }
 
-#               view 'ability_recs',
-#                    locals: { online_resources: online_resources, physical_resources: physical_resources, time: time,
-# stress_index: stress_index }
-
-#           end
-#         end
+        #           end
+        #         end
       end
     end
   end

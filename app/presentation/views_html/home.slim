@@ -3,21 +3,22 @@
 
   .row.d-flex.justify-content-center.align-items-center.min-vh-100
     .form-container.p-4.rounded.shadow
+      .title-section
+        h2 Chart Your Course, Ignite the Stars! 
+        h5 Map Your Goals, Unlock New Possibilities.
+
       form#show-analyze-form role="form" action="/LevelEvaluation" method="POST"
-        h4.text-center Prepare for Liftoff
-        p.text-center.lead Together, let's explore the wonders of learning!
-
         .form-group.mb-3
-          label.form-label for="syllabus_title_input" Course Title:
-          textarea.form-control.custom-textarea#syllabus_title_input name="syllabus_title" placeholder="e.g. Course Title" rows="1"
+          .input-group.mb-3
+            span.input-group-text.w-fixed Course Title
+            input.form-control#syllabus_title_input name="syllabus_title" placeholder="e.g. Course Title" rows="1" aria-label="Course Title"
 
-        .form-group.mb-3
-          label.form-label for="syllabus_text_input" Course Syllabus:
-          textarea.form-control.custom-textarea#syllabus_text_input name="syllabus_text" placeholder="e.g. Course Syllabus" rows="6"
+          .input-group
+            span.input-group-text.w-fixed  Course Syllabus
+            textarea.form-control#syllabus_text_input name="syllabus_text" placeholder="e.g. Course Syllabus" rows="6" aria-label="With textarea"
 
         .text-center.mt-4
-          button.btn.btn-success.btn-lg#syllabus-form-submit type="submit" Analyze Syllabus
-
+          button.btn.btn-info#syllabus-form-submit type="submit" Launch and Activate Your Star Map! 🗺️🚀
   .fixed-container
     p.dialog-box "Let's Explore Together!."
     img#fixed-image src="/astronaut.png" alt="Fixed Image"

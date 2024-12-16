@@ -15,6 +15,5 @@ module Views
     def skill_name
       @skill.skill_name
     end
-
   end
 end
