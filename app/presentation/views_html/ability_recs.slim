@@ -1,33 +1,53 @@
-.container
-  .row
-    .col
-      h2 = map_name
-
-  .row
-    .col-5
-      .card(style="height: 65vh; overflow-y: hidden;")
-        .card-body(style="margin: 2%; height: 80%;")
-          canvas#radarChart(style="display: block; height: 100%; width: 100%;")
-        .card-text(style="height: 65vh; overflow-y: hidden;")
-          - user_ability_value.keys.each_with_index do |key, index|
-            li #{ ('A'.ord + index).chr}>#{key}
+.container-fluid.bg(style="padding: 2vh 5vw;")
+  .row(style='padding: 2vh 2vw; background-color: #0F2540; border-radius: 0.25rem; color: white;')
+    .col-6
+      .card
+        .card-body
+          canvas#radarChart
 
     .col-6
+      p 
+        strong Destination Planet: 
+        = map_name
       p
-        strong MinTime(/hr): 
+        strong Estimated Arrival Time (hrs): 
         = time
 
       p
-        strong pressure_index: 
-        = stress_index["pressure_index"]
+        strong Pressure Level: 
+        - pressure_index = stress_index["pressure_index"]
+        - circle_display = ""
+        - case pressure_index
+          - when 0..20
+            - circle_display = "🟢⚪⚪⚪⚪" 
+          - when 21..40
+            - circle_display = "🟢🟡⚪⚪⚪"  
+          - when 41..60
+            - circle_display = "🟢🟡🟠⚪⚪" 
+          - when 61..80
+            - circle_display = "🟢🟡🟠🟠⚪"  
+          - when 81..100
+            - circle_display = "🟢🟡🟠🟠🔴"  
+        = circle_display
       p
-        strong stress_level: 
-        = stress_index["stress_level"]
-
-  .row
+        strong Stress Level: 
+        - stress_level = stress_index["stress_level"]
+        - stress_display = ""
+        - case stress_level
+          - when "Low"
+            - stress_display = "Low🌱"
+          - when "Medium"
+            - stress_display = "Medium🌻"
+          - when "High"
+            - stress_display = "High🔥"
+          - else
+            - stress_display = "❓❓❓❓❓"
+        = stress_display
+  .row(style="background-color: #0F2540; color: white;")
     - if physical_resources.any?
       h2 Recommended Physical Resources
-      table.table.table-hover
+      p (style='color:gray;') Explore these in-person courses to enhance the skills for your goal planet!
+      table.table.table-hover(style="color: white;")
         thead
           tr
             th Course ID
@@ -45,11 +65,12 @@
               td = physical_resource.language
               td = physical_resource.provider
               td = physical_resource.timeloc
-
-  .row
+  
+  .row(style="background-color: #0F2540; color: white;")
     - if online_resources.any?
       h2 Recommended Online Resources
-      table.table.table-hover
+      p (style='color:gray;') Boost your learning anytime, anywhere with the online resources below!
+      table.table.table-hover(style="color: white;")
         thead
           tr
             th Topic
@@ -71,9 +92,9 @@ javascript:
     const ctx = document.getElementById('radarChart').getContext('2d');
 
     // 動態標籤和數據
-    let labels = ['A', 'B', 'C', 'D', 'E'];
-    const UserAbilityData = #{user_ability_value.values.map(&:to_f).to_json}; 
-    const RequireAbilityData = #{require_ability_value.values.map(&:to_f).to_json}; 
+    let labels = #{{user_ability_value.keys}};
+    const UserAbilityData = #{user_ability_value.values.map(&:to_f).to_json};
+    const RequireAbilityData = #{require_ability_value.values.map(&:to_f).to_json};
 
     const data = {
       labels: labels,

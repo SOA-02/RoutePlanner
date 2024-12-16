@@ -19,7 +19,7 @@
             = map.map_ai
           p.text-muted Tip: Every successful explorer needs a diverse set of skills. Let’s evaluate your abilities to ensure you’re ready for this journey!
       .d-flex.justify-content-center.mt-3
-        button.btn.btn-primary#goToSkillsBtn type="button" Proceed to Skills Assessment🚀
+        button.btn.btn-primary#goToSkillsBtn type="button" Proceed to Skills Assessment📝✅
 
   / Skills Survey - 預設隱藏
   .row#skillsSurvey(style="display:none")
@@ -56,8 +56,8 @@
                   tr
                     td colspan="6" No skills available
             .d-flex.justify-content-center.gap-3.mt-3
-              button.btn.btn-secondary#goToCourseBtn type="button" Review planet introduction
-              button.btn.btn-primary type="submit"  Begin the Journey!
+              button.btn.btn-secondary#goToCourseBtn type="button" Review planet introduction🪐
+              button.btn.btn-primary type="submit"  Begin the Journey!🚀
 
 
 / JavaScript 控制頁面邏輯
@@ -90,15 +90,17 @@ javascript:
         const selected = Array.from(radios).some((radio) => radio.checked);
         if (!selected) {
           allSelected = false;
-          row.style.backgroundColor = "#ffcccc"; // 標記未選擇的行
+          row.style.color = "#FF567B"; 
+          row.style.fontWeight = "bold";
         } else {
-          row.style.backgroundColor = ""; // 重置已選擇行的顏色
+          row.style.color = ""; 
+          row.style.fontWeight = "normal"; 
         }
       });
 
       if (!allSelected) {
-        event.preventDefault(); // 阻止表單提交
-        alert("Please select an option for all skills."); // 提示訊息
+        event.preventDefault(); 
+        alert("Please select an option for all skills.🥲"); 
       }
     });
   });
