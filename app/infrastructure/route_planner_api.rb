@@ -48,27 +48,16 @@ module RoutePlanner
 
         def fetch_anaylze_result(skills)
           body = skills.to_json
-<<<<<<< HEAD
-
-=======
           # binding.irb
->>>>>>> e20a9db (update main)
           call_api('post', ['RoutePlanner'], {}, body)
         end
 
         private
 
-<<<<<<< HEAD
-        def call_api(method, resources = [], _params = {}, body = nil)
-          api_path = resources.empty? ? @api_host : @api_root
-          url = [api_path, resources].flatten.join('/')
-
-=======
         def call_api(method, resources = [], params = {},body = nil)
           api_path = resources.empty? ? @api_host : @api_root
           url = [api_path, resources].flatten.join('/')
           # binding.irb
->>>>>>> e20a9db (update main)
           headers = {
             'Accept'       => 'application/json',
             'Content-Type' => 'application/json; charset=utf-8' # 加入 charset=utf-8
@@ -77,11 +66,7 @@ module RoutePlanner
           # 傳送請求時檢查 body 是否存在並使用 JSON 格式
           response = HTTP.headers(headers)
             .send(method, url, body: body) # 傳送原始 JSON 字串作為 body
-<<<<<<< HEAD
-
-=======
           # binding.irb
->>>>>>> e20a9db (update main)
           Response.new(response)
         rescue StandardError
           raise "Invalid URL request: #{url}"

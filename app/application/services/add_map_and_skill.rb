@@ -19,10 +19,7 @@ module RoutePlanner
         # binding.irb
         result = Gateway::Api.new(RoutePlanner::App.config)
           .add_map(syllabus_title, syllabus_text)
-<<<<<<< HEAD
-=======
         # binding.irb
->>>>>>> e20a9db (update main)
 
         result.success? ? Success(result.payload) : Failure('Error processing request') # Failure not working
       rescue StandardError => e
