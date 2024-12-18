@@ -5,6 +5,7 @@
         .card-body
           canvas#radarChart
 
+<<<<<<< HEAD
     .col-6
       p 
         strong Destination Planet: 
@@ -44,6 +45,18 @@
             - stress_display = "❓❓❓❓❓"
         = stress_display
   .row(style="background-color: #0F2540; color: white;")
+=======
+          p
+            strong pressure_index: 
+            =  stress_index["pressure_index"]
+          p
+            strong stress_level: 
+            = stress_index["stress_level"]
+  .row
+    .col
+      h2 Recommended Phyiscal resources
+  .row
+>>>>>>> e20a9db (update main)
     - if physical_resources.any?
       h2 Recommended Physical Resources
       p (style='color:gray;') Explore these in-person courses to enhance the skills for your goal planet!

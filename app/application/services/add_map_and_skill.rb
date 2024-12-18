@@ -12,16 +12,23 @@ module RoutePlanner
       step :reify_mapandskill
 
       def request_map(input)
+        # binding.irb
         syllabus_title = input[:syllabus_title]
         syllabus_text = input[:syllabus_text]
+
+        # binding.irb
         result = Gateway::Api.new(RoutePlanner::App.config)
           .add_map(syllabus_title, syllabus_text)
+<<<<<<< HEAD
+=======
+        # binding.irb
+>>>>>>> e20a9db (update main)
 
-        result.success? ? Success(result.payload) : Failure(result.message)
+        result.success? ? Success(result.payload) : Failure('Error processing request') # Failure not working
       rescue StandardError => e
         puts e.inspect
         puts e.backtrace
-        Failure('Cannot ayazle right now; please try again later')
+        Failure('Cannot analyze right now; please try again later')
       end
 
       def reify_mapandskill(response_json)

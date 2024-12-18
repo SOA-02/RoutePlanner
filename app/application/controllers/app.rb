@@ -52,7 +52,6 @@ module RoutePlanner
           result = RoutePlanner::Service::AddMapandSkill.new.call(
             syllabus_title: syllabus_title, syllabus_text: syllabus_text
           )
-
           if result.success?
             view 'level_eval', locals: {
               map: result.value![:map],
@@ -72,7 +71,7 @@ module RoutePlanner
 
             if result.success?
 
-              binding.irb
+              # binding.irb
               view 'ability_recs',
                    locals: { map_name: result.value![:map],
                              user_ability_value: result.value![:user_ability_value],
