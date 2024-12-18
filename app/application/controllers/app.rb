@@ -48,7 +48,7 @@ module RoutePlanner
           end
           syllabus_title = form_syllabus[:syllabus_title]
           syllabus_text = form_syllabus[:syllabus_text]
-
+          # binding.irb
           result = RoutePlanner::Service::AddMapandSkill.new.call(
             syllabus_title: syllabus_title, syllabus_text: syllabus_text
           )
