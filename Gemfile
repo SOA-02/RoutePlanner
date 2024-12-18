@@ -55,3 +55,8 @@ group :development do
   gem 'rubocop-minitest'
   gem 'rubocop-rake'
 end
+
+# Production
+group :production do
+  gem 'pg'
+end

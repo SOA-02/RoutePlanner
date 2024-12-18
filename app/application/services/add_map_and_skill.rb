@@ -21,7 +21,7 @@ module RoutePlanner
           .add_map(syllabus_title, syllabus_text)
         # binding.irb
 
-        result.success? ? Success(result.payload) : Failure('Error processing request') # Failure not working
+        result.success? ? Success(result.payload) : Failure(result.message) # Failure not working
       rescue StandardError => e
         puts e.inspect
         puts e.backtrace
