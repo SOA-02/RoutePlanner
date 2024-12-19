@@ -12,11 +12,11 @@ module RoutePlanner
       step :reify_mapandskill
 
       def request_map(input)
-        # binding.irb
+        binding.irb
         syllabus_title = input[:syllabus_title]
         syllabus_text = input[:syllabus_text]
 
-        # binding.irb
+        binding.irb
         result = Gateway::Api.new(RoutePlanner::App.config)
           .add_map(syllabus_title, syllabus_text)
         # binding.irb
