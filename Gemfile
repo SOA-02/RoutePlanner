@@ -56,7 +56,4 @@ group :development do
   gem 'rubocop-rake'
 end
 
-# Production
-group :production do
-  gem 'pg'
-end
+
