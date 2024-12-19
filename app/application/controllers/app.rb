@@ -48,7 +48,6 @@ module RoutePlanner
           end
           syllabus_title = form_syllabus[:syllabus_title]
           syllabus_text = form_syllabus[:syllabus_text]
-
           result = RoutePlanner::Service::AddMapandSkill.new.call(
             syllabus_title: syllabus_title, syllabus_text: syllabus_text
           )
@@ -71,8 +70,6 @@ module RoutePlanner
             result = Service::FethcAnayzleResult.new.call(routing.params)
 
             if result.success?
-
-              binding.irb
               view 'ability_recs',
                    locals: { map_name: result.value![:map],
                              user_ability_value: result.value![:user_ability_value],
