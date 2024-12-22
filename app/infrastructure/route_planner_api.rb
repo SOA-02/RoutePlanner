@@ -17,6 +17,7 @@ module RoutePlanner
 
       def add_map(syllabus_title, syllabus_text)
         @request.add_map(syllabus_title, syllabus_text)
+       
       end
 
       def fetch_anaylze_result(skills)
@@ -49,13 +50,13 @@ module RoutePlanner
 
         def fetch_anaylze_result(skills)
           body = skills.to_json
-
+          # binding.irb
           call_api('post', ['RoutePlanner'], {}, body)
         end
 
         private
 
-        def call_api(method, resources = [], _params = {}, body = nil)
+        def call_api(method, resources = [], params = {},body = nil)
           api_path = resources.empty? ? @api_host : @api_root
           url = [api_path, resources].flatten.join('/')
           headers = {

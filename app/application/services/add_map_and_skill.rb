@@ -12,6 +12,7 @@ module RoutePlanner
       step :reify_mapandskill
 
       def request_map(input)
+        binding.irb
         syllabus_title = input[:syllabus_title]
         syllabus_text = input[:syllabus_text]
 

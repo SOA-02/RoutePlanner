@@ -41,6 +41,7 @@ module RoutePlanner
         routing.is do
           form_syllabus = Forms::NewSyllabus.new.call(routing.params)
           if form_syllabus.failure?
+            binding.irb
             errors = form_syllabus.errors.to_h
             flash[:error] = errors[:syllabus_title].first if errors[:syllabus_title]
             flash[:error] = errors[:syllabus_text].first if errors[:syllabus_text]
@@ -48,7 +49,6 @@ module RoutePlanner
           end
           syllabus_title = form_syllabus[:syllabus_title]
           syllabus_text = form_syllabus[:syllabus_text]
-
           result = RoutePlanner::Service::AddMapandSkill.new.call(
             syllabus_title: syllabus_title, syllabus_text: syllabus_text
           )
@@ -64,7 +64,7 @@ module RoutePlanner
                              'Please refresh the page.'
             routing.redirect '/'
           end
-          
+
           if result.success?
             view 'level_eval', locals: {
               map: result.value![:data][:map],

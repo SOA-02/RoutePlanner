@@ -5,45 +5,13 @@
         .card-body
           canvas#radarChart
 
-    .col-6
-      p 
-        strong Destination Planet: 
-        = map_name
-      p
-        strong Estimated Arrival Time (hrs): 
-        = time
-
-      p
-        strong Pressure Level: 
-        - pressure_index = stress_index["pressure_index"]
-        - circle_display = ""
-        - case pressure_index
-          - when 0..20
-            - circle_display = "🟢⚪⚪⚪⚪" 
-          - when 21..40
-            - circle_display = "🟢🟡⚪⚪⚪"  
-          - when 41..60
-            - circle_display = "🟢🟡🟠⚪⚪" 
-          - when 61..80
-            - circle_display = "🟢🟡🟠🟠⚪"  
-          - when 81..100
-            - circle_display = "🟢🟡🟠🟠🔴"  
-        = circle_display
-      p
-        strong Stress Level: 
-        - stress_level = stress_index["stress_level"]
-        - stress_display = ""
-        - case stress_level
-          - when "Low"
-            - stress_display = "Low🌱"
-          - when "Medium"
-            - stress_display = "Medium🌻"
-          - when "High"
-            - stress_display = "High🔥"
-          - else
-            - stress_display = "❓❓❓❓❓"
-        = stress_display
-  .row(style="background-color: #0F2540; color: white;")
+          p
+            strong pressure_index: 
+            =  stress_index["pressure_index"]
+          p
+            strong stress_level: 
+            = stress_index["stress_level"]
+  .row
     - if physical_resources.any?
       h2 Recommended Physical Resources
       p (style='color:gray;') Explore these in-person courses to enhance the skills for your goal planet!

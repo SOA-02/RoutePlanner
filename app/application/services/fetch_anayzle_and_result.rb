@@ -12,8 +12,10 @@ module RoutePlanner
       step :retrieveSkillInsightsAndResources
 
       def request_anayzle(input)
+        # binding.irb
         result = Gateway::Api.new(RoutePlanner::App.config)
           .fetch_anaylze_result(input)
+        # binding.irb
 
         result.success? ? Success(result.payload) : Failure(result.message)
       rescue StandardError => e
