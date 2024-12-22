@@ -58,7 +58,6 @@ module RoutePlanner
         def call_api(method, resources = [], params = {},body = nil)
           api_path = resources.empty? ? @api_host : @api_root
           url = [api_path, resources].flatten.join('/')
-          binding.irb
           headers = {
             'Accept'       => 'application/json',
             'Content-Type' => 'application/json; charset=utf-8' # 加入 charset=utf-8
@@ -67,7 +66,6 @@ module RoutePlanner
           # 傳送請求時檢查 body 是否存在並使用 JSON 格式
           response = HTTP.headers(headers)
             .send(method, url, body: body) # 傳送原始 JSON 字串作為 body
-          binding.irb
           Response.new(response)
         rescue StandardError
           raise "Invalid URL request: #{url}"
