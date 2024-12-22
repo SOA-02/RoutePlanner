@@ -17,7 +17,6 @@ module RoutePlanner
 
       def add_map(syllabus_title, syllabus_text)
         @request.add_map(syllabus_title, syllabus_text)
-       
       end
 
       def fetch_anaylze_result(skills)
@@ -43,6 +42,7 @@ module RoutePlanner
         end
 
         def add_map(syllabus_title, syllabus_text)
+          # binding.irb
           body = { syllabus_title: syllabus_title, syllabus_text: syllabus_text }.to_json
           call_api('post', ['maps'], {}, body)
         end
@@ -66,6 +66,7 @@ module RoutePlanner
           # 傳送請求時檢查 body 是否存在並使用 JSON 格式
           response = HTTP.headers(headers)
             .send(method, url, body: body) # 傳送原始 JSON 字串作為 body
+          # binding.irb
           Response.new(response)
         rescue StandardError
           raise "Invalid URL request: #{url}"
@@ -99,6 +100,7 @@ module RoutePlanner
         end
 
         def message
+          # binding.irb
           JSON.parse(payload)['message']
         end
 

@@ -48,18 +48,28 @@ module RoutePlanner
           end
           syllabus_title = form_syllabus[:syllabus_title]
           syllabus_text = form_syllabus[:syllabus_text]
+
           result = RoutePlanner::Service::AddMapandSkill.new.call(
             syllabus_title: syllabus_title, syllabus_text: syllabus_text
           )
 
-          if result.success?
-            view 'level_eval', locals: {
-              map: result.value![:map],
-              skills: result.value![:skills]
-            }
-          else
+          if result.failure?
             flash[:error] = result.failure
             routing.redirect '/'
+          end
+
+          analysis_response = result.value![:response]
+          if analysis_response.processing?
+            flash[:notice] = 'Syllabus is being analyzed, ' \
+                             'Please refresh the page.'
+            routing.redirect '/'
+          end
+          
+          if result.success?
+            view 'level_eval', locals: {
+              map: result.value![:data][:map],
+              skills: result.value![:data][:skills]
+            }
           end
         end
       end

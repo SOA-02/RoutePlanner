@@ -14,22 +14,27 @@ module RoutePlanner
       def request_map(input)
         syllabus_title = input[:syllabus_title]
         syllabus_text = input[:syllabus_text]
-        result = Gateway::Api.new(RoutePlanner::App.config)
-          .add_map(syllabus_title, syllabus_text)
 
-        result.success? ? Success(result.payload) : Failure(result.message)
-      rescue StandardError => e
-        puts e.inspect
-        puts e.backtrace
-        Failure('Cannot ayazle right now; please try again later')
+        # binding.irb
+        input[:response] = Gateway::Api.new(RoutePlanner::App.config)
+          .add_map(syllabus_title, syllabus_text)
+        # binding.irb
+        input[:response].success? ? Success(input) : Failure('Cannot analyze right now')
+      rescue StandardError
+        Failure('Cannot analyze right now; please try again later')
       end
 
-      def reify_mapandskill(response_json)
-        Representer::AddMapandSkill.new(OpenStruct.new)
-          .from_json(response_json)
-          .then { |project| Success(project) }
+      def reify_mapandskill(input)
+        unless input[:response].processing?
+          Representer::AddMapandSkill.new(OpenStruct.new) # rubocop:disable Style/OpenStructUse
+            .from_json(input[:response].payload).then do |project|
+              input[:data] = project
+              Success(input)
+            end
+        end
+        Success(input)
       rescue StandardError
-        Failure('Error in the project -- please try again')
+        Failure('Error in the analysis -- please try again')
       end
     end
   end
